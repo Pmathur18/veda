@@ -2,19 +2,24 @@
 
 :root {
   --background: #FFFFFF;
-  --foreground: #071B3A;
+  --foreground: #0F172A;
 }
 
 @theme {
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-display: var(--font-montserrat), system-ui, sans-serif;
   
-  --color-brand: #1261C9;
-  --color-brand-hover: #1687E8;
-  --color-midnight: #071B3A;
-  --color-ocean: #0B3D91;
-  --color-azure: #38A9F5;
-  --color-ice: #B9E3FF;
+  --color-brand: #1E3A8A;
+  --color-brand-hover: #172554;
+  --color-brand-light: #EFF6FF;
+  --color-accent: #2563EB;
+  --color-accent-hover: #1D4ED8;
+  --color-sky: #0ea5e9;
+  --color-sky-hover: #0284c7;
+  --color-midnight: #0F172A;
+  --color-ocean: #1E3A8A;
+  --color-azure: #2563EB;
+  --color-ice: #F0F9FF;
 }
 
 body {

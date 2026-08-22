@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { Search, Filter, HelpCircle, FileText, ChevronDown, CheckSquare } from "lucide-react";
+import { Search, Filter, HelpCircle, FileText, CheckSquare } from "lucide-react";
 import { documentsData, allCountries, allProducts } from "../../data/documents-data";
 
 export default function LegalDocumentsPage() {
@@ -192,7 +192,7 @@ export default function LegalDocumentsPage() {
 
               <div className="space-y-1">
                 <h4 className="font-bold text-neutral-850">Phytosanitary Certificate</h4>
-                <p>Issued by an exporting nation's agricultural department verifying that agricultural commodities or plants are free from quarantine pests and match importing biosecurity guidelines.</p>
+                <p>{"Issued by an exporting nation's agricultural department verifying that agricultural commodities or plants are free from quarantine pests and match importing biosecurity guidelines."}</p>
               </div>
 
               <div className="space-y-1">

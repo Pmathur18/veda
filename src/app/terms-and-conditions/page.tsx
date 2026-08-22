@@ -61,10 +61,10 @@ export default function TermsAndConditionsPage() {
           <section id="definitions" className="space-y-4 pt-6 border-t border-neutral-100">
             <h2 className="text-base font-bold text-neutral-850">2. Definitions & Interpretation</h2>
             <p>
-              Throughout this agreement, "Company", "Veda Impex", "we", "us", and "our" refer directly to Veda Impex and its registered operations desks. "Client", "Exporter", "Importer", "User", and "you" refer to any corporate entity using our cargo coordination portal.
+              {"Throughout this agreement, \"Company\", \"Veda Impex\", \"we\", \"us\", and \"our\" refer directly to Veda Impex and its registered operations desks. \"Client\", \"Exporter\", \"Importer\", \"User\", and \"you\" refer to any corporate entity using our cargo coordination portal."}
             </p>
             <p>
-              "Services" refers to our ocean cargo consolidation, expedited aviation freight, domestic trucking routing, customs brokerage filings, and trade commodity procurement.
+              {"\"Services\" refers to our ocean cargo consolidation, expedited aviation freight, domestic trucking routing, customs brokerage filings, and trade commodity procurement."}
             </p>
           </section>
 

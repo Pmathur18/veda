@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, TrendingUp, Calendar, CheckCircle2, ShieldCheck, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowUpRight, TrendingUp, Calendar, CheckCircle2, ShieldCheck } from "lucide-react";
 
 type TimeRange = "7D" | "30D" | "6M";
 
@@ -109,7 +109,7 @@ export default function ShipmentAnalytics() {
             <span className="text-2xl font-black text-neutral-900">
               {current.totalShipments}
             </span>
-            <span className="text-xs font-bold text-green-500 flex items-center">
+            <span className="text-xs font-bold text-blue-600 flex items-center">
               <ArrowUpRight className="h-3 w-3" /> {current.changeRate}
             </span>
           </div>
@@ -120,11 +120,11 @@ export default function ShipmentAnalytics() {
           <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block mb-1">
             On-Time Rate
           </span>
-          <div className="flex items-baseline gap-2">
+          <div className="flex flex-wrap items-baseline gap-1.5">
             <span className="text-2xl font-black text-neutral-900 text-[#1261C9]">
               {current.onTimeRate}
             </span>
-            <span className="text-xs font-bold text-green-500 flex items-center bg-green-50 px-1.5 py-0.5 rounded-full">
+            <span className="text-xs font-bold text-blue-600 flex items-center bg-blue-50 px-1.5 py-0.5 rounded-full">
               Optimal
             </span>
           </div>
@@ -196,28 +196,28 @@ export default function ShipmentAnalytics() {
           Active Custom Clearances
         </span>
         <div className="space-y-2.5">
-          <div className="flex items-center justify-between text-xs border border-neutral-100 p-2.5 rounded-xl bg-white shadow-sm">
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-green-500" />
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs border border-neutral-100 p-2.5 rounded-xl bg-white shadow-sm gap-2">
+            <div className="flex items-start gap-2">
+              <CheckCircle2 className="h-4 w-4 text-blue-600 shrink-0 mt-0.5 sm:mt-0" />
               <div>
-                <span className="font-bold text-neutral-800">Mundra (IN) ➔ Hamburg (DE)</span>
+                <span className="font-bold text-neutral-800 block sm:inline">Mundra (IN) ➔ Hamburg (DE)</span>
                 <span className="block text-[10px] text-neutral-400">Customs Cleared</span>
               </div>
             </div>
-            <span className="font-bold text-neutral-900 bg-neutral-50 px-2 py-0.5 rounded-lg border border-neutral-150">
+            <span className="font-bold text-neutral-900 bg-neutral-50 px-2 py-0.5 rounded-lg border border-neutral-150 self-start sm:self-auto shrink-0">
               #IN-382
             </span>
           </div>
 
-          <div className="flex items-center justify-between text-xs border border-neutral-100 p-2.5 rounded-xl bg-white shadow-sm">
-            <div className="flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-amber-500" />
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs border border-neutral-100 p-2.5 rounded-xl bg-white shadow-sm gap-2">
+            <div className="flex items-start gap-2">
+              <ShieldCheck className="h-4 w-4 text-sky-500 shrink-0 mt-0.5 sm:mt-0" />
               <div>
-                <span className="font-bold text-neutral-800">Jebel Ali (AE) ➔ Sydney (AU)</span>
+                <span className="font-bold text-neutral-800 block sm:inline">Jebel Ali (AE) ➔ Sydney (AU)</span>
                 <span className="block text-[10px] text-neutral-400">Biosecurity Inspection</span>
               </div>
             </div>
-            <span className="font-bold text-neutral-900 bg-neutral-50 px-2 py-0.5 rounded-lg border border-neutral-150">
+            <span className="font-bold text-neutral-900 bg-neutral-50 px-2 py-0.5 rounded-lg border border-neutral-150 self-start sm:self-auto shrink-0">
               #AE-992
             </span>
           </div>

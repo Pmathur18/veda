@@ -7,9 +7,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Home,
   Info,
-  Settings,
   Layers,
-  BookOpen,
+  Award,
+  TrendingUp,
   Mail,
   Menu,
   X
@@ -17,10 +17,11 @@ import {
 
 const navigation = [
   { name: "Home", href: "/", icon: Home },
-  { name: "About Us", href: "/about-us", icon: Info },
-  { name: "Services", href: "/services", icon: Settings },
   { name: "Products", href: "/products", icon: Layers },
-  { name: "Blog", href: "/blog", icon: BookOpen },
+  { name: "Quality", href: "/quality", icon: Award },
+  { name: "Export Process", href: "/export-process", icon: TrendingUp },
+  { name: "About", href: "/about", icon: Info },
+  { name: "Contact", href: "/contact", icon: Mail },
 ];
 
 export default function Header() {
@@ -44,8 +45,8 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-4 px-4 md:px-8">
       <div
         className={`mx-auto transition-all duration-300 bg-white border border-neutral-200/50 shadow-md ${scrolled
-          ? "rounded-full py-2.5 px-6 max-w-5xl shadow-lg bg-white/95 backdrop-blur-md"
-          : "rounded-3xl py-4 px-8 max-w-7xl"
+          ? "rounded-full py-2.5 px-4 md:px-6 max-w-5xl shadow-lg bg-white/95 backdrop-blur-md"
+          : "rounded-3xl py-3 px-4 md:py-4 md:px-8 max-w-7xl"
           } flex items-center justify-between`}
       >
         {/* Logo */}
@@ -62,14 +63,14 @@ export default function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-1">
           {navigation.map((item) => {
-            const isActive = pathname === item.href;
+            const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
             const Icon = item.icon;
             return (
               <Link
                 key={item.name}
                 href={item.href}
                 className={`relative px-4 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-1.5 ${isActive
-                  ? "text-[#F5A623] bg-neutral-50"
+                  ? "text-brand bg-brand-light/30"
                   : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50"
                   }`}
               >
@@ -83,10 +84,10 @@ export default function Header() {
         {/* Action Button */}
         <div className="hidden md:block">
           <Link
-            href="/contact-us"
-            className="bg-neutral-950 hover:bg-neutral-900 text-white font-bold py-2.5 px-5 rounded-full text-xs transition-all tracking-wide uppercase cursor-pointer"
+            href="/enquiry"
+            className="bg-sky hover:bg-sky-hover text-white font-bold py-2.5 px-5 rounded-full text-xs transition-all tracking-wide uppercase cursor-pointer"
           >
-            Contact Us
+            Request Quote
           </Link>
         </div>
 
@@ -117,7 +118,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", bounce: 0.15 }}
-              className="fixed right-0 top-0 bottom-0 w-80 bg-white shadow-2xl z-50 md:hidden p-6 flex flex-col"
+              className="fixed right-0 top-0 bottom-0 w-80 max-w-full bg-white shadow-2xl z-50 md:hidden p-6 flex flex-col overflow-y-auto no-scrollbar"
             >
               <div className="flex items-center justify-between mb-8">
                 <Link href="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
@@ -137,7 +138,7 @@ export default function Header() {
 
               <div className="flex-1 space-y-2">
                 {navigation.map((item) => {
-                  const isActive = pathname === item.href;
+                  const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
                   const Icon = item.icon;
                   return (
                     <Link
@@ -145,7 +146,7 @@ export default function Header() {
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-base font-semibold transition-all ${isActive
-                        ? "bg-[#F5A623]/10 text-[#F5A623]"
+                        ? "bg-brand-light/35 text-brand"
                         : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
                         }`}
                     >
@@ -158,11 +159,11 @@ export default function Header() {
 
               <div className="mt-auto space-y-4">
                 <Link
-                  href="/contact-us"
+                  href="/enquiry"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full bg-[#F5A623] hover:bg-[#e0921b] text-neutral-950 font-bold py-3.5 px-4 rounded-2xl text-center text-sm transition-all block cursor-pointer"
+                  className="w-full bg-sky hover:bg-sky-hover text-white font-bold py-3.5 px-4 rounded-2xl text-center text-sm transition-all block cursor-pointer"
                 >
-                  Contact Us
+                  Request Quote
                 </Link>
                 <p className="text-center text-xs text-neutral-400">
                   © 2026 Veda Impex. All rights reserved.

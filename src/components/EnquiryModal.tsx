@@ -22,11 +22,11 @@ export default function EnquiryModal({ isOpen, onClose, initialProduct = "" }: E
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Sync state if initialProduct changes
-  React.useEffect(() => {
-    if (initialProduct) {
-      setFormData((prev) => ({ ...prev, product: initialProduct }));
-    }
-  }, [initialProduct]);
+  const [prevInitialProduct, setPrevInitialProduct] = useState(initialProduct);
+  if (initialProduct !== prevInitialProduct) {
+    setPrevInitialProduct(initialProduct);
+    setFormData((prev) => ({ ...prev, product: initialProduct }));
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -66,7 +66,7 @@ export default function EnquiryModal({ isOpen, onClose, initialProduct = "" }: E
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                className="p-4 bg-green-50 text-green-500 rounded-full mb-6"
+                className="p-4 bg-blue-50 text-blue-600 rounded-full mb-6"
               >
                 <CheckCircle2 className="h-16 w-16" />
               </motion.div>
@@ -91,7 +91,7 @@ export default function EnquiryModal({ isOpen, onClose, initialProduct = "" }: E
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-1.5">
                       Your Name
@@ -134,7 +134,7 @@ export default function EnquiryModal({ isOpen, onClose, initialProduct = "" }: E
                   />
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-1.5">
                       Product/Commodity
@@ -178,7 +178,7 @@ export default function EnquiryModal({ isOpen, onClose, initialProduct = "" }: E
 
                 <button
                   type="submit"
-                  className="w-full bg-[#1261C9] hover:bg-[#1687E8] text-neutral-950 font-bold py-3 px-4 rounded-xl text-sm transition-all flex items-center justify-center gap-2 mt-2 cursor-pointer shadow-md shadow-[#1261C9]/10"
+                  className="w-full bg-[#1261C9] hover:bg-[#1687E8] text-white font-bold py-3 px-4 rounded-xl text-sm transition-all flex items-center justify-center gap-2 mt-2 cursor-pointer shadow-md shadow-[#1261C9]/10"
                 >
                   Send Trade Enquiry <Send className="h-4 w-4" />
                 </button>
