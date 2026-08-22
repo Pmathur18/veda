@@ -8,8 +8,14 @@ function ContactFormInner() {
   const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     name: "",
+    company: "",
+    country: "",
     email: "",
-    subject: "",
+    phone: "",
+    productRequired: "",
+    quantity: "",
+    specification: "",
+    destinationPort: "",
     message: ""
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -30,8 +36,8 @@ function ContactFormInner() {
       }
       setFormData((prev) => ({
         ...prev,
-        subject: `Enquiry for ${productLabel}`,
-        message: `Hello, I would like to request specifications, packaging options, and pricing for ${productLabel}.`
+        productRequired: productLabel,
+        specification: `Standard physical specifications for ${productLabel}.`
       }));
     }
   }
@@ -41,64 +47,173 @@ function ContactFormInner() {
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({
+        name: "",
+        company: "",
+        country: "",
+        email: "",
+        phone: "",
+        productRequired: "",
+        quantity: "",
+        specification: "",
+        destinationPort: "",
+        message: ""
+      });
     }, 2500);
   };
 
   return (
     <>
-      <h3 className="text-2xl font-black uppercase text-slate-900 mb-6">Quick Enquiry</h3>
+      <h3 className="text-xl md:text-2xl font-black uppercase text-slate-900 mb-2">
+        Looking for Indian Agricultural Products?
+      </h3>
+      <p className="text-xs text-slate-500 mb-6 leading-relaxed">
+        Send us your product requirement, specification, quantity and destination. Our team will review the requirement and provide a suitable sourcing and commercial proposal.
+      </p>
+
       {isSubmitted ? (
         <div className="flex flex-col items-center justify-center py-16 text-center space-y-4">
           <div className="p-3 bg-emerald-50 text-emerald-500 rounded-full border border-emerald-200">
             <CheckCircle2 className="h-10 w-10" />
           </div>
-          <h4 className="font-bold text-lg uppercase">Message Transmitted</h4>
+          <h4 className="font-bold text-lg uppercase">Enquiry Transmitted</h4>
           <p className="text-slate-500 text-xs max-w-xs mx-auto leading-relaxed">
-            Thank you for your message. An export coordinator will contact you via email shortly.
+            Thank you for your enquiry. An export coordinator will contact you shortly with a proposal.
           </p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
-              Name *
-            </label>
-            <input
-              type="text"
-              required
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              placeholder="Your Name"
-              className="w-full bg-slate-55 border border-slate-200 focus:border-accent focus:bg-white text-slate-800 rounded-xl px-4 py-3 text-xs outline-none transition-all font-medium"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
+                Name *
+              </label>
+              <input
+                type="text"
+                required
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                placeholder="Your Name"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-accent focus:bg-white text-slate-800 rounded-xl px-4 py-3 text-xs outline-none transition-all font-medium"
+              />
+            </div>
+
+            <div>
+              <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
+                Company *
+              </label>
+              <input
+                type="text"
+                required
+                value={formData.company}
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                placeholder="Your Company Name"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-accent focus:bg-white text-slate-800 rounded-xl px-4 py-3 text-xs outline-none transition-all font-medium"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
+                Country *
+              </label>
+              <input
+                type="text"
+                required
+                value={formData.country}
+                onChange={(e) => setFormData({ ...formData, country: e.target.value })}
+                placeholder="E.g., Germany, USA, UAE"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-accent focus:bg-white text-slate-800 rounded-xl px-4 py-3 text-xs outline-none transition-all font-medium"
+              />
+            </div>
+
+            <div>
+              <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
+                Email *
+              </label>
+              <input
+                type="email"
+                required
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                placeholder="buyer@company.com"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-accent focus:bg-white text-slate-800 rounded-xl px-4 py-3 text-xs outline-none transition-all font-medium"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
+                WhatsApp / Phone *
+              </label>
+              <input
+                type="text"
+                required
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                placeholder="+1 (555) 000-0000"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-accent focus:bg-white text-slate-800 rounded-xl px-4 py-3 text-xs outline-none transition-all font-medium"
+              />
+            </div>
+
+            <div>
+              <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
+                Product Required *
+              </label>
+              <input
+                type="text"
+                required
+                value={formData.productRequired}
+                onChange={(e) => setFormData({ ...formData, productRequired: e.target.value })}
+                placeholder="E.g., Psyllium Husk, Senna Leaves"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-accent focus:bg-white text-slate-800 rounded-xl px-4 py-3 text-xs outline-none transition-all font-medium"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
+                Quantity *
+              </label>
+              <input
+                type="text"
+                required
+                value={formData.quantity}
+                onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
+                placeholder="E.g., 20 MT (Metric Tons)"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-accent focus:bg-white text-slate-800 rounded-xl px-4 py-3 text-xs outline-none transition-all font-medium"
+              />
+            </div>
+
+            <div>
+              <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
+                Destination Port *
+              </label>
+              <input
+                type="text"
+                required
+                value={formData.destinationPort}
+                onChange={(e) => setFormData({ ...formData, destinationPort: e.target.value })}
+                placeholder="E.g., Hamburg Port, Germany"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-accent focus:bg-white text-slate-800 rounded-xl px-4 py-3 text-xs outline-none transition-all font-medium"
+              />
+            </div>
           </div>
 
           <div>
             <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
-              Business Email *
+              Specification *
             </label>
-            <input
-              type="email"
+            <textarea
+              rows={2}
               required
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              placeholder="buyer@company.com"
-              className="w-full bg-slate-55 border border-slate-200 focus:border-accent focus:bg-white text-slate-800 rounded-xl px-4 py-3 text-xs outline-none transition-all font-medium"
-            />
-          </div>
-
-          <div>
-            <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
-              Subject *
-            </label>
-            <input
-              type="text"
-              required
-              value={formData.subject}
-              onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-              placeholder="E.g., Psyllium Husk 99% price inquiry"
-              className="w-full bg-slate-55 border border-slate-200 focus:border-accent focus:bg-white text-slate-850 rounded-xl px-4 py-3 text-xs outline-none transition-all font-medium"
+              value={formData.specification}
+              onChange={(e) => setFormData({ ...formData, specification: e.target.value })}
+              placeholder="E.g., 99% purity, custom packing in 25kg multi-wall paper bags..."
+              className="w-full bg-slate-55 border border-slate-200 focus:border-accent focus:bg-white text-slate-800 rounded-xl px-4 py-3 text-xs outline-none transition-all resize-none font-medium"
             />
           </div>
 
@@ -107,12 +222,12 @@ function ContactFormInner() {
               Message *
             </label>
             <textarea
-              rows={4}
+              rows={3}
               required
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              placeholder="Detail your quality specifications, target delivery timeline, and port logistics parameters..."
-              className="w-full bg-slate-55 border border-slate-200 focus:border-accent focus:bg-white text-slate-855 rounded-xl px-4 py-3 text-xs outline-none transition-all resize-none font-medium"
+              placeholder="Any additional instructions or sourcing details..."
+              className="w-full bg-slate-55 border border-slate-200 focus:border-accent focus:bg-white text-slate-800 rounded-xl px-4 py-3 text-xs outline-none transition-all resize-none font-medium"
             />
           </div>
 
@@ -120,7 +235,7 @@ function ContactFormInner() {
             type="submit"
             className="w-full bg-sky hover:bg-sky-hover text-white font-bold py-3.5 px-4 rounded-xl text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 cursor-pointer border-2 border-slate-950 shadow-md shadow-sky/10"
           >
-            Send Message <Send className="h-4 w-4" />
+            Submit Enquiry <Send className="h-4 w-4" />
           </button>
         </form>
       )}

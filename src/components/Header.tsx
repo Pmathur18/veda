@@ -19,7 +19,7 @@ const navigation = [
   { name: "Products", href: "/products", icon: Layers },
   { name: "Export Process", href: "/export-process", icon: TrendingUp },
   { name: "About", href: "/about", icon: Info },
-  { name: "Contact", href: "/contact", icon: Mail },
+
 ];
 
 export default function Header() {
@@ -52,9 +52,8 @@ export default function Header() {
           <img
             src="/logo.png"
             alt="Veda Impex Logo"
-            className={`transition-all duration-300 object-contain ${
-              scrolled ? "h-9 md:h-11" : "h-11 md:h-14"
-            }`}
+            className={`transition-all duration-300 object-contain ${scrolled ? "h-9 md:h-11" : "h-11 md:h-14"
+              }`}
           />
         </Link>
 
