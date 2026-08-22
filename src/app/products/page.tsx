@@ -111,7 +111,7 @@ export default function ProductsPage() {
                     View Product Details
                   </Link>
                   <Link
-                    href={`/enquiry?product=${p.id}`}
+                    href={`/contact?product=${p.id}`}
                     className="bg-sky hover:bg-sky-hover text-white font-bold py-3.5 px-6 rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer border-2 border-slate-950 flex items-center justify-center gap-1.5"
                   >
                     Request Quote
@@ -137,7 +137,7 @@ export default function ProductsPage() {
             </p>
           </div>
           <Link
-            href="/enquiry"
+            href="/contact"
             className="bg-sky hover:bg-sky-hover text-white font-bold py-4 px-6 rounded-xl text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer shadow-lg shadow-sky/10 hover:shadow-sky/20 border border-transparent"
           >
             Submit Specifications

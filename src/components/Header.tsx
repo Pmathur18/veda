@@ -8,7 +8,6 @@ import {
   Home,
   Info,
   Layers,
-  Award,
   TrendingUp,
   Mail,
   Menu,
@@ -18,7 +17,6 @@ import {
 const navigation = [
   { name: "Home", href: "/", icon: Home },
   { name: "Products", href: "/products", icon: Layers },
-  { name: "Quality", href: "/quality", icon: Award },
   { name: "Export Process", href: "/export-process", icon: TrendingUp },
   { name: "About", href: "/about", icon: Info },
   { name: "Contact", href: "/contact", icon: Mail },
@@ -84,10 +82,10 @@ export default function Header() {
         {/* Action Button */}
         <div className="hidden md:block">
           <Link
-            href="/enquiry"
+            href="/contact"
             className="bg-sky hover:bg-sky-hover text-white font-bold py-2.5 px-5 rounded-full text-xs transition-all tracking-wide uppercase cursor-pointer"
           >
-            Request Quote
+            Contact Us
           </Link>
         </div>
 
@@ -159,11 +157,11 @@ export default function Header() {
 
               <div className="mt-auto space-y-4">
                 <Link
-                  href="/enquiry"
+                  href="/contact"
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full bg-sky hover:bg-sky-hover text-white font-bold py-3.5 px-4 rounded-2xl text-center text-sm transition-all block cursor-pointer"
                 >
-                  Request Quote
+                  Contact Us
                 </Link>
                 <p className="text-center text-xs text-neutral-400">
                   © 2026 Veda Impex. All rights reserved.

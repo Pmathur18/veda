@@ -1,9 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
 
-export default function ContactPage() {
+function ContactFormInner() {
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -11,6 +13,28 @@ export default function ContactPage() {
     message: ""
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // Prepopulate from search params if 'product' is present
+  const [prevProductParam, setPrevProductParam] = useState(() => searchParams.get("product"));
+  const currentProductParam = searchParams.get("product");
+  if (currentProductParam !== prevProductParam) {
+    setPrevProductParam(currentProductParam);
+    if (currentProductParam) {
+      let productLabel = "";
+      if (currentProductParam.toLowerCase().includes("psyllium")) {
+        productLabel = "Psyllium Husk & Powder";
+      } else if (currentProductParam.toLowerCase().includes("senna")) {
+        productLabel = "Senna Leaves & Pods";
+      } else {
+        productLabel = currentProductParam;
+      }
+      setFormData((prev) => ({
+        ...prev,
+        subject: `Enquiry for ${productLabel}`,
+        message: `Hello, I would like to request specifications, packaging options, and pricing for ${productLabel}.`
+      }));
+    }
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,6 +45,90 @@ export default function ContactPage() {
     }, 2500);
   };
 
+  return (
+    <>
+      <h3 className="text-2xl font-black uppercase text-slate-900 mb-6">Quick Enquiry</h3>
+      {isSubmitted ? (
+        <div className="flex flex-col items-center justify-center py-16 text-center space-y-4">
+          <div className="p-3 bg-emerald-50 text-emerald-500 rounded-full border border-emerald-200">
+            <CheckCircle2 className="h-10 w-10" />
+          </div>
+          <h4 className="font-bold text-lg uppercase">Message Transmitted</h4>
+          <p className="text-slate-500 text-xs max-w-xs mx-auto leading-relaxed">
+            Thank you for your message. An export coordinator will contact you via email shortly.
+          </p>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
+              Name *
+            </label>
+            <input
+              type="text"
+              required
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              placeholder="Your Name"
+              className="w-full bg-slate-55 border border-slate-200 focus:border-accent focus:bg-white text-slate-800 rounded-xl px-4 py-3 text-xs outline-none transition-all font-medium"
+            />
+          </div>
+
+          <div>
+            <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
+              Business Email *
+            </label>
+            <input
+              type="email"
+              required
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              placeholder="buyer@company.com"
+              className="w-full bg-slate-55 border border-slate-200 focus:border-accent focus:bg-white text-slate-800 rounded-xl px-4 py-3 text-xs outline-none transition-all font-medium"
+            />
+          </div>
+
+          <div>
+            <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
+              Subject *
+            </label>
+            <input
+              type="text"
+              required
+              value={formData.subject}
+              onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+              placeholder="E.g., Psyllium Husk 99% price inquiry"
+              className="w-full bg-slate-55 border border-slate-200 focus:border-accent focus:bg-white text-slate-850 rounded-xl px-4 py-3 text-xs outline-none transition-all font-medium"
+            />
+          </div>
+
+          <div>
+            <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
+              Message *
+            </label>
+            <textarea
+              rows={4}
+              required
+              value={formData.message}
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+              placeholder="Detail your quality specifications, target delivery timeline, and port logistics parameters..."
+              className="w-full bg-slate-55 border border-slate-200 focus:border-accent focus:bg-white text-slate-855 rounded-xl px-4 py-3 text-xs outline-none transition-all resize-none font-medium"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-sky hover:bg-sky-hover text-white font-bold py-3.5 px-4 rounded-xl text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 cursor-pointer border-2 border-slate-950 shadow-md shadow-sky/10"
+          >
+            Send Message <Send className="h-4 w-4" />
+          </button>
+        </form>
+      )}
+    </>
+  );
+}
+
+export default function ContactPage() {
   return (
     <div className="py-12 bg-white min-h-screen">
       {/* 1. PAGE HEADER */}
@@ -48,83 +156,9 @@ export default function ContactPage() {
       <section className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-24">
         {/* Contact Form Section (Left Column) */}
         <div className="lg:col-span-7 bg-white border-2 border-slate-900 rounded-3xl p-8 shadow-xl">
-          <h3 className="text-2xl font-black uppercase text-slate-900 mb-6">Quick Enquiry</h3>
-          {isSubmitted ? (
-            <div className="flex flex-col items-center justify-center py-16 text-center space-y-4">
-              <div className="p-3 bg-emerald-50 text-emerald-500 rounded-full border border-emerald-200">
-                <CheckCircle2 className="h-10 w-10" />
-              </div>
-              <h4 className="font-bold text-lg uppercase">Message Transmitted</h4>
-              <p className="text-slate-500 text-xs max-w-xs mx-auto leading-relaxed">
-                Thank you for your message. An export coordinator will contact you via email shortly.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
-                  Name *
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="Your Name"
-                  className="w-full bg-slate-55 border border-slate-200 focus:border-accent focus:bg-white text-slate-800 rounded-xl px-4 py-3 text-xs outline-none transition-all font-medium"
-                />
-              </div>
-
-              <div>
-                <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
-                  Business Email *
-                </label>
-                <input
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="buyer@company.com"
-                  className="w-full bg-slate-55 border border-slate-200 focus:border-accent focus:bg-white text-slate-800 rounded-xl px-4 py-3 text-xs outline-none transition-all font-medium"
-                />
-              </div>
-
-              <div>
-                <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
-                  Subject *
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={formData.subject}
-                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  placeholder="E.g., Psyllium Husk 99% price inquiry"
-                  className="w-full bg-slate-55 border border-slate-200 focus:border-accent focus:bg-white text-slate-850 rounded-xl px-4 py-3 text-xs outline-none transition-all font-medium"
-                />
-              </div>
-
-              <div>
-                <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
-                  Message *
-                </label>
-                <textarea
-                  rows={4}
-                  required
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Detail your quality specifications, target delivery timeline, and port logistics parameters..."
-                  className="w-full bg-slate-55 border border-slate-200 focus:border-accent focus:bg-white text-slate-855 rounded-xl px-4 py-3 text-xs outline-none transition-all resize-none font-medium"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-sky hover:bg-sky-hover text-white font-bold py-3.5 px-4 rounded-xl text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 cursor-pointer border-2 border-slate-950 shadow-md shadow-sky/10"
-              >
-                Send Message <Send className="h-4 w-4" />
-              </button>
-            </form>
-          )}
+          <Suspense fallback={<div className="py-20 text-center text-xs text-slate-400">Loading form parameters...</div>}>
+            <ContactFormInner />
+          </Suspense>
         </div>
 
         {/* Sidebar Info Column (Right Column) */}

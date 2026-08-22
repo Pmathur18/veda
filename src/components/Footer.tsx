@@ -51,15 +51,15 @@ export default function Footer() {
     <div ref={footerRef} className="relative z-0 sticky bottom-0 w-full overflow-hidden bg-[#071B3A] text-neutral-400">
       {/* Footer Content */}
       <footer className="w-full max-w-7xl mx-auto px-4 md:px-8 pt-16 pb-8">
-        
+
         {/* Large Closing CTA line - scales & fades in */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center border-b border-neutral-900 pb-12 mb-12"
         >
-          <Link href="/enquiry" className="inline-flex items-center gap-4 group">
+          <Link href="/contact" className="inline-flex items-center gap-4 group">
             <h2 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tight transition-colors group-hover:text-brand">
               {"Let's Talk Business "}
               <span className="text-brand group-hover:text-white">→</span>
@@ -83,7 +83,7 @@ export default function Footer() {
                 </span>
                 <span className="text-[10px] text-neutral-500 font-semibold uppercase">{office.role}</span>
               </div>
-              
+
               <div className="flex gap-2.5 items-start text-xs text-neutral-300">
                 <MapPin className="h-4 w-4 text-brand shrink-0 mt-0.5" />
                 <p className="leading-relaxed">{office.address}</p>
@@ -117,7 +117,6 @@ export default function Footer() {
             <ul className="space-y-2 text-xs">
               <li><Link href="/products/psyllium-husk" className="hover:text-brand transition-colors">Psyllium Husk & Powder</Link></li>
               <li><Link href="/products/senna-leaves" className="hover:text-brand transition-colors">Senna Leaves & Pods</Link></li>
-              <li><Link href="/products" className="hover:text-brand transition-colors">All Products</Link></li>
             </ul>
           </div>
 
@@ -125,7 +124,6 @@ export default function Footer() {
           <div className="space-y-3">
             <h4 className="text-white text-xs font-bold uppercase tracking-wider">Quality & Standards</h4>
             <ul className="space-y-2 text-xs">
-              <li><Link href="/quality" className="hover:text-brand transition-colors">Quality Specifications</Link></li>
               <li><Link href="/export-process" className="hover:text-brand transition-colors">Export Process Timeline</Link></li>
               <li><Link href="/about" className="hover:text-brand transition-colors">About Us</Link></li>
             </ul>
@@ -135,22 +133,21 @@ export default function Footer() {
           <div className="space-y-3">
             <h4 className="text-white text-xs font-bold uppercase tracking-wider">Business Channels</h4>
             <ul className="space-y-2 text-xs">
-              <li><Link href="/enquiry" className="hover:text-brand transition-colors">Request a Quote</Link></li>
-              <li><Link href="/contact" className="hover:text-brand transition-colors">Contact Details</Link></li>
+              <li><Link href="/contact" className="hover:text-brand transition-colors">Contact Us</Link></li>
               <li><Link href="/privacy-policy" className="hover:text-brand transition-colors">Privacy Policy</Link></li>
             </ul>
           </div>
         </div>
 
         {/* Bottom bar - simplest reveal */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.5, duration: 0.6 }}
           className="border-t border-neutral-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px]"
         >
           <p>© {new Date().getFullYear()} Veda Impex. Registered Export House, Jodhpur, Rajasthan, India.</p>
-          
+
           {/* Socials - Spring Scale Bounce */}
           <div className="flex gap-4">
             {socialLinks.map((social) => {

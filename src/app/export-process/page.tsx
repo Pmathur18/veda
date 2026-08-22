@@ -9,7 +9,7 @@ export default function ExportProcessPage() {
     {
       num: "01",
       title: "Enquiry",
-      desc: "Buyer submits product requirements (commodity, volume, quality specs, packing, and destination port) via our Enquiry form."
+      desc: "Buyer submits product requirements (commodity, volume, quality specs, packing, and destination port) via our Contact Us form."
     },
     {
       num: "02",
@@ -111,7 +111,7 @@ export default function ExportProcessPage() {
             </p>
           </div>
           <Link
-            href="/enquiry"
+            href="/contact"
             className="bg-sky hover:bg-sky-hover text-white font-bold py-4 px-6 rounded-xl text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer border-2 border-slate-950 shadow-md shadow-sky/10"
           >
             Initiate Sourcing Step 1
