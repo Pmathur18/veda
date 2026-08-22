@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -23,24 +23,12 @@ const navigation = [
 ];
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const scrolled = false;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-4 px-4 md:px-8">
+    <header className="relative z-40 py-4 px-4 md:px-8">
       <div
         className={`mx-auto transition-all duration-300 bg-white border border-neutral-200/50 shadow-md ${scrolled
           ? "rounded-full py-2.5 px-4 md:px-6 max-w-5xl shadow-lg bg-white/95 backdrop-blur-md"

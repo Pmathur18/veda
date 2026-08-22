@@ -51,28 +51,20 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      
+
       {/* 1. HERO SECTION */}
       <section className="relative pt-12 pb-24 md:pt-20 md:pb-36 px-4 md:px-8 max-w-7xl mx-auto w-full overflow-hidden">
         {/* Background Decorative Accent */}
         <div className="absolute top-1/4 right-0 w-72 h-72 bg-brand/5 rounded-full blur-3xl -z-10" />
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Hero Left Content */}
           <div className="lg:col-span-7 space-y-8 z-10 text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-900 text-white border border-slate-800 text-xs font-semibold uppercase tracking-wider"
-            >
-              <MapPin className="h-4 w-4 text-sky animate-pulse" />
-              <span>Jodhpur, Rajasthan | India</span>
-            </motion.div>
+
 
             {/* Angled headline typography */}
             <div className="space-y-4">
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
@@ -109,7 +101,7 @@ export default function HomePage() {
                 href="/products"
                 className="group bg-brand hover:bg-brand-hover text-white font-bold py-4 px-8 rounded-xl text-sm transition-all flex items-center justify-center gap-2.5 shadow-lg shadow-brand/10 hover:shadow-brand/20 uppercase tracking-wider"
               >
-                Explore Products 
+                Explore Products
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
@@ -173,9 +165,7 @@ export default function HomePage() {
       <section className="bg-slate-50 py-24 px-4 md:px-8 border-y border-slate-100">
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center space-y-4 max-w-xl mx-auto">
-            <span className="text-[11px] font-bold text-accent uppercase tracking-widest block">
-              Core Commodities
-            </span>
+
             <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tight">
               What We Export
             </h2>
@@ -190,7 +180,7 @@ export default function HomePage() {
             <RotatingCard angle={-2} className="border-2 border-slate-900 group">
               <Link href="/products/psyllium-husk" className="block p-8 space-y-6">
                 <div className="aspect-[16/10] overflow-hidden rounded-xl border border-slate-200 relative bg-slate-100">
-                  <div 
+                  <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                     style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=600&auto=format&fit=crop')` }}
                   />
@@ -226,7 +216,7 @@ export default function HomePage() {
             <RotatingCard angle={2} className="border-2 border-slate-900 group">
               <Link href="/products/senna-leaves" className="block p-8 space-y-6">
                 <div className="aspect-[16/10] overflow-hidden rounded-xl border border-slate-200 relative bg-slate-100">
-                  <div 
+                  <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                     style={{ backgroundImage: `url('https://images.unsplash.com/photo-1564894536308-4011244a307e?q=80&w=600&auto=format&fit=crop')` }}
                   />
@@ -266,9 +256,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Section Left Title */}
           <div className="lg:col-span-4 space-y-6">
-            <span className="text-[11px] font-bold text-accent uppercase tracking-widest block">
-              Differentiators
-            </span>
+
             <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tight leading-none">
               Why <br />
               Veda Impex
@@ -278,8 +266,8 @@ export default function HomePage() {
               As export trade coordinators, we connect Indian crops directly to international standards. Here is how we ensure seamless B2B transactions.
             </p>
             <div className="hidden lg:block pt-6">
-              <Link 
-                href="/about" 
+              <Link
+                href="/about"
                 className="inline-flex items-center gap-2 text-xs font-bold text-accent hover:text-accent-hover uppercase tracking-widest"
               >
                 Learn more about us <ArrowRight className="h-4 w-4" />
@@ -295,9 +283,8 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isWhyInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className={`bg-white border-2 border-slate-900 p-6 rounded-2xl space-y-4 hover:shadow-lg transition-shadow duration-300 relative ${
-                  idx === differentiators.length - 1 ? "sm:col-span-2" : ""
-                }`}
+                className={`bg-white border-2 border-slate-900 p-6 rounded-2xl space-y-4 hover:shadow-lg transition-shadow duration-300 relative ${idx === differentiators.length - 1 ? "sm:col-span-2" : ""
+                  }`}
               >
                 <div className="flex justify-between items-center">
                   <span className="text-accent font-mono font-bold text-sm tracking-wider">
@@ -335,11 +322,9 @@ export default function HomePage() {
       <section className="bg-white py-20 px-4 md:px-8 border-b border-slate-100">
         <div className="max-w-5xl mx-auto bg-brand text-white rounded-3xl p-8 md:p-16 text-center space-y-8 shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.08),transparent)]" />
-          
+
           <div className="space-y-4 max-w-2xl mx-auto relative z-10">
-            <span className="text-[10px] font-bold text-slate-900 uppercase tracking-widest bg-white/90 px-3 py-1 rounded inline-block">
-              International Procurement Desk
-            </span>
+
             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-none">
               {"Let's Talk Business"}
             </h2>
