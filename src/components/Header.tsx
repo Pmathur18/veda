@@ -28,7 +28,7 @@ export default function Header() {
   const scrolled = false;
 
   return (
-    <header className="relative z-40 py-4 px-4 md:px-8">
+    <header className="relative z-40 py-4 px-4 md:px-8 bg-white">
       <div
         className={`mx-auto transition-all duration-300 bg-white border border-neutral-200/50 shadow-md ${scrolled
           ? "rounded-full py-2.5 px-4 md:px-6 max-w-5xl shadow-lg bg-white/95 backdrop-blur-md"
