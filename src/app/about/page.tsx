@@ -9,22 +9,17 @@ export default function AboutPage() {
     {
       icon: ShieldCheck,
       title: "Integrity",
-      desc: "We deliver exactly what is verified in the spec sheet. Every batch is certified with independent pre-shipment reports."
+      desc: "Clear, direct, and honest conversations—we only commit to what we can flawlessly execute."
     },
     {
       icon: Compass,
-      title: "Consistency",
-      desc: "For B2B buyers, supply consistency is vital. We coordinate shipping plans and parameters to match contract commitments."
+      title: "Responsibility",
+      desc: "Rigorous oversight of documentation, packaging, and export compliance."
     },
     {
       icon: Users,
-      title: "Clarity",
-      desc: "No vague promises. We provide transparent cargo statuses, processing timelines, and direct coordinator access."
-    },
-    {
-      icon: HeartHandshake,
-      title: "Long-Term Relationships",
-      desc: "B2B trade is built on mutual reliability. We align our coordinates to secure your raw material needs year-round."
+      title: "Consistency",
+      desc: "Delivering the same benchmark quality shipment after shipment."
     }
   ];
 
@@ -37,17 +32,17 @@ export default function AboutPage() {
         </div>
         
         <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-none uppercase max-w-4xl">
-          EXPORTING NATURAL INGREDIENTS <br />
+          We Believe Good Business <br />
           <span className="relative inline-block mt-2">
             <span className="absolute inset-0 bg-brand -skew-x-6 rotate-[-1deg]" />
             <span className="relative text-white px-5 py-1 inline-block rotate-[-1deg]">
-              DIRECT FROM INDIA
+              Starts With Trust.
             </span>
           </span>
         </h1>
         
         <p className="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl font-normal">
-          VEDA IMPEX coordinates the supply of premium agricultural commodities of Indian origin to B2B buyers worldwide. Headquartered in Jodhpur, Rajasthan, we manage quality, specifications compliance, and ocean export logistics.
+          Based out of Jodhpur, Rajasthan, VEDA IMPEX is an Indian export company built around a single, uncompromising objective: making cross-border sourcing from India simple, transparent, and completely dependable. Our portfolio focuses on high-demand, world-class Indian commodities—starting with Psyllium Husk and Senna Leaves. To us, exporting isn't just logistics; it is an obligation to respect buyer specifications, protect cargo integrity, and uphold commercial commitments without fail.
         </p>
       </section>
 
@@ -60,7 +55,7 @@ export default function AboutPage() {
           </div>
           <h3 className="text-2xl font-black text-slate-900 uppercase">Our Mission</h3>
           <p className="text-slate-500 text-sm leading-relaxed">
-            To coordinate the supply of high-grade Psyllium Husk and Senna Leaves, matching international agricultural specifications and quality criteria, while executing cargo clearance and maritime shipments with absolute precision.
+            To streamline international trade with India through precise specification alignment, open communication, and end-to-end shipment accountability.
           </p>
         </div>
 
@@ -71,7 +66,7 @@ export default function AboutPage() {
           </div>
           <h3 className="text-2xl font-black text-slate-900 uppercase">Our Vision</h3>
           <p className="text-slate-500 text-sm leading-relaxed">
-            To build Veda Impex into a globally recognized symbol of trust for Indian agricultural exports, offering international buyers absolute clarity and quality accountability on every shipment.
+            To build VEDA IMPEX into a globally respected Indian export brand known not merely for volume, but as the standard for trade reliability and integrity.
           </p>
         </div>
       </section>
@@ -84,7 +79,7 @@ export default function AboutPage() {
               Leadership
             </span>
             <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tight">
-              Our Founder
+              The Person Behind VEDA IMPEX
             </h2>
             <div className="h-1.5 w-16 bg-brand rounded mt-3" />
           </div>
@@ -100,7 +95,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <h4 className="text-white font-black text-lg uppercase">Deepeksha Jain</h4>
-                    <p className="text-sky text-xs uppercase tracking-widest font-bold">Founder, Veda Impex</p>
+                    <p className="text-sky text-xs uppercase tracking-widest font-bold">Founder, VEDA IMPEX</p>
                   </div>
                   <p className="text-slate-400 text-[10px] leading-relaxed max-w-xs">
                     Managing export operations, physical quality screening, and international B2B client relations.
@@ -113,11 +108,11 @@ export default function AboutPage() {
             <div className="lg:col-span-7 space-y-6 text-left">
               <span className="text-5xl text-sky font-serif block leading-none select-none">“</span>
               <p className="text-slate-700 text-base md:text-lg leading-relaxed font-medium italic -mt-4">
-                {"\"Our business was founded on a very simple realization: international B2B buyers do not just buy ingredients, they invest in reliability. At Veda Impex, our focus is entirely on removing guesswork. We verify specifications carefully, double-check compliance certificates, and ensure that every shipment loaded at Jodhpur meets our standards.\""}
+                "I founded VEDA IMPEX on a simple foundation: global trade thrives when trust is mutual and absolute. We are building this company step-by-step—creating long-term value and dependable relationships, not short-term transactional hype."
               </p>
               <div className="space-y-1">
                 <span className="block font-black text-slate-900 uppercase text-sm tracking-wider">Deepeksha Jain</span>
-                <span className="block text-xs text-sky uppercase tracking-wider font-bold">Founder & Director | Veda Impex</span>
+                <span className="block text-xs text-sky uppercase tracking-wider font-bold">Founder, VEDA IMPEX</span>
               </div>
             </div>
           </div>
@@ -128,11 +123,11 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-4 md:px-8 mb-12">
         <div className="text-center max-w-xl mx-auto mb-16 space-y-3">
           <span className="text-[10px] font-bold uppercase tracking-wider text-accent">Operating Principles</span>
-          <h2 className="text-3xl font-black text-slate-900 uppercase">What We Stand For</h2>
+          <h2 className="text-3xl font-black text-slate-900 uppercase">Our Core Pillars</h2>
           <div className="h-1.5 w-16 bg-brand mx-auto rounded" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {values.map((v, idx) => {
             const Icon = v.icon;
             return (

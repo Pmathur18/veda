@@ -25,8 +25,8 @@ export default function HomePage() {
 
   const stickyScrollContent = [
     {
-      title: "Clear From the Beginning",
-      description: "No guessing games. We state specifications, packing standards, and logistics schedules upfront so you know exactly what is loading.",
+      title: "Absolute Clarity",
+      description: "Straightforward communication from product parameters and commercial terms to shipping timelines. No surprises, no guesswork.",
       content: (
         <div className="h-full w-full bg-gradient-to-br from-cyan-500 to-emerald-500 flex flex-col items-center justify-center text-white p-6 text-center space-y-3">
           <FileText className="h-12 w-12 text-white animate-pulse" />
@@ -36,8 +36,8 @@ export default function HomePage() {
       )
     },
     {
-      title: "Consistency Matters",
-      description: "B2B buyers need repeatable quality. Our export coordination ensures chemical and physical parameters remain stable container after container.",
+      title: "Uncompromising Consistency",
+      description: "A great first shipment builds a contact; repeating that exact standard order after order builds a partnership.",
       content: (
         <div className="h-full w-full bg-gradient-to-br from-pink-500 to-indigo-500 flex flex-col items-center justify-center text-white p-6 text-center space-y-3">
           <CheckCircle2 className="h-12 w-12 text-white" />
@@ -50,8 +50,8 @@ export default function HomePage() {
       )
     },
     {
-      title: "Quality With Accountability",
-      description: "Every shipment is accompanied by verified Certificates of Analysis (COA) and phytosanitary checks. We stand behind our specifications.",
+      title: "Accountability at the Core",
+      description: "End-to-end attention to detail—from pre-shipment quality checks and documentation to customized packaging.",
       content: (
         <div className="h-full w-full flex flex-col items-center justify-center text-white p-6 text-center space-y-3" style={{ background: "linear-gradient(to bottom right, #f97316, #eab308)" }}>
           <ShieldCheck className="h-12 w-12 text-white" />
@@ -61,19 +61,8 @@ export default function HomePage() {
       )
     },
     {
-      title: "Easy to Work With",
-      description: "Direct communication channels with Jodhpur-based trade coordinators. No layers of administrative delay or generic helpdesks.",
-      content: (
-        <div className="h-full w-full bg-gradient-to-br from-emerald-500 to-blue-600 flex flex-col items-center justify-center text-white p-6 text-center space-y-3">
-          <MessageSquare className="h-12 w-12 text-white" />
-          <span className="text-sm font-bold uppercase tracking-wider">Direct Liaison Desk</span>
-          <span className="text-xs text-white/80">Typical Response Time: &lt; 15 mins</span>
-        </div>
-      )
-    },
-    {
-      title: "Built for Long-Term Trade",
-      description: "We focus on supply security and documentation accuracy, helping international buyers build stable supply chains for years to come.",
+      title: "Engineered for Long-Term Trade",
+      description: "We don't chase one-off orders; we build lasting, reliable supply networks across borders.",
       content: (
         <div className="h-full w-full bg-gradient-to-br from-purple-500 to-pink-500 flex flex-col items-center justify-center text-white p-6 text-center space-y-3">
           <Calendar className="h-12 w-12 text-white" />
@@ -123,7 +112,7 @@ export default function HomePage() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-slate-600 text-base md:text-lg leading-relaxed max-w-xl font-normal"
             >
-              Indian Natural Ingredients for Global Markets. We coordinate the supply of commercial quantities of premium Psyllium Husk and Senna Leaves, direct from Rajasthan to international B2B buyers.
+              Indian Natural Ingredients for Global Markets. Premium Psyllium Husk and Senna Leaves delivered with unmatched consistency, absolute transparency, and international care.
             </motion.p>
 
             <motion.div
@@ -143,7 +132,7 @@ export default function HomePage() {
                 href="/contact"
                 className="bg-sky hover:bg-sky-hover text-white font-bold py-4 px-8 rounded-xl text-sm transition-all border-2 border-slate-950 flex items-center justify-center gap-2.5 uppercase tracking-wider"
               >
-                Contact Us
+                Request a Quote
               </Link>
             </motion.div>
           </div>
@@ -200,19 +189,15 @@ export default function HomePage() {
       <section className="bg-slate-50 py-24 px-4 md:px-8 border-y border-slate-100">
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center space-y-4 max-w-xl mx-auto">
-
             <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tight">
-              What We Export
+              What We Export (Core Offerings)
             </h2>
             <div className="h-1.5 w-16 bg-brand mx-auto rounded" />
-            <p className="text-slate-500 text-sm leading-relaxed">
-              We specialize in the trade, quality coordination, and export documentation of two key botanical commodities native to India.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
             {/* Psyllium Card */}
-            <RotatingCard angle={-2} className="border-2 border-slate-900 group">
+            <RotatingCard angle={0} className="border-2 border-slate-900 group">
               <Link href="/products/psyllium-husk" className="block p-8 space-y-6">
                 <div className="aspect-[16/10] overflow-hidden rounded-xl border border-slate-200 relative bg-slate-100">
                   <div
@@ -222,33 +207,37 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
                     <span className="text-[10px] bg-accent text-white px-2.5 py-0.5 rounded font-bold uppercase tracking-wider">
-                      Plantago ovata
+                      Psyllium Husk
                     </span>
                   </div>
                 </div>
 
                 <div className="space-y-3">
                   <div className="flex justify-between items-start">
-                    <h3 className="text-2xl font-black text-slate-900 uppercase group-hover:text-accent transition-colors">
-                      Psyllium Husk & Powder
-                    </h3>
+                    <div>
+                      <h3 className="text-2xl font-black text-slate-900 uppercase group-hover:text-accent transition-colors">
+                        Psyllium Husk
+                      </h3>
+                      <span className="text-xs text-slate-500 italic font-medium block mt-0.5">
+                        (Plantago ovata)
+                      </span>
+                    </div>
                     <ArrowUpRight className="h-5 w-5 text-slate-400 group-hover:text-accent transition-colors" />
                   </div>
                   <p className="text-slate-500 text-xs leading-relaxed">
-                    Premium whole husk and fine powders. Processed in Rajasthan to target strict purity requirements up to 99% for food and pharmaceutical applications.
+                    Pure, highly soluble Indian Psyllium Husk tailored for international buyers who demand strict specifications, reliable purity, and flawless export execution.
                   </p>
                 </div>
 
-                <div className="border-t border-slate-100 pt-4 flex flex-wrap gap-x-6 gap-y-2 text-[11px] text-slate-600 font-medium">
-                  <div><strong>Origin:</strong> Rajasthan/Gujarat</div>
-                  <div><strong>MOQ:</strong> 10 Metric Tons</div>
-                  <div><strong>Form:</strong> Husk & Powder</div>
+                <div className="border-t border-slate-100 pt-4 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-accent group-hover:text-accent-hover transition-colors">
+                  <span>View Product Specifications</span>
+                  <ArrowRight className="h-4 w-4 transform transition-transform group-hover:translate-x-1" />
                 </div>
               </Link>
             </RotatingCard>
 
             {/* Senna Card */}
-            <RotatingCard angle={2} className="border-2 border-slate-900 group">
+            <RotatingCard angle={0} className="border-2 border-slate-900 group">
               <Link href="/products/senna-leaves" className="block p-8 space-y-6">
                 <div className="aspect-[16/10] overflow-hidden rounded-xl border border-slate-200 relative bg-slate-100">
                   <div
@@ -265,20 +254,24 @@ export default function HomePage() {
 
                 <div className="space-y-3">
                   <div className="flex justify-between items-start">
-                    <h3 className="text-2xl font-black text-slate-900 uppercase group-hover:text-accent transition-colors">
-                      Senna Leaves & Pods
-                    </h3>
+                    <div>
+                      <h3 className="text-2xl font-black text-slate-900 uppercase group-hover:text-accent transition-colors">
+                        Senna Leaves
+                      </h3>
+                      <span className="text-xs text-slate-500 italic font-medium block mt-0.5">
+                        (Cassia angustifolia)
+                      </span>
+                    </div>
                     <ArrowUpRight className="h-5 w-5 text-slate-400 group-hover:text-accent transition-colors" />
                   </div>
                   <p className="text-slate-500 text-xs leading-relaxed">
-                    Dried senna leaves and pods. Sourced and cleaned carefully to ensure high Sennoside content and low foreign matter for global phytotherapeutic markets.
+                    Expertly processed Indian Senna Leaves designed for global commercial needs, conditioned and packed to meet exact buyer specifications.
                   </p>
                 </div>
 
-                <div className="border-t border-slate-100 pt-4 flex flex-wrap gap-x-6 gap-y-2 text-[11px] text-slate-600 font-medium">
-                  <div><strong>Origin:</strong> Rajasthan, India</div>
-                  <div><strong>MOQ:</strong> 12 Metric Tons</div>
-                  <div><strong>Form:</strong> Leaves, Pods, Powder</div>
+                <div className="border-t border-slate-100 pt-4 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-accent group-hover:text-accent-hover transition-colors">
+                  <span>View Product Specifications</span>
+                  <ArrowRight className="h-4 w-4 transform transition-transform group-hover:translate-x-1" />
                 </div>
               </Link>
             </RotatingCard>
@@ -290,12 +283,9 @@ export default function HomePage() {
       <section className="py-24 px-4 md:px-8 max-w-7xl mx-auto w-full">
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tight">
-            Why Veda Impex
+            Why VEDA IMPEX? (The Edge)
           </h2>
           <div className="h-1.5 w-16 bg-brand mx-auto rounded" />
-          <p className="text-slate-500 text-sm leading-relaxed max-w-xl mx-auto">
-            As export trade coordinators, we connect Indian crops directly to international standards. Here is how we ensure seamless B2B transactions.
-          </p>
         </div>
 
         <div className="max-w-7xl mx-auto border-2 border-slate-900 rounded-3xl overflow-hidden shadow-2xl bg-slate-950">
@@ -319,18 +309,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. CLOSING CTA BAND: LET'S TALK BUSINESS */}
+      {/* 5. QUICK ENQUIRY BANNER */}
       <section className="bg-white py-20 px-4 md:px-8 border-b border-slate-100">
         <div className="max-w-5xl mx-auto bg-brand text-white rounded-3xl p-8 md:p-16 text-center space-y-8 shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.08),transparent)]" />
 
           <div className="space-y-4 max-w-2xl mx-auto relative z-10">
-
             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-none">
-              {"Let's Talk Business"}
+              Have a Specific Export Requirement?
             </h2>
-            <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-lg mx-auto">
-              Ready to request product requirements, specify volumes, or arrange quality sample coordination? Connect with our team today.
+            <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-xl mx-auto">
+              Share your target specifications, required quantities, and destination port—our team will review and respond with exact commercial details.
             </p>
           </div>
 
@@ -339,7 +328,7 @@ export default function HomePage() {
               href="/contact"
               className="w-full sm:w-auto bg-sky hover:bg-sky-hover text-white font-bold py-4 px-8 rounded-xl text-xs uppercase tracking-wider transition-colors border border-transparent text-center"
             >
-              Contact Our Desk
+              Send Your Requirement
             </Link>
           </div>
         </div>

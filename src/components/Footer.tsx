@@ -10,21 +10,6 @@ export default function Footer() {
   const footerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(footerRef, { once: true, amount: 0.15 });
 
-  const offices = [
-    {
-      city: "Jodhpur HQ",
-      role: "Corporate & Logistics Desk",
-      address: "Heavy Industrial Area, Jodhpur, Rajasthan, India 342001",
-      phone: "+91 291 555-0145"
-    },
-    {
-      city: "Mundra Port Liaison",
-      role: "Export Operations Desk",
-      address: "Port User Building, Mundra Port, Kutch, Gujarat, India 370421",
-      phone: "+91 2838 555-0192"
-    }
-  ];
-
   const socialLinks = [
     {
       name: "LinkedIn",
@@ -67,38 +52,6 @@ export default function Footer() {
             </h2>
           </Link>
         </motion.div>
-
-        {/* Office Address Cards - Fade + Stagger */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {offices.map((office, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.15 * idx, duration: 0.6, ease: "easeOut" }}
-              className="bg-slate-900/60 border border-neutral-800 p-6 rounded-3xl space-y-3 shadow-lg"
-            >
-              <div className="flex justify-between items-center">
-                <span className="text-brand font-bold text-xs uppercase tracking-widest block">
-                  {office.city}
-                </span>
-                <span className="text-[10px] text-neutral-500 font-semibold uppercase">{office.role}</span>
-              </div>
-
-              <div className="flex gap-2.5 items-start text-xs text-neutral-300">
-                <MapPin className="h-4 w-4 text-brand shrink-0 mt-0.5" />
-                <p className="leading-relaxed">{office.address}</p>
-              </div>
-
-              <div className="flex gap-2.5 items-center text-xs text-neutral-300">
-                <Phone className="h-4 w-4 text-neutral-500 shrink-0" />
-                <a href={`tel:${office.phone.replace(/\s+/g, '')}`} className="hover:text-brand font-semibold transition-colors">
-                  {office.phone}
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
 
         {/* Links Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 border-t border-neutral-900 pt-12 text-sm">
@@ -168,7 +121,7 @@ export default function Footer() {
           </div>
         </motion.div>
 
-      </footer>
-    </div>
+      </footer >
+    </div >
   );
 }

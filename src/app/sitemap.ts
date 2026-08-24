@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Dynamic product routes
   const productRoutes = [
     "psyllium-husk",
+    "psyllium-powder",
     "senna-leaves",
   ];
 
