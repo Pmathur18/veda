@@ -3,6 +3,7 @@
 import React from "react";
 import { Compass, Users, ShieldCheck, HeartHandshake, Eye, Target } from "lucide-react";
 import RotatingCard from "../../components/RotatingCard";
+import { ParallaxSection, ParallaxElement } from "../../components/ParallaxScroll";
 
 export default function AboutPage() {
   const values = [
@@ -47,28 +48,32 @@ export default function AboutPage() {
       </section>
 
       {/* 2. VISION & MISSION */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 mb-24 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 mb-24 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
         {/* Mission */}
-        <div className="border-2 border-slate-900 rounded-3xl p-8 space-y-4 hover:shadow-lg transition-shadow duration-300">
-          <div className="p-3 bg-brand-light text-accent rounded-xl inline-block border border-accent/20">
-            <Target className="h-6 w-6" />
+        <ParallaxElement speed={-0.03}>
+          <div className="border-2 border-slate-900 rounded-3xl p-8 space-y-4 hover:shadow-lg transition-shadow duration-300 h-full">
+            <div className="p-3 bg-brand-light text-accent rounded-xl inline-block border border-accent/20">
+              <Target className="h-6 w-6" />
+            </div>
+            <h3 className="text-2xl font-black text-slate-900 uppercase">Our Mission</h3>
+            <p className="text-slate-500 text-sm leading-relaxed font-normal">
+              To streamline international trade with India through precise specification alignment, open communication, and end-to-end shipment accountability.
+            </p>
           </div>
-          <h3 className="text-2xl font-black text-slate-900 uppercase">Our Mission</h3>
-          <p className="text-slate-500 text-sm leading-relaxed">
-            To streamline international trade with India through precise specification alignment, open communication, and end-to-end shipment accountability.
-          </p>
-        </div>
+        </ParallaxElement>
 
         {/* Vision */}
-        <div className="border-2 border-slate-900 rounded-3xl p-8 space-y-4 hover:shadow-lg transition-shadow duration-300">
-          <div className="p-3 bg-brand-light text-accent rounded-xl inline-block border border-accent/20">
-            <Eye className="h-6 w-6" />
+        <ParallaxElement speed={0.03}>
+          <div className="border-2 border-slate-900 rounded-3xl p-8 space-y-4 hover:shadow-lg transition-shadow duration-300 h-full">
+            <div className="p-3 bg-brand-light text-accent rounded-xl inline-block border border-accent/20">
+              <Eye className="h-6 w-6" />
+            </div>
+            <h3 className="text-2xl font-black text-slate-900 uppercase">Our Vision</h3>
+            <p className="text-slate-500 text-sm leading-relaxed font-normal">
+              To build VEDA IMPEX into a globally respected Indian export brand known not merely for volume, but as the standard for trade reliability and integrity.
+            </p>
           </div>
-          <h3 className="text-2xl font-black text-slate-900 uppercase">Our Vision</h3>
-          <p className="text-slate-500 text-sm leading-relaxed">
-            To build VEDA IMPEX into a globally respected Indian export brand known not merely for volume, but as the standard for trade reliability and integrity.
-          </p>
-        </div>
+        </ParallaxElement>
       </section>
 
       {/* 3. FOUNDER SECTION */}
@@ -87,33 +92,37 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Founder Image Card */}
             <div className="lg:col-span-5 flex justify-center">
-              <RotatingCard angle={-2} className="border-2 border-slate-900 w-full max-w-sm overflow-hidden bg-slate-900 relative aspect-square">
-                {/* Styled Professional Frame Placeholder */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-slate-950 via-slate-900 to-sky/20 flex flex-col items-center justify-center p-8 text-center space-y-4">
-                  <div className="h-24 w-24 rounded-full border-4 border-sky bg-slate-850 flex items-center justify-center text-3xl font-black text-sky font-mono">
-                    DJ
+              <ParallaxElement speed={0.06} className="w-full max-w-sm">
+                <RotatingCard angle={-2} className="border-2 border-slate-900 w-full overflow-hidden bg-slate-900 relative aspect-square">
+                  {/* Styled Professional Frame Placeholder */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-slate-950 via-slate-900 to-sky/20 flex flex-col items-center justify-center p-8 text-center space-y-4">
+                    <div className="h-24 w-24 rounded-full border-4 border-sky bg-slate-850 flex items-center justify-center text-3xl font-black text-sky font-mono">
+                      DJ
+                    </div>
+                    <div>
+                      <h4 className="text-white font-black text-lg uppercase">Deepeksha Jain</h4>
+                      <p className="text-sky text-xs uppercase tracking-widest font-bold">Founder, VEDA IMPEX</p>
+                    </div>
+                    <p className="text-slate-400 text-[10px] leading-relaxed max-w-xs font-normal">
+                      Managing export operations, physical quality screening, and international B2B client relations.
+                    </p>
                   </div>
-                  <div>
-                    <h4 className="text-white font-black text-lg uppercase">Deepeksha Jain</h4>
-                    <p className="text-sky text-xs uppercase tracking-widest font-bold">Founder, VEDA IMPEX</p>
-                  </div>
-                  <p className="text-slate-400 text-[10px] leading-relaxed max-w-xs">
-                    Managing export operations, physical quality screening, and international B2B client relations.
-                  </p>
-                </div>
-              </RotatingCard>
+                </RotatingCard>
+              </ParallaxElement>
             </div>
 
             {/* Founder Quote Side */}
             <div className="lg:col-span-7 space-y-6 text-left">
-              <span className="text-5xl text-sky font-serif block leading-none select-none">“</span>
-              <p className="text-slate-700 text-base md:text-lg leading-relaxed font-medium italic -mt-4">
-                "I founded VEDA IMPEX on a simple foundation: global trade thrives when trust is mutual and absolute. We are building this company step-by-step—creating long-term value and dependable relationships, not short-term transactional hype."
-              </p>
-              <div className="space-y-1">
-                <span className="block font-black text-slate-900 uppercase text-sm tracking-wider">Deepeksha Jain</span>
-                <span className="block text-xs text-sky uppercase tracking-wider font-bold">Founder, VEDA IMPEX</span>
-              </div>
+              <ParallaxElement speed={-0.02}>
+                <span className="text-5xl text-sky font-serif block leading-none select-none">“</span>
+                <p className="text-slate-700 text-base md:text-lg leading-relaxed font-medium italic -mt-4">
+                  "I founded VEDA IMPEX on a simple foundation: global trade thrives when trust is mutual and absolute. We are building this company step-by-step—creating long-term value and dependable relationships, not short-term transactional hype."
+                </p>
+                <div className="space-y-1">
+                  <span className="block font-black text-slate-900 uppercase text-sm tracking-wider">Deepeksha Jain</span>
+                  <span className="block text-xs text-sky uppercase tracking-wider font-bold">Founder, VEDA IMPEX</span>
+                </div>
+              </ParallaxElement>
             </div>
           </div>
         </div>
@@ -127,17 +136,17 @@ export default function AboutPage() {
           <div className="h-1.5 w-16 bg-brand mx-auto rounded" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <ParallaxSection speed={0.05} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto text-left">
           {values.map((v, idx) => {
             const Icon = v.icon;
             return (
-              <div key={idx} className="bg-white rounded-2xl p-6 border-2 border-slate-900 space-y-4 hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between">
+              <div key={idx} className="bg-white rounded-2xl p-6 border-2 border-slate-900 space-y-4 hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between h-full">
                 <div className="space-y-3">
                   <div className="p-2.5 bg-brand-light text-accent rounded-xl inline-block border border-accent/20">
                     <Icon className="h-5 w-5" />
                   </div>
                   <h4 className="font-black text-slate-900 uppercase text-sm">{v.title}</h4>
-                  <p className="text-slate-550 text-xs leading-relaxed">{v.desc}</p>
+                  <p className="text-slate-550 text-xs leading-relaxed font-normal">{v.desc}</p>
                 </div>
                 <div className="text-[9px] font-bold text-accent uppercase tracking-widest border-t border-slate-100 pt-3">
                   Verified Principle
@@ -145,7 +154,7 @@ export default function AboutPage() {
               </div>
             );
           })}
-        </div>
+        </ParallaxSection>
       </section>
     </div>
   );
