@@ -44,17 +44,6 @@ export default function AboutPage() {
     }
   ];
 
-  const chartData = [
-    { label: "Jan", val: "40%" },
-    { label: "Feb", val: "55%" },
-    { label: "Mar", val: "45%" },
-    { label: "Apr", val: "70%" },
-    { label: "May", val: "85%" },
-    { label: "Jun", val: "75%" },
-    { label: "Jul", val: "90%" },
-    { label: "Aug", val: "95%" }
-  ];
-
   return (
     <div className="py-12 bg-white min-h-screen">
       {/* 1. HERO SECTION */}
@@ -255,54 +244,50 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Right Column: Interactive White Analytics Card */}
+          {/* Right Column: Director Profile Card */}
           <div className="lg:col-span-7 bg-white text-slate-900 p-6 md:p-8 rounded-2xl border-2 border-slate-950 shadow-xl flex flex-col justify-between space-y-6">
-            <div className="space-y-4 text-left">
-              <div className="flex justify-between items-center">
-                <span className="bg-blue-50 text-accent border border-blue-150 px-2.5 py-0.5 rounded text-[8px] font-bold tracking-wider uppercase">
-                  Quality Audit
-                </span>
-                <span className="text-[9px] text-slate-400 font-mono">Real-time parameters</span>
-              </div>
-              <h4 className="text-base font-black uppercase text-slate-900">
-                Analysis of batch purity and crop consistency
-              </h4>
-            </div>
-
-            {/* Analytics Bar Chart Visual */}
-            <div className="h-32 flex items-end justify-between gap-2 border-b border-slate-200 pb-2 pt-4">
-              {chartData.map((bar, idx) => (
-                <div key={idx} className="flex-1 flex flex-col items-center group">
-                  <div className="w-full bg-slate-100 rounded-t-md h-24 relative overflow-hidden flex items-end">
-                    <div
-                      className="w-full bg-accent group-hover:bg-sky transition-colors duration-200 rounded-t-md"
-                      style={{ height: bar.val }}
-                    />
+            <div className="flex flex-col md:flex-row gap-6 items-start text-left">
+              {/* Director Image Badge */}
+              <div className="w-28 h-28 md:w-36 md:h-36 rounded-2xl overflow-hidden border-2 border-slate-900 bg-slate-950 relative flex items-center justify-center shrink-0 shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-tr from-brand to-sky/30 flex flex-col items-center justify-center p-4 text-center">
+                  <div className="h-14 w-14 rounded-full border-2 border-white bg-slate-900 flex items-center justify-center text-xl font-black text-sky font-mono shadow-md">
+                    DJ
                   </div>
-                  <span className="text-[8px] font-bold text-slate-400 mt-1.5 uppercase font-mono">{bar.label}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Join Our Sourcing / Partner Card at bottom */}
-            <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-white font-bold text-xs shrink-0 font-mono border-2 border-slate-900">
-                  DJ
-                </div>
-                <div>
-                  <span className="block text-[9px] font-black text-slate-900 uppercase">Deepeksha Jain</span>
-                  <span className="block text-[8px] text-slate-500 font-medium">Founder & Export Liaison</span>
+                  <span className="text-[9px] font-black text-white uppercase mt-2">Deepeksha Jain</span>
                 </div>
               </div>
 
-              <Link
-                href="/contact"
-                className="bg-accent hover:bg-accent-hover text-white font-bold py-2.5 px-4 rounded-lg text-[9px] uppercase tracking-wider transition-all border border-transparent shadow"
-              >
-                Liaison Sourcing Request
-              </Link>
+              {/* Director Quote & Role */}
+              <div className="space-y-4 flex-1">
+                <div className="space-y-1">
+                  <span className="bg-blue-50 text-accent border border-blue-150 px-2.5 py-0.5 rounded text-[8px] font-bold tracking-wider uppercase inline-block">
+                    Founder & Director
+                  </span>
+                  <h4 className="text-lg font-black uppercase text-slate-900">
+                    Deepeksha Jain
+                  </h4>
+                </div>
+
+                <div className="relative">
+                  <span className="text-3xl text-accent font-serif absolute -top-3.5 -left-1 select-none">“</span>
+                  <p className="text-slate-700 text-xs leading-relaxed font-medium italic pl-4">
+                    I founded VEDA IMPEX on a simple foundation: global trade thrives when trust is mutual and absolute. We are building this company step-by-step—creating long-term value and dependable relationships, not short-term transactional hype.
+                  </p>
+                </div>
+
+                <p className="text-slate-500 text-[10px] leading-relaxed font-normal">
+                  Supervising Jodhpur road logistics coordinates, batch purity verification, phytosanitary certifications, and B2B client satisfaction.
+                </p>
+              </div>
             </div>
+
+            {/* CTA Link */}
+            <Link
+              href="/contact?subject=director_sourcing"
+              className="bg-accent hover:bg-accent-hover text-white font-bold py-3.5 px-6 rounded-xl text-xs uppercase tracking-wider transition-all border-2 border-slate-950 shadow shadow-accent/15 text-center flex items-center justify-center gap-2 cursor-pointer"
+            >
+              Connect with Director Desk <ArrowUpRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
