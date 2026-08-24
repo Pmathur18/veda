@@ -3,7 +3,6 @@
 import React, { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
-import { ParallaxSection, ParallaxElement } from "../../components/ParallaxScroll";
 
 function ContactFormInner() {
   const searchParams = useSearchParams();
@@ -248,31 +247,27 @@ export default function ContactPage() {
   return (
     <div className="py-12 bg-white min-h-screen">
       {/* 1. PAGE HEADER */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 mb-12">
-        <ParallaxElement speed={-0.03} className="space-y-6 text-left">
-          <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-none uppercase max-w-4xl">
-            CONNECT WITH OUR EXPORTS DESK<br />
-          </h1>
-          <p className="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl font-normal">
-            Connect directly to our Jodhpur coordinates desk. We coordinate crop packaging configurations, quality assessments, and ocean shipping options.
-          </p>
-        </ParallaxElement>
+      <section className="max-w-7xl mx-auto px-4 md:px-8 mb-12 space-y-6">
+        <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-none uppercase max-w-4xl">
+          CONNECT WITH OUR EXPORTS DESK<br />
+        </h1>
+        <p className="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl font-normal">
+          Connect directly to our Jodhpur coordinates desk. We coordinate crop packaging configurations, quality assessments, and ocean shipping options.
+        </p>
       </section>
 
       {/* 2. CONTACT CHANNELS & FORM */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-24">
         {/* Contact Form Section (Left Column) */}
-        <div className="lg:col-span-7">
-          <ParallaxElement speed={0.04} className="bg-white border-2 border-slate-900 rounded-3xl p-8 shadow-xl">
-            <Suspense fallback={<div className="py-20 text-center text-xs text-slate-400 font-normal">Loading form parameters...</div>}>
-              <ContactFormInner />
-            </Suspense>
-          </ParallaxElement>
+        <div className="lg:col-span-7 bg-white border-2 border-slate-900 rounded-3xl p-8 shadow-xl">
+          <Suspense fallback={<div className="py-20 text-center text-xs text-slate-400">Loading form parameters...</div>}>
+            <ContactFormInner />
+          </Suspense>
         </div>
 
         {/* Sidebar Info Column (Right Column) */}
         <div className="lg:col-span-5">
-          <ParallaxElement speed={-0.02} className="bg-slate-50 rounded-3xl p-8 space-y-8 shadow-sm border-0">
+          <div className="bg-slate-50 rounded-3xl p-8 space-y-8 shadow-sm border-0">
             {/* Direct Channels */}
             <div className="space-y-4">
               <h3 className="font-black text-slate-900 uppercase text-xs tracking-wider border-b border-slate-200 pb-2">
@@ -297,7 +292,7 @@ export default function ContactPage() {
                 </span>
                 <div>
                   <span className="block text-[9px] text-slate-455 uppercase font-bold">Corporate Hotline</span>
-                  <a href="tel:+912915550145" className="text-xs font-bold text-slate-850 hover:text-accent font-sans">
+                  <a href="tel:+912915550145" className="text-xs font-bold text-slate-850 hover:text-accent">
                     +91 (291) 555-0145
                   </a>
                 </div>
@@ -316,7 +311,7 @@ export default function ContactPage() {
                 <div className="text-xs">
                   <span className="block text-[9px] text-slate-450 uppercase font-bold">Office Hours</span>
                   <p className="font-bold text-slate-850 mt-0.5">Mon - Sat: 09:00 - 18:00 (GMT+5:30)</p>
-                  <p className="text-[10px] text-slate-450 mt-1 leading-normal font-normal">
+                  <p className="text-[10px] text-slate-450 mt-1 leading-normal">
                     Our Jodhpur coordinator desks monitor shipping lane notifications and container dispatches daily.
                   </p>
                 </div>
@@ -335,28 +330,28 @@ export default function ContactPage() {
                 <div className="text-xs leading-relaxed text-slate-650">
                   <span className="block text-[9px] text-slate-450 uppercase font-bold mb-1">Corporate HQ (Jodhpur)</span>
                   <p className="font-bold text-slate-850">Veda Impex</p>
-                  <p className="font-normal">Heavy Industrial Area</p>
-                  <p className="font-normal">Jodhpur, Rajasthan 342001, India</p>
+                  <p>Heavy Industrial Area</p>
+                  <p>Jodhpur, Rajasthan 342001, India</p>
                 </div>
               </div>
             </div>
-          </ParallaxElement>
+          </div>
         </div>
       </section>
 
       {/* Route Map Placeholder */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 mb-12">
-        <ParallaxSection speed={0.05} className="bg-slate-100 border-2 border-slate-900 rounded-3xl h-80 overflow-hidden flex items-center justify-center relative shadow-md">
+        <div className="bg-slate-100 border-2 border-slate-900 rounded-3xl h-80 overflow-hidden flex items-center justify-center relative shadow-md">
           <div className="absolute inset-0 bg-cover bg-center filter grayscale opacity-40"
             style={{ backgroundImage: `url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200&auto=format&fit=crop')` }} />
-          <div className="z-10 text-center space-y-2 bg-white/95 backdrop-blur-sm p-6 rounded-2xl border border-slate-200 shadow-xl max-w-sm mx-4 text-left">
+          <div className="z-10 text-center space-y-2 bg-white/95 backdrop-blur-sm p-6 rounded-2xl border border-slate-200 shadow-xl max-w-sm mx-4">
             <span className="text-[9px] font-bold text-accent uppercase tracking-widest block">Geographic Location</span>
             <h4 className="font-black text-slate-900 text-sm uppercase">Jodhpur Operations Desk</h4>
-            <p className="text-[10px] text-slate-500 leading-relaxed font-normal">
+            <p className="text-[10px] text-slate-500 leading-relaxed">
               Situated in Jodhpur, Rajasthan — the crop hub of Psyllium Husk and Senna Leaves — coordinating direct road transport to Mundra Port, Gujarat.
             </p>
           </div>
-        </ParallaxSection>
+        </div>
       </section>
     </div>
   );

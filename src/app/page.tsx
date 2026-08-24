@@ -14,7 +14,6 @@ import {
 } from "lucide-react";
 import RotatingCard from "../components/RotatingCard";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
-import { ParallaxSection, ParallaxElement, ParallaxBackground } from "../components/ParallaxScroll";
 
 export default function HomePage() {
   const stats = [
@@ -80,9 +79,7 @@ export default function HomePage() {
       {/* 1. HERO SECTION */}
       <section className="relative pt-12 pb-24 md:pt-20 md:pb-36 px-4 md:px-8 max-w-7xl mx-auto w-full overflow-hidden">
         {/* Background Decorative Accent */}
-        <ParallaxBackground speed={-0.3} className="top-1/4 right-0 w-72 h-72">
-          <div className="w-full h-full bg-brand/5 rounded-full blur-3xl" />
-        </ParallaxBackground>
+        <div className="absolute top-1/4 right-0 w-72 h-72 bg-brand/5 rounded-full blur-3xl -z-10" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Hero Left Content */}
@@ -147,46 +144,42 @@ export default function HomePage() {
 
             <div className="w-full max-w-md space-y-6">
               {/* Card 1 */}
-              <ParallaxElement speed={0.06}>
-                <motion.div
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2, duration: 0.6 }}
-                  className="bg-white border-2 border-slate-900 p-6 rounded-2xl shadow-xl space-y-4 transition-transform duration-300 text-left"
-                >
-                  <div className="flex justify-between items-center">
-                    <span className="bg-brand-light text-brand px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase">
-                      ORIGIN STATEMENT
-                    </span>
-                    <span className="text-[10px] text-slate-400 font-mono">EXPORT READY</span>
-                  </div>
-                  <h3 className="font-black text-slate-900 text-lg uppercase">Direct Indian Sourcing</h3>
-                  <p className="text-slate-500 text-xs leading-relaxed">
-                    Products are processed and sorted at our facilities in Jodhpur. Direct container loads are routed via Mundra Port to global hubs.
-                  </p>
-                </motion.div>
-              </ParallaxElement>
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                className="bg-white border-2 border-slate-900 p-6 rounded-2xl shadow-xl space-y-4 transition-transform duration-300 text-left"
+              >
+                <div className="flex justify-between items-center">
+                  <span className="bg-brand-light text-brand px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase">
+                    ORIGIN STATEMENT
+                  </span>
+                  <span className="text-[10px] text-slate-400 font-mono">EXPORT READY</span>
+                </div>
+                <h3 className="font-black text-slate-900 text-lg uppercase">Direct Indian Sourcing</h3>
+                <p className="text-slate-500 text-xs leading-relaxed">
+                  Products are processed and sorted at our facilities in Jodhpur. Direct container loads are routed via Mundra Port to global hubs.
+                </p>
+              </motion.div>
 
               {/* Card 2 */}
-              <ParallaxElement speed={0.14}>
-                <motion.div
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.35, duration: 0.6 }}
-                  className="bg-slate-900 text-white p-6 rounded-2xl shadow-xl space-y-4 border-2 border-slate-950 text-left"
-                >
-                  <div className="flex justify-between items-center">
-                    <span className="bg-sky text-white px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase">
-                      QA PARAMETER
-                    </span>
-                    <span className="text-[10px] text-sky font-mono">LAB TESTED</span>
-                  </div>
-                  <h3 className="font-black text-brand-light text-lg uppercase">Zero Compromise Purity</h3>
-                  <p className="text-slate-300 text-xs leading-relaxed">
-                    We supply natural ingredients complying strictly with international chemical residue limits, heavy metals tolerances, and purity specifications.
-                  </p>
-                </motion.div>
-              </ParallaxElement>
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.6 }}
+                className="bg-slate-900 text-white p-6 rounded-2xl shadow-xl space-y-4 border-2 border-slate-950 text-left"
+              >
+                <div className="flex justify-between items-center">
+                  <span className="bg-sky text-white px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase">
+                    QA PARAMETER
+                  </span>
+                  <span className="text-[10px] text-sky font-mono">LAB TESTED</span>
+                </div>
+                <h3 className="font-black text-brand-light text-lg uppercase">Zero Compromise Purity</h3>
+                <p className="text-slate-300 text-xs leading-relaxed">
+                  We supply natural ingredients complying strictly with international chemical residue limits, heavy metals tolerances, and purity specifications.
+                </p>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -204,88 +197,84 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
             {/* Psyllium Card */}
-            <ParallaxElement speed={-0.04}>
-              <RotatingCard angle={0} className="border-2 border-slate-900 group h-full">
-                <Link href="/products/psyllium-husk" className="block p-8 space-y-6">
-                  <div className="aspect-[16/10] overflow-hidden rounded-xl border border-slate-200 relative bg-slate-100">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                      style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=600&auto=format&fit=crop')` }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-4 left-4 text-white">
-                      <span className="text-[10px] bg-accent text-white px-2.5 py-0.5 rounded font-bold uppercase tracking-wider">
+            <RotatingCard angle={0} className="border-2 border-slate-900 group">
+              <Link href="/products/psyllium-husk" className="block p-8 space-y-6">
+                <div className="aspect-[16/10] overflow-hidden rounded-xl border border-slate-200 relative bg-slate-100">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=600&auto=format&fit=crop')` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <span className="text-[10px] bg-accent text-white px-2.5 py-0.5 rounded font-bold uppercase tracking-wider">
+                      Psyllium Husk
+                    </span>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="text-2xl font-black text-slate-900 uppercase group-hover:text-accent transition-colors">
                         Psyllium Husk
+                      </h3>
+                      <span className="text-xs text-slate-500 italic font-medium block mt-0.5">
+                        (Plantago ovata)
                       </span>
                     </div>
+                    <ArrowUpRight className="h-5 w-5 text-slate-400 group-hover:text-accent transition-colors" />
                   </div>
+                  <p className="text-slate-500 text-xs leading-relaxed">
+                    Pure, highly soluble Indian Psyllium Husk tailored for international buyers who demand strict specifications, reliable purity, and flawless export execution.
+                  </p>
+                </div>
 
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <h3 className="text-2xl font-black text-slate-900 uppercase group-hover:text-accent transition-colors">
-                          Psyllium Husk
-                        </h3>
-                        <span className="text-xs text-slate-500 italic font-medium block mt-0.5">
-                          (Plantago ovata)
-                        </span>
-                      </div>
-                      <ArrowUpRight className="h-5 w-5 text-slate-400 group-hover:text-accent transition-colors" />
-                    </div>
-                    <p className="text-slate-500 text-xs leading-relaxed">
-                      Pure, highly soluble Indian Psyllium Husk tailored for international buyers who demand strict specifications, reliable purity, and flawless export execution.
-                    </p>
-                  </div>
-
-                  <div className="border-t border-slate-100 pt-4 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-accent group-hover:text-accent-hover transition-colors">
-                    <span>View Product Specifications</span>
-                    <ArrowRight className="h-4 w-4 transform transition-transform group-hover:translate-x-1" />
-                  </div>
-                </Link>
-              </RotatingCard>
-            </ParallaxElement>
+                <div className="border-t border-slate-100 pt-4 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-accent group-hover:text-accent-hover transition-colors">
+                  <span>View Product Specifications</span>
+                  <ArrowRight className="h-4 w-4 transform transition-transform group-hover:translate-x-1" />
+                </div>
+              </Link>
+            </RotatingCard>
 
             {/* Senna Card */}
-            <ParallaxElement speed={0.04}>
-              <RotatingCard angle={0} className="border-2 border-slate-900 group h-full">
-                <Link href="/products/senna-leaves" className="block p-8 space-y-6">
-                  <div className="aspect-[16/10] overflow-hidden rounded-xl border border-slate-200 relative bg-slate-100">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                      style={{ backgroundImage: `url('https://images.unsplash.com/photo-1564894536308-4011244a307e?q=80&w=600&auto=format&fit=crop')` }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-4 left-4 text-white">
-                      <span className="text-[10px] bg-accent text-white px-2.5 py-0.5 rounded font-bold uppercase tracking-wider">
-                        Cassia angustifolia
+            <RotatingCard angle={0} className="border-2 border-slate-900 group">
+              <Link href="/products/senna-leaves" className="block p-8 space-y-6">
+                <div className="aspect-[16/10] overflow-hidden rounded-xl border border-slate-200 relative bg-slate-100">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    style={{ backgroundImage: `url('https://images.unsplash.com/photo-1564894536308-4011244a307e?q=80&w=600&auto=format&fit=crop')` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <span className="text-[10px] bg-accent text-white px-2.5 py-0.5 rounded font-bold uppercase tracking-wider">
+                      Cassia angustifolia
+                    </span>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="text-2xl font-black text-slate-900 uppercase group-hover:text-accent transition-colors">
+                        Senna Leaves
+                      </h3>
+                      <span className="text-xs text-slate-500 italic font-medium block mt-0.5">
+                        (Cassia angustifolia)
                       </span>
                     </div>
+                    <ArrowUpRight className="h-5 w-5 text-slate-400 group-hover:text-accent transition-colors" />
                   </div>
+                  <p className="text-slate-500 text-xs leading-relaxed">
+                    Expertly processed Indian Senna Leaves designed for global commercial needs, conditioned and packed to meet exact buyer specifications.
+                  </p>
+                </div>
 
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <h3 className="text-2xl font-black text-slate-900 uppercase group-hover:text-accent transition-colors">
-                          Senna Leaves
-                        </h3>
-                        <span className="text-xs text-slate-500 italic font-medium block mt-0.5">
-                          (Cassia angustifolia)
-                        </span>
-                      </div>
-                      <ArrowUpRight className="h-5 w-5 text-slate-400 group-hover:text-accent transition-colors" />
-                    </div>
-                    <p className="text-slate-500 text-xs leading-relaxed">
-                      Expertly processed Indian Senna Leaves designed for global commercial needs, conditioned and packed to meet exact buyer specifications.
-                    </p>
-                  </div>
-
-                  <div className="border-t border-slate-100 pt-4 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-accent group-hover:text-accent-hover transition-colors">
-                    <span>View Product Specifications</span>
-                    <ArrowRight className="h-4 w-4 transform transition-transform group-hover:translate-x-1" />
-                  </div>
-                </Link>
-              </RotatingCard>
-            </ParallaxElement>
+                <div className="border-t border-slate-100 pt-4 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-accent group-hover:text-accent-hover transition-colors">
+                  <span>View Product Specifications</span>
+                  <ArrowRight className="h-4 w-4 transform transition-transform group-hover:translate-x-1" />
+                </div>
+              </Link>
+            </RotatingCard>
           </div>
         </div>
       </section>
@@ -299,9 +288,9 @@ export default function HomePage() {
           <div className="h-1.5 w-16 bg-brand mx-auto rounded" />
         </div>
 
-        <ParallaxSection speed={-0.03} className="max-w-7xl mx-auto border-2 border-slate-900 rounded-3xl overflow-hidden shadow-2xl bg-slate-950">
+        <div className="max-w-7xl mx-auto border-2 border-slate-900 rounded-3xl overflow-hidden shadow-2xl bg-slate-950">
           <StickyScroll content={stickyScrollContent} />
-        </ParallaxSection>
+        </div>
       </section>
 
       {/* 4. STATS STRIP */}
@@ -320,15 +309,16 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 5. QUICK ENQUIRY BANNER */}
       <section className="bg-white py-20 px-4 md:px-8 border-b border-slate-100">
-        <ParallaxSection speed={0.04} className="max-w-5xl mx-auto bg-brand text-white rounded-3xl p-8 md:p-16 text-center space-y-8 shadow-2xl relative overflow-hidden">
+        <div className="max-w-5xl mx-auto bg-brand text-white rounded-3xl p-8 md:p-16 text-center space-y-8 shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.08),transparent)]" />
 
-          <div className="space-y-4 max-w-2xl mx-auto relative z-10 text-center">
+          <div className="space-y-4 max-w-2xl mx-auto relative z-10">
             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-none">
               Have a Specific Export Requirement?
             </h2>
-            <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-xl mx-auto font-normal">
+            <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-xl mx-auto">
               Share your target specifications, required quantities, and destination port—our team will review and respond with exact commercial details.
             </p>
           </div>
@@ -341,7 +331,7 @@ export default function HomePage() {
               Send Your Requirement
             </Link>
           </div>
-        </ParallaxSection>
+        </div>
       </section>
 
     </div>
