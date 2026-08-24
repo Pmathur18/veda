@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import CookieConsent from "../components/CookieConsent";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${montserrat.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-[#071B3A] text-[#071B3A] flex flex-col font-sans antialiased overflow-x-hidden">
+    <html lang="en" className={cn("scroll-smooth", inter.variable, montserrat.variable, "font-sans")}>
+      <body className="min-h-screen bg-dark-blue text-dark-blue flex flex-col font-sans antialiased overflow-x-hidden">
         <Header />
         
         {/* Floating parallax page wrapper */}

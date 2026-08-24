@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -9,7 +10,6 @@ import {
   Info,
   Layers,
   TrendingUp,
-  Mail,
   Menu,
   X
 } from "lucide-react";
@@ -36,12 +36,15 @@ export default function Header() {
           } flex items-center justify-between`}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center group">
-          <img
+        <Link href="/" className="flex items-center">
+          <Image
             src="/logo.png"
             alt="Veda Impex Logo"
-            className={`transition-all duration-300 object-contain ${scrolled ? "h-9 md:h-11" : "h-11 md:h-14"
+            width={180}
+            height={50}
+            className={`transition-all duration-300 object-contain w-auto ${scrolled ? "h-9 md:h-11" : "h-11 md:h-14"
               }`}
+            priority
           />
         </Link>
 
@@ -49,17 +52,15 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-1">
           {navigation.map((item) => {
             const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
-            const Icon = item.icon;
             return (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`relative px-4 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-1.5 ${isActive
+                className={`relative px-4 py-2 rounded-full text-sm font-semibold transition-all ${isActive
                   ? "text-brand bg-brand-light/30"
                   : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50"
                   }`}
               >
-                <Icon className="h-4 w-4" />
                 {item.name}
               </Link>
             );
@@ -107,10 +108,13 @@ export default function Header() {
             >
               <div className="flex items-center justify-between mb-8">
                 <Link href="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
-                  <img
+                  <Image
                     src="/logo.png"
                     alt="Veda Impex Logo"
-                    className="h-10 object-contain"
+                    width={130}
+                    height={36}
+                    className="h-10 w-auto object-contain"
+                    priority
                   />
                 </Link>
                 <button

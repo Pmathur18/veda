@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { MapPin, Phone } from "lucide-react";
 
@@ -104,7 +105,7 @@ export default function Footer() {
           {/* Logo Column */}
           <div className="space-y-4">
             <Link href="/" className="inline-block bg-white p-2 rounded-2xl shadow-sm">
-              <img src="/logo.png" alt="Veda Impex Logo" className="h-9 w-auto object-contain" />
+              <Image src="/logo.png" alt="Veda Impex Logo" width={130} height={36} className="h-9 w-auto object-contain" />
             </Link>
             <p className="text-xs text-neutral-500 leading-relaxed max-w-xs">
               VEDA IMPEX — Trust Behind Every Shipment. India-based export coordination of premium Psyllium Husk and Senna Leaves to global B2B buyers.

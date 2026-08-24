@@ -1,19 +1,21 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   ArrowRight,
-  MapPin,
-  ArrowUpRight
+  ArrowUpRight,
+  FileText,
+  CheckCircle2,
+  ShieldCheck,
+  MessageSquare,
+  Calendar
 } from "lucide-react";
 import RotatingCard from "../components/RotatingCard";
+import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 
 export default function HomePage() {
-  const whySectionRef = useRef<HTMLDivElement>(null);
-  const isWhyInView = useInView(whySectionRef, { once: true, amount: 0.15 });
-
   const stats = [
     { label: "Purity Grade Target", value: "99.5%" },
     { label: "Transit Documentation Success", value: "100%" },
@@ -21,31 +23,64 @@ export default function HomePage() {
     { label: "Primary Shipping Lanes", value: "24/7" }
   ];
 
-  const differentiators = [
+  const stickyScrollContent = [
     {
-      id: "01",
       title: "Clear From the Beginning",
-      desc: "No guessing games. We state specifications, packing standards, and logistics schedules upfront so you know exactly what is loading."
+      description: "No guessing games. We state specifications, packing standards, and logistics schedules upfront so you know exactly what is loading.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-cyan-500 to-emerald-500 flex flex-col items-center justify-center text-white p-6 text-center space-y-3">
+          <FileText className="h-12 w-12 text-white animate-pulse" />
+          <span className="text-sm font-bold uppercase tracking-wider">Specifications Registry</span>
+          <span className="text-xs text-white/80">99% Purity Whole Husk Target confirmed</span>
+        </div>
+      )
     },
     {
-      id: "02",
       title: "Consistency Matters",
-      desc: "B2B buyers need repeatable quality. Our export coordination ensures chemical and physical parameters remain stable container after container."
+      description: "B2B buyers need repeatable quality. Our export coordination ensures chemical and physical parameters remain stable container after container.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-pink-500 to-indigo-500 flex flex-col items-center justify-center text-white p-6 text-center space-y-3">
+          <CheckCircle2 className="h-12 w-12 text-white" />
+          <span className="text-sm font-bold uppercase tracking-wider">Quality Uniformity</span>
+          <div className="w-full bg-white/20 h-2 rounded-full overflow-hidden">
+            <div className="bg-white h-full w-[99.8%]" />
+          </div>
+          <span className="text-xs text-white/80">99.8% Batch Consistency Rating</span>
+        </div>
+      )
     },
     {
-      id: "03",
       title: "Quality With Accountability",
-      desc: "Every shipment is accompanied by verified Certificates of Analysis (COA) and phytosanitary checks. We stand behind our specifications."
+      description: "Every shipment is accompanied by verified Certificates of Analysis (COA) and phytosanitary checks. We stand behind our specifications.",
+      content: (
+        <div className="h-full w-full flex flex-col items-center justify-center text-white p-6 text-center space-y-3" style={{ background: "linear-gradient(to bottom right, #f97316, #eab308)" }}>
+          <ShieldCheck className="h-12 w-12 text-white" />
+          <span className="text-sm font-bold uppercase tracking-wider">COA Verified Desk</span>
+          <span className="text-xs text-white/80">Lab Testing: Approved for EU & US entry</span>
+        </div>
+      )
     },
     {
-      id: "04",
       title: "Easy to Work With",
-      desc: "Direct communication channels with Jodhpur-based trade coordinators. No layers of administrative delay or generic helpdesks."
+      description: "Direct communication channels with Jodhpur-based trade coordinators. No layers of administrative delay or generic helpdesks.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-emerald-500 to-blue-600 flex flex-col items-center justify-center text-white p-6 text-center space-y-3">
+          <MessageSquare className="h-12 w-12 text-white" />
+          <span className="text-sm font-bold uppercase tracking-wider">Direct Liaison Desk</span>
+          <span className="text-xs text-white/80">Typical Response Time: &lt; 15 mins</span>
+        </div>
+      )
     },
     {
-      id: "05",
       title: "Built for Long-Term Trade",
-      desc: "We focus on supply security and documentation accuracy, helping international buyers build stable supply chains for years to come."
+      description: "We focus on supply security and documentation accuracy, helping international buyers build stable supply chains for years to come.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-purple-500 to-pink-500 flex flex-col items-center justify-center text-white p-6 text-center space-y-3">
+          <Calendar className="h-12 w-12 text-white" />
+          <span className="text-sm font-bold uppercase tracking-wider">Stable Supply Lanes</span>
+          <span className="text-xs text-white/80">Year-round crop allocation planning</span>
+        </div>
+      )
     }
   ];
 
@@ -68,7 +103,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-3xl sm:text-4xl md:text-7xl font-black text-slate-900 tracking-tight leading-[1.05] uppercase"
+                className="text-3xl sm:text-4xl md:text-7xl font-black text-slate-900 tracking-tight leading-[1.15] uppercase"
               >
                 VEDA IMPEX <br />
                 <span className="relative inline-block mt-2">
@@ -121,10 +156,10 @@ export default function HomePage() {
             <div className="w-full max-w-md space-y-6">
               {/* Card 1 */}
               <motion.div
-                initial={{ opacity: 0, rotate: -3 }}
-                animate={{ opacity: 1, rotate: -2 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="bg-white border-2 border-slate-900 p-6 rounded-2xl shadow-xl space-y-4 hover:rotate-0 transition-transform duration-300"
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                className="bg-white border-2 border-slate-900 p-6 rounded-2xl shadow-xl space-y-4 transition-transform duration-300 text-left"
               >
                 <div className="flex justify-between items-center">
                   <span className="bg-brand-light text-brand px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase">
@@ -140,10 +175,10 @@ export default function HomePage() {
 
               {/* Card 2 */}
               <motion.div
-                initial={{ opacity: 0, rotate: 2 }}
-                animate={{ opacity: 1, rotate: 3 }}
-                transition={{ delay: 0.45, duration: 0.6 }}
-                className="bg-slate-900 text-white p-6 rounded-2xl shadow-xl space-y-4 hover:rotate-0 transition-transform duration-300 border-2 border-slate-950"
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.6 }}
+                className="bg-slate-900 text-white p-6 rounded-2xl shadow-xl space-y-4 border-2 border-slate-950 text-left"
               >
                 <div className="flex justify-between items-center">
                   <span className="bg-sky text-white px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase">
@@ -252,53 +287,19 @@ export default function HomePage() {
       </section>
 
       {/* 3. WHY VEDA IMPEX */}
-      <section ref={whySectionRef} className="py-24 px-4 md:px-8 max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Section Left Title */}
-          <div className="lg:col-span-4 space-y-6">
+      <section className="py-24 px-4 md:px-8 max-w-7xl mx-auto w-full">
+        <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tight">
+            Why Veda Impex
+          </h2>
+          <div className="h-1.5 w-16 bg-brand mx-auto rounded" />
+          <p className="text-slate-500 text-sm leading-relaxed max-w-xl mx-auto">
+            As export trade coordinators, we connect Indian crops directly to international standards. Here is how we ensure seamless B2B transactions.
+          </p>
+        </div>
 
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tight leading-none">
-              Why <br />
-              Veda Impex
-            </h2>
-            <div className="h-1.5 w-16 bg-brand rounded" />
-            <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
-              As export trade coordinators, we connect Indian crops directly to international standards. Here is how we ensure seamless B2B transactions.
-            </p>
-            <div className="hidden lg:block pt-6">
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 text-xs font-bold text-accent hover:text-accent-hover uppercase tracking-widest"
-              >
-                Learn more about us <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Differentiators Grid (Right) */}
-          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {differentiators.map((diff, idx) => (
-              <motion.div
-                key={diff.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isWhyInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className={`bg-white border-2 border-slate-900 p-6 rounded-2xl space-y-4 hover:shadow-lg transition-shadow duration-300 relative ${idx === differentiators.length - 1 ? "sm:col-span-2" : ""
-                  }`}
-              >
-                <div className="flex justify-between items-center">
-                  <span className="text-accent font-mono font-bold text-sm tracking-wider">
-                    {diff.id}
-                  </span>
-                  <span className="text-[9px] text-slate-400 font-bold uppercase tracking-widest">
-                    SYSTEM COMPLIANCE
-                  </span>
-                </div>
-                <h3 className="font-black text-slate-900 text-base uppercase">{diff.title}</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">{diff.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+        <div className="max-w-7xl mx-auto border-2 border-slate-900 rounded-3xl overflow-hidden shadow-2xl bg-slate-950">
+          <StickyScroll content={stickyScrollContent} />
         </div>
       </section>
 
