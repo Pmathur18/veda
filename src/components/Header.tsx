@@ -9,7 +9,7 @@ import {
   Home,
   Info,
   Layers,
-  TrendingUp,
+  ShieldCheck,
   Menu,
   X
 } from "lucide-react";
@@ -17,9 +17,8 @@ import {
 const navigation = [
   { name: "Home", href: "/", icon: Home },
   { name: "Products", href: "/products", icon: Layers },
-  { name: "Export Process", href: "/export-process", icon: TrendingUp },
+  { name: "Quality & Process", href: "/export-process", icon: ShieldCheck },
   { name: "About", href: "/about", icon: Info },
-
 ];
 
 export default function Header() {

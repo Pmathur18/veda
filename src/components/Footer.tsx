@@ -78,7 +78,7 @@ export default function Footer() {
           <div className="space-y-3">
             <h4 className="text-white text-xs font-bold uppercase tracking-wider">Quality & Standards</h4>
             <ul className="space-y-2 text-xs">
-              <li><Link href="/export-process" className="hover:text-brand transition-colors">Export Process Timeline</Link></li>
+              <li><Link href="/export-process" className="hover:text-brand transition-colors">Quality & Process</Link></li>
               <li><Link href="/about" className="hover:text-brand transition-colors">About Us</Link></li>
             </ul>
           </div>
