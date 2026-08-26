@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     canonical: "https://www.vedaimpex.com/about",
   },
   openGraph: {
-    title: "About VEDA IMPEX | Trusted Indian Product Exporter Jodhpur",
+    title: "About VEDA IMPEX | Trusted Indian Product Exporter",
     description: "Discover VEDA IMPEX, a Jodhpur-based export house bridging the gap between premium Indian agro-products and global commercial buyers.",
     url: "https://www.vedaimpex.com/about",
     siteName: "VEDA IMPEX",

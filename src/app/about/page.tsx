@@ -82,29 +82,20 @@ export default function AboutPage() {
 
         {/* Hero Content Overlay */}
         <div className="w-full max-w-5xl mx-auto px-6 md:px-8 py-20 md:py-24 relative z-20 flex flex-col items-center justify-center text-center text-white">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[10px] font-bold text-sky uppercase tracking-widest shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-sky animate-pulse" />
-            Corporate Profile
-          </div>
 
-          <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight uppercase max-w-4xl mt-6 leading-tight">
-            Leading Coordinators of <br />
-            <span className="relative inline-block mt-2">
-              <span className="absolute inset-0 bg-sky" />
-              <span className="relative text-[#071B3A] px-5 py-0.5 inline-block">
-                Agricultural Exports
-              </span>
-            </span>
+
+          <h1 className="text-5xl md:text-5xl font-black text-white tracking-tight uppercase max-w-4xl mt-6 leading-tight">
+            Leading Coordinators of <br />Agricultural Exports
           </h1>
 
-          <p className="text-slate-200 text-sm md:text-base leading-relaxed max-w-3xl font-normal font-sans mx-auto mt-6">
-            Based out of Jodhpur, Rajasthan, VEDA IMPEX is an Indian export coordinator built around a single, uncompromising objective: making cross-border sourcing from India simple, transparent, and completely dependable.
+          <p className="text-slate-200 text-sm md:text-base leading-relaxed max-w-4xl font-normal font-sans mx-auto mt-6">
+            Based out of Jodhpur, Rajasthan, VEDA IMPEX is an Indian export coordinator built around a single, uncompromising objective making cross-border sourcing from India simple, transparent, and completely dependable.
           </p>
         </div>
-      </section>
+      </section >
 
       {/* Overlapping Stats Cards Container */}
-      <div className="max-w-4xl mx-auto px-6 md:px-8 -mt-28 mb-16 relative z-20">
+      < div className="max-w-4xl mx-auto px-6 md:px-8 -mt-28 mb-16 relative z-20" >
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {stats.map((stat, idx) => (
             <div
@@ -120,66 +111,30 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-      </div>
+      </div >
 
       {/* 2. FOUNDED & STATEMENT SECTION (DARK) */}
-      <section className="bg-slate-950 text-white py-20 px-6 md:px-12 relative overflow-hidden">
+      < section className="bg-slate-950 text-white py-20 px-6 md:px-12 relative overflow-hidden" >
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-brand/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.02),transparent)]" />
-
+        < div className="absolute top-0 right-0 w-96 h-96 bg-brand/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto space-y-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
             {/* Left Statement Block */}
             <div className="lg:col-span-8 space-y-6 text-left">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">
-                // About VEDA IMPEX
-              </span>
-              <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight leading-normal">
+              <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight leading-normal text-left">
                 Founded with a commitment to absolute purity and quality consistency, VEDA IMPEX helps B2B buyers navigate complex agricultural supply chains through direct, laboratory-verified sourcing.
               </h2>
-            </div>
-
-            {/* Right Details Block */}
-            <div className="lg:col-span-4 space-y-4 text-left lg:pt-8">
               <p className="text-slate-400 text-xs md:text-sm leading-relaxed font-normal">
                 Our processing facilities in Jodhpur, Rajasthan, act as the central anchor for our operations. We manage the supply chain from raw desert harvests to container loading and customs clearances, assuring EU and US regulation compliance.
               </p>
             </div>
-
           </div>
-
-          {/* Bottom Row */}
-          <div className="border-t border-slate-900 pt-12 flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="flex items-center gap-4 text-left">
-              <div className="w-20 h-14 rounded-xl overflow-hidden relative border border-slate-800 bg-slate-900 shrink-0">
-                <Image
-                  src="/psyllium-husk.jpg"
-                  alt="Sourcing Origin"
-                  fill
-                  className="object-cover filter grayscale contrast-125"
-                />
-              </div>
-              <div>
-                <span className="block text-[8px] text-slate-500 uppercase font-bold tracking-wider">Operational Location</span>
-                <span className="block text-xs font-bold text-white uppercase">Jodhpur Sourcing & Grading Hub</span>
-              </div>
-            </div>
-
-            <Link
-              href="/products"
-              className="group bg-white hover:bg-slate-100 text-[#071B3A] font-bold py-3 px-6 rounded-none text-xs transition-all flex items-center justify-between gap-6 uppercase tracking-wider border border-white cursor-pointer"
-            >
-              Explore Sourcing Catalog
-              <ArrowRight className="h-4 w-4 text-[#071B3A] transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </div>
-        </div>
-      </section>
+        </div >
+      </section >
 
       {/* 3. BUILT ON TRUST. DRIVEN BY PERFORMANCE */}
-      <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto w-full relative">
+      < section className="py-20 px-6 md:px-12 max-w-7xl mx-auto w-full relative" >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
           {/* Left Column: Values List */}
@@ -224,10 +179,10 @@ export default function AboutPage() {
           </div>
 
         </div>
-      </section>
+      </section >
 
       {/* 4. DIRECTOR PROFILE & LIAISON MAP (DARK) */}
-      <section className="bg-slate-900 text-white py-20 px-6 md:px-12 relative overflow-hidden">
+      < section className="bg-slate-900 text-white py-20 px-6 md:px-12 relative overflow-hidden" >
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#071B3A]/20 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
@@ -335,10 +290,10 @@ export default function AboutPage() {
           </div>
 
         </div>
-      </section>
+      </section >
 
       {/* 5. SOLUTIONS DESIGNED FOR EVERY INDUSTRY */}
-      <section className="bg-slate-950 text-white py-20 px-6 md:px-12 relative overflow-hidden">
+      < section className="bg-slate-950 text-white py-20 px-6 md:px-12 relative overflow-hidden" >
         <div className="max-w-7xl mx-auto space-y-12">
           {/* Header Block */}
           <div className="space-y-4 text-left max-w-2xl">
@@ -399,10 +354,10 @@ export default function AboutPage() {
           </div>
 
         </div>
-      </section>
+      </section >
 
       {/* 6. PARTNERSHIP CTA FOOTER */}
-      <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto w-full text-center space-y-8">
+      < section className="py-20 px-6 md:px-12 max-w-7xl mx-auto w-full text-center space-y-8" >
         <div className="max-w-2xl mx-auto space-y-4">
           <h2 className="text-3xl md:text-4.5xl font-black text-slate-900 uppercase tracking-tight leading-none">
             Ready to secure your bulk crop allocation?
@@ -419,7 +374,7 @@ export default function AboutPage() {
           Initiate Sourcing Request
           <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 text-white" />
         </Link>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 }
