@@ -73,7 +73,7 @@ function ContactFormInner() {
 
       {isSubmitted ? (
         <div className="flex flex-col items-center justify-center py-16 text-center space-y-4">
-          <div className="p-3 bg-emerald-50 text-emerald-500 rounded-full border border-emerald-200">
+          <div className="p-3 bg-brand-light text-brand rounded-full border border-brand/20">
             <CheckCircle2 className="h-10 w-10" />
           </div>
           <h4 className="font-bold text-lg uppercase">Enquiry Transmitted</h4>

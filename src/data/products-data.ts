@@ -35,7 +35,7 @@ export const productsData: ProductItem[] = [
     botanicalName: "Plantago ovata",
     description: "High-purity whole seed coating of Plantago ovata, sourced from Rajasthan and Gujarat with high swell volume and strict quality standards.",
     category: "Natural Ingredients",
-    imageUrl: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=600&auto=format&fit=crop",
+    imageUrl: "/psyllium-husk.jpg",
     overview: "Psyllium Husk is the outer seed coating of Plantago ovata, retained in its whole, natural husk form. India dominates global production, supplying over 85% of the world’s demand. VEDA IMPEX procures raw psyllium seeds from prime agricultural belts, ensuring high swell volume, exceptional mucilage content, and strict purity grades for global buyers.",
     highlights: [
       "Origin: Rajasthan & Gujarat",
@@ -94,7 +94,7 @@ export const productsData: ProductItem[] = [
     botanicalName: "Plantago ovata",
     description: "Mechanically pulverized whole Psyllium Husk from 40 to 100 Mesh, ideal for seamless blending in commercial food, baking, and pharmaceutical manufacturing.",
     category: "Natural Ingredients",
-    imageUrl: "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?q=80&w=600&auto=format&fit=crop",
+    imageUrl: "/psyllium-powder.jpg",
     overview: "Psyllium Husk Powder is produced by mechanically pulverizing whole Psyllium Husk into fine particle mesh sizes ranging from 40 mesh to 100 mesh. Milling increases bulk density and surface area, making it an ideal ingredient for seamless blending in commercial food, baking, and pharmaceutical manufacturing.",
     highlights: [
       "Origin: Rajasthan & Gujarat",
@@ -147,16 +147,16 @@ export const productsData: ProductItem[] = [
   },
   {
     id: "senna-leaves",
-    name: "Senna Leaves & Pods",
+    name: "Senna Leaves",
     botanicalName: "Cassia angustifolia",
-    description: "Premium Cassia angustifolia leaves and pods, sun-dried and graded into prime cuts with standardized Sennosides for global markets.",
+    description: "Premium Cassia angustifolia leaves, sun-dried and graded into prime cuts with standardized Sennosides for global markets.",
     category: "Natural Ingredients",
-    imageUrl: "https://images.unsplash.com/photo-1564894536308-4011244a307e?q=80&w=600&auto=format&fit=crop",
-    overview: "Senna (Cassia angustifolia), harvested predominantly in the arid regions of Rajasthan, is world-renowned for its anthraquinone glycosides (Sennosides A & B). VEDA IMPEX supplies premium-graded Senna leaves, pods, and siftings that are carefully machine-cleaned, sun-dried, and sorted to retain active botanical properties.",
+    imageUrl: "/senna-leaves.jpg",
+    overview: "Senna Leaves (Cassia angustifolia), harvested predominantly in the arid regions of Rajasthan, are world-renowned for their anthraquinone glycosides (Sennosides A & B). VEDA IMPEX supplies premium-graded Senna leaves that are carefully machine-cleaned, sun-dried, and sorted to retain active botanical properties.",
     highlights: [
       "Origin: Rajasthan, India",
-      "Sennosides: 1.5% to 3.5%",
-      "Form: Cut Leaves, Pods, Powder",
+      "Sennosides: 1.5% to 3.0%",
+      "Form: Cut Leaves & Leaf Powder",
       "Packaging: Compressed Bales"
     ],
     specTable: {
@@ -165,7 +165,6 @@ export const productsData: ProductItem[] = [
         ["Prime Cut Leaf No. 1", "Large, bold unbroken leaves", "2.5% – 3.0%", "Herbal Teas & Infusions"],
         ["Prime Cut Leaf No. 2", "Medium-sized clean leaves", "2.0% – 2.5%", "Herbal Teas & Extracts"],
         ["Senna Leaves No. 3 / 4", "Small cut leaves / Siftings", "1.5% – 2.0%", "Extraction & Milling"],
-        ["Senna Pods (Hand Picked)", "Whole unbroken seed pods", "2.5% – 3.5%", "Botanical Formulations"],
         ["Senna Leaf Powder", "40 to 80 Mesh Fine Powder", "2.0% – 3.0%", "Capsules, Tablets & Extracts"]
       ]
     },
@@ -176,7 +175,7 @@ export const productsData: ProductItem[] = [
       },
       {
         title: "Pharmaceutical Extraction",
-        desc: "High-sennoside crude leaves and pods serve as raw material for manufacturing Sennoside concentrates, syrups, and tablets."
+        desc: "High-sennoside crude leaves serve as raw material for manufacturing Sennoside concentrates, syrups, and tablets."
       },
       {
         title: "Cosmetics & Personal Care",
@@ -198,6 +197,59 @@ export const productsData: ProductItem[] = [
         "Certificate of Analysis (COA)",
         "Phytosanitary Certificate",
         "Fumigation clearances"
+      ]
+    }
+  },
+  {
+    id: "senna-pods",
+    name: "Senna Pods",
+    botanicalName: "Cassia angustifolia",
+    description: "Hand-picked, whole unbroken Senna Pods standardized for high Sennoside content and premium botanical formulations.",
+    category: "Natural Ingredients",
+    imageUrl: "/senna-pods.jpg",
+    overview: "Senna Pods (Cassia angustifolia) are the dried pods of the senna plant, prized globally for their mild yet highly reliable laxative properties. Cleaned and graded at our Jodhpur processing hub, VEDA IMPEX supplies whole unbroken hand-picked pods and extraction-grade pods to meet stringent pharmaceutical and botanical standards.",
+    highlights: [
+      "Origin: Rajasthan, India",
+      "Sennosides: 2.5% to 3.5%",
+      "Form: Hand-Picked & FAQ Pods",
+      "Packaging: Woven Bags or Cartons"
+    ],
+    specTable: {
+      headers: ["Product Variant", "Grade / Description", "Sennoside Content (Avg.)", "Primary Application"],
+      rows: [
+        ["Hand-Picked Pods", "Whole unbroken green/brown pods", "2.5% – 3.5%", "Botanical Tea Blends"],
+        ["FAQ Pods", "Fair Average Quality pods", "2.0% – 2.5%", "Pharmaceutical Extraction"],
+        ["Senna Pod Powder", "Powdered whole pods", "2.0% – 3.0%", "Supplement Manufacture"]
+      ]
+    },
+    applications: [
+      {
+        title: "Botanical Tea Blends",
+        desc: "Whole pods are included in herbal infusions and botanical preparations for digestive wellness."
+      },
+      {
+        title: "Active Pharmaceutical Ingredients",
+        desc: "Laxative and purgative syrups, tablets, and extracts rely on active glycosides from whole pods."
+      },
+      {
+        title: "Supplement Manufacturing",
+        desc: "Senna pod powder is capsule-filled or tableted as a natural dietary supplement."
+      }
+    ],
+    logistics: {
+      packaging: [
+        "25 kg / 50 kg HDPE Woven Bags with inner lining.",
+        "Custom corrugated cardboard cartons for Hand-Picked Pods (protecting shape)."
+      ],
+      capacity: [
+        "20 ft FCL: ~10 to 11 Metric Tons (Loose Bag loading)",
+        "40 ft FCL: ~20 to 22 Metric Tons"
+      ],
+      compliance: [
+        "Certified low moisture",
+        "Cleaned and foreign-matter free",
+        "COA & Phytosanitary Certification",
+        "Fumigation standards met"
       ]
     }
   }

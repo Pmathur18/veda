@@ -11,7 +11,8 @@ import {
   Layers,
   ShieldCheck,
   Menu,
-  X
+  X,
+  ArrowRight
 } from "lucide-react";
 
 const navigation = [
@@ -24,40 +25,50 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const scrolled = false;
+  const [scrolled, setScrolled] = useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const hasVideoBanner = pathname === "/" || pathname === "/products" || pathname === "/about" || pathname === "/export-process";
+  const showBg = !hasVideoBanner || scrolled;
 
   return (
-    <header className="relative z-40 py-4 px-4 md:px-8 bg-white">
-      <div
-        className={`mx-auto transition-all duration-300 bg-white border border-neutral-200/50 shadow-md ${scrolled
-          ? "rounded-full py-2.5 px-4 md:px-6 max-w-5xl shadow-lg bg-white/95 backdrop-blur-md"
-          : "rounded-3xl py-3 px-4 md:py-4 md:px-8 max-w-7xl"
-          } flex items-center justify-between`}
-      >
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${showBg
+        ? "bg-[#071B3A] border-b border-white/5 shadow-md py-4"
+        : "bg-transparent border-b border-transparent shadow-none py-6"
+        }`}
+    >
+      <div className="mx-auto max-w-7xl px-6 md:px-8 flex items-center justify-between transition-all duration-300">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
             src="/logo.png"
             alt="Veda Impex Logo"
-            width={180}
-            height={50}
-            className={`transition-all duration-300 object-contain w-auto ${scrolled ? "h-9 md:h-11" : "h-11 md:h-14"
-              }`}
+            width={140}
+            height={40}
+            className="transition-all duration-300 object-contain w-auto h-8 md:h-10"
             priority
           />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className=" md:flex items-center gap-2">
           {navigation.map((item) => {
             const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
             return (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`relative px-4 py-2 rounded-full text-sm font-semibold transition-all ${isActive
-                  ? "text-brand bg-brand-light/30"
-                  : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50"
+                className={`px-4 py-2 text-xs uppercase tracking-[0.15em] transition-all duration-200 ${isActive
+                  ? "text-white font-bold"
+                  : "text-white font-medium hover:font-bold"
                   }`}
               >
                 {item.name}
@@ -70,16 +81,16 @@ export default function Header() {
         <div className="hidden md:block">
           <Link
             href="/contact"
-            className="bg-sky hover:bg-sky-hover text-white font-bold py-2.5 px-5 rounded-full text-xs transition-all tracking-wide uppercase cursor-pointer"
+            className="text-white border border-white/40 hover:border-white font-medium py-2.5 px-6 rounded-none text-xs tracking-[0.15em] uppercase transition-all duration-200 hover:font-bold cursor-pointer"
           >
-            Contact Us
+            Get Started
           </Link>
         </div>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(true)}
-          className="md:hidden p-2 text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 rounded-full transition-all cursor-pointer"
+          className="md:hidden p-2 text-white hover:text-white/80 transition-all cursor-pointer"
         >
           <Menu className="h-6 w-6" />
         </button>
@@ -103,7 +114,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", bounce: 0.15 }}
-              className="fixed right-0 top-0 bottom-0 w-80 max-w-full bg-white shadow-2xl z-50 md:hidden p-6 flex flex-col overflow-y-auto no-scrollbar"
+              className="fixed right-0 top-0 bottom-0 w-80 max-w-full bg-white shadow-2xl z-50 md:hidden p-6 flex flex-col overflow-y-auto no-scrollbar border-l border-white/5"
             >
               <div className="flex items-center justify-between mb-8">
                 <Link href="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
@@ -112,19 +123,19 @@ export default function Header() {
                     alt="Veda Impex Logo"
                     width={130}
                     height={36}
-                    className="h-10 w-auto object-contain"
+                    className="h-9 w-auto object-contain"
                     priority
                   />
                 </Link>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 text-neutral-500 hover:text-neutral-800 hover:bg-neutral-50 rounded-full cursor-pointer"
+                  className="p-2 text-slate-500 hover:text-slate-900 rounded-full cursor-pointer"
                 >
                   <X className="h-6 w-6" />
                 </button>
               </div>
 
-              <div className="flex-1 space-y-2">
+              <div className="flex-1 space-y-4">
                 {navigation.map((item) => {
                   const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
                   const Icon = item.icon;
@@ -133,12 +144,12 @@ export default function Header() {
                       key={item.name}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-base font-semibold transition-all ${isActive
-                        ? "bg-brand-light/35 text-brand"
-                        : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
+                      className={`flex items-center gap-3 px-4 py-3 text-sm font-bold uppercase tracking-[0.1em] transition-all rounded-xl ${isActive
+                        ? "text-[#071B3A] bg-slate-100"
+                        : "text-slate-600 hover:text-[#071B3A] hover:bg-slate-50"
                         }`}
                     >
-                      <Icon className="h-5 w-5" />
+                      <Icon className={`h-5 w-5 ${isActive ? "text-[#071B3A]" : "text-slate-500"}`} />
                       {item.name}
                     </Link>
                   );
@@ -149,11 +160,11 @@ export default function Header() {
                 <Link
                   href="/contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full bg-sky hover:bg-sky-hover text-white font-bold py-3.5 px-4 rounded-2xl text-center text-sm transition-all block cursor-pointer"
+                  className="w-full bg-[#071B3A] text-white font-bold py-3.5 px-4 rounded-none text-center text-xs tracking-[0.1em] uppercase transition-all block cursor-pointer border border-[#071B3A] hover:bg-slate-900"
                 >
-                  Contact Us
+                  Get Started
                 </Link>
-                <p className="text-center text-xs text-neutral-400">
+                <p className="text-center text-xs text-slate-400">
                   © 2026 Veda Impex. All rights reserved.
                 </p>
               </div>

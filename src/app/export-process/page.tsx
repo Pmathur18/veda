@@ -105,57 +105,54 @@ export default function QualityProcessPage() {
   ];
 
   return (
-    <div className="py-12 bg-white min-h-screen">
-      {/* 1. HERO SECTION */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 mb-20">
-        <div className="relative bg-slate-900 text-white rounded-3xl p-8 md:p-16 border-2 border-slate-950 overflow-hidden shadow-2xl">
-          {/* Decorative gradients */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-brand/10 rounded-full blur-3xl -z-10" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-sky/5 rounded-full blur-3xl -z-10" />
+    <div className="bg-white min-h-screen">
+      {/* 1. HERO VIDEO BANNER */}
+      <section className="relative w-full min-h-[55vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden -mt-16 mb-16">
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="/360536.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Dark Overlay to protect text contrast */}
+        <div className="absolute inset-0 bg-slate-950/60 z-10" />
 
-          <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-[10px] font-bold text-sky uppercase tracking-widest">
-              Quality Assurance
-            </div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-4xl md:text-6xl font-black tracking-tight leading-none uppercase"
-            >
-              Quality Starts With <br />
-              <span className="relative inline-block mt-2">
-                <span className="absolute inset-0 bg-brand -skew-x-6 rotate-[-1deg]" />
-                <span className="relative text-white px-5 py-1 inline-block rotate-[-1deg]">
-                  Knowing What the Buyer Needs
-                </span>
+
+        {/* Hero Content Overlay */}
+        <div className="w-full max-w-5xl mx-auto px-6 md:px-8 py-20 md:py-24 relative z-20 flex flex-col items-center justify-center text-center text-white">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[10px] font-bold text-sky uppercase tracking-widest shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-sky animate-pulse" />
+            Quality Assurance
+          </div>
+          
+          <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight uppercase max-w-4xl mt-6 leading-tight">
+            Quality Starts With <br />
+            <span className="relative inline-block mt-2">
+              <span className="absolute inset-0 bg-sky" />
+              <span className="relative text-[#071B3A] px-5 py-0.5 inline-block">
+                Knowing Buyer Needs
               </span>
-            </motion.h1>
+            </span>
+          </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-slate-300 text-sm md:text-base leading-relaxed font-normal"
-            >
-              At VEDA IMPEX, quality is not a marketing phrase—it is a measurable, batch-tested standard engineered around your market’s specific regulatory and technical requirements.
-            </motion.p>
+          <p className="text-slate-200 text-sm md:text-base leading-relaxed max-w-2xl font-normal font-sans mx-auto mt-6">
+            At VEDA IMPEX, quality is not a marketing phrase—it is a measurable, batch-tested standard engineered around your market’s specific regulatory and technical requirements.
+          </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="pt-4"
+          <div className="pt-2">
+            <Link
+              href="/contact?subject=Spec%20Sheet"
+              className="inline-flex items-center bg-white hover:bg-slate-100 text-[#071B3A] font-bold py-3 px-6 rounded-none text-xs uppercase tracking-wider transition-all border border-white cursor-pointer shadow-lg mt-4"
             >
-              <Link
-                href="/contact?subject=Spec%20Sheet"
-                className="inline-flex items-center bg-sky hover:bg-sky-hover text-white font-bold py-4 px-8 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 border-2 border-slate-950 shadow-md hover:translate-y-[-2px] hover:shadow-lg"
-              >
-                Submit Your Spec Sheet
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </motion.div>
+              Submit Your Spec Sheet
+              <ArrowRight className="ml-2 h-4 w-4 text-[#071B3A]" />
+            </Link>
           </div>
         </div>
       </section>
@@ -193,7 +190,7 @@ export default function QualityProcessPage() {
                 <p className="text-slate-500 text-xs leading-relaxed font-normal">{pillar.desc}</p>
               </div>
               <div className="flex items-center text-[10px] font-bold text-brand uppercase tracking-wider pt-6 mt-6 border-t border-slate-100">
-                Pillar {idx + 1} Cleared <ShieldCheck className="ml-1.5 h-3.5 w-3.5 text-emerald-500" />
+                Pillar {idx + 1} Cleared <ShieldCheck className="ml-1.5 h-3.5 w-3.5 text-sky" />
               </div>
             </motion.div>
           ))}
@@ -384,7 +381,7 @@ export default function QualityProcessPage() {
                   {comp.desc}
                 </p>
               </div>
-              <div className="pt-4 mt-4 border-t border-slate-100 flex items-center text-[9px] font-black text-emerald-600 uppercase tracking-widest">
+              <div className="pt-4 mt-4 border-t border-slate-100 flex items-center text-[9px] font-black text-sky uppercase tracking-widest">
                 <Check className="h-3.5 w-3.5 mr-1" /> Active Status
               </div>
             </motion.div>

@@ -4,65 +4,51 @@ import React from "react";
 import Link from "next/link";
 import { FileCheck, ArrowUpRight } from "lucide-react";
 import { productsData } from "../../data/products-data";
-import RotatingCard from "../../components/RotatingCard";
 
 export default function ProductsPage() {
   return (
-    <div className="py-12 bg-white">
-      {/* 1. PAGE HEADER */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 mb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Header Left Content */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-[10px] font-bold text-white uppercase tracking-widest w-fit">
-              Trade Catalog
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-none uppercase max-w-4xl">
-              Indian Agro Commodities. <br />
-              <span className="relative inline-block mt-2">
-                <span className="absolute inset-0 bg-brand -skew-x-6 rotate-[-1deg]" />
-                <span className="relative text-white px-5 py-1 inline-block rotate-[-1deg]">
-                  Global Standards.
-                </span>
-              </span>
-            </h1>
-            
-            <p className="text-slate-550 text-xs md:text-sm font-bold uppercase tracking-wide max-w-2xl">
-              Spec-driven, batch-tested natural ingredients sourced directly from prime growing regions in Rajasthan and Western India.
-            </p>
+    <div className="bg-white min-h-screen">
+      {/* 1. HERO VIDEO BANNER */}
+      <section className="relative w-full min-h-[55vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden -mt-16">
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="/16685-274413239.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Dark Overlay to protect text contrast */}
+        <div className="absolute inset-0 bg-slate-950/60 z-10" />
 
-            <p className="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl font-normal">
-              At VEDA IMPEX, we recognize that international buyers do not purchase generic commodities—they purchase specific parameters. Whether your application requires whole Psyllium Husk, fine Psyllium Powder, or sennoside-standardized Senna Leaves, we align our processing, grading, and packaging directly with your technical spec sheet.
-            </p>
-          </div>
 
-          {/* Header Right Content (Image) */}
-          <div className="lg:col-span-5 relative w-full h-64 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-xl border-2 border-slate-900">
-            <div 
-              className="absolute inset-0 bg-cover bg-center filter grayscale contrast-125 opacity-90 transition-transform duration-700 hover:scale-105"
-              style={{ backgroundImage: `url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop')` }}
-            />
-            {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent" />
-            <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm border border-slate-200 py-2 px-4 rounded-xl shadow-md">
-              <span className="text-[9px] font-bold text-accent uppercase tracking-widest block">Global Shipping Desk</span>
-              <span className="text-[10px] font-black text-slate-900 uppercase">Mundra Port Operations Liaison</span>
-            </div>
-          </div>
+
+        {/* Hero Content Overlay */}
+        <div className="w-full max-w-5xl mx-auto px-6 md:px-8 py-20 md:py-24 relative z-20 flex flex-col items-center justify-center text-center text-white">
+
+
+          <h1 className="text-3xl md:text-6xl font-black text-white tracking-tight uppercase max-w-4xl mt-6 leading-tight">
+            Indian Agro Commodities Global Standards<br />
+          </h1>
+
+          <p className="text-slate-200 text-l md:text-base leading-relaxed max-w-2m font-sans mx-auto mt-6">
+            Spec-driven, batch-tested natural ingredients sourced directly from prime growing regions in Rajasthan and Western India. We align our processing, grading, and packaging directly with your technical spec sheet.
+          </p>
         </div>
       </section>
 
       {/* 2. PRODUCTS GRID */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 mb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {productsData.map((p, idx) => (
-            <RotatingCard
+      <section className="max-w-7xl mx-auto px-4 md:px-8 pt-16 md:pt-20 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {productsData.map((p) => (
+            <div
               key={p.id}
-              angle={idx === 0 ? -1.0 : idx === 1 ? 0 : 1.0}
-              className="bg-white border-2 border-slate-900 rounded-3xl overflow-hidden flex flex-col justify-between group shadow-xl shadow-slate-100/40"
+              className="bg-white border border-slate-200 rounded-3xl overflow-hidden flex flex-col justify-between group shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative h-full"
             >
-              <div className="p-8 space-y-6 flex-1 flex flex-col justify-between">
+              <div className="p-6 space-y-5 flex-1 flex flex-col justify-between">
                 <div>
                   {/* Photo container */}
                   <div className="relative aspect-[16/10] overflow-hidden bg-slate-100 rounded-xl border border-slate-200 mb-6">
@@ -82,15 +68,15 @@ export default function ProductsPage() {
                         <span className="text-[10px] text-accent font-mono font-bold block uppercase">
                           {p.botanicalName}
                         </span>
-                        <h3 className="text-2xl font-black text-slate-900 group-hover:text-accent transition-colors uppercase">
+                        <h3 className="text-xl font-black text-slate-900 group-hover:text-accent transition-colors uppercase leading-tight">
                           {p.name}
                         </h3>
                       </div>
                       <Link
                         href={`/products/${p.id}`}
-                        className="p-2 border-2 border-slate-900 rounded-full hover:bg-accent hover:text-white transition-colors cursor-pointer shrink-0"
+                        className="p-2 border-2 border-slate-200 rounded-full hover:bg-accent hover:text-white transition-colors cursor-pointer shrink-0"
                       >
-                        <ArrowUpRight className="h-5 w-5" />
+                        <ArrowUpRight className="h-4.5 w-4.5" />
                       </Link>
                     </div>
 
@@ -99,13 +85,13 @@ export default function ProductsPage() {
                     </p>
 
                     {/* Specs Summary Sheet */}
-                    <div className="bg-slate-50 border border-slate-100 rounded-2xl p-5 space-y-3">
+                    <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 space-y-3">
                       <span className="text-[9px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
                         Sourcing Spec Sheet Highlights
                       </span>
-                      <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+                      <div className="grid grid-cols-2 gap-x-2 gap-y-2">
                         {p.highlights.map((highlight, hIdx) => (
-                          <div key={hIdx} className="text-[10px] text-slate-600 flex items-center gap-2">
+                          <div key={hIdx} className="text-[9px] text-slate-600 flex items-center gap-1.5">
                             <span className="h-1.5 w-1.5 bg-accent rounded-full shrink-0" />
                             <span className="truncate">{highlight}</span>
                           </div>
@@ -116,22 +102,22 @@ export default function ProductsPage() {
                 </div>
 
                 {/* Bottom Action */}
-                <div className="pt-6 border-t border-slate-100 flex gap-4">
+                <div className="pt-5 border-t border-slate-100 flex gap-3">
                   <Link
                     href={`/products/${p.id}`}
-                    className="flex-1 bg-slate-900 hover:bg-brand hover:text-white text-white text-center font-bold py-3.5 px-4 rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer border border-transparent"
+                    className="flex-1 bg-slate-900 hover:bg-brand hover:text-white text-white text-center font-bold py-3 px-4 rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer border border-transparent"
                   >
                     View Specs
                   </Link>
                   <Link
                     href={`/contact?product=${p.id}`}
-                    className="bg-sky hover:bg-sky-hover text-white font-bold py-3.5 px-6 rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer border-2 border-slate-950 flex items-center justify-center gap-1.5"
+                    className="bg-sky hover:bg-sky-hover text-white font-bold py-3 px-4 rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer border border-transparent flex items-center justify-center gap-1.5"
                   >
                     Quote
                   </Link>
                 </div>
               </div>
-            </RotatingCard>
+            </div>
           ))}
         </div>
       </section>

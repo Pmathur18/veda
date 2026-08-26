@@ -11,12 +11,12 @@ export const metadata: Metadata = {
     "quality export documentation India"
   ],
   alternates: {
-    canonical: "https://www.vedaimpex.com/export-process",
+    canonical: "https://www.vedaimpex.com/quality-process",
   },
   openGraph: {
     title: "Quality Control & Export Workflow | VEDA IMPEX India",
     description: "Discover how VEDA IMPEX ensures strict batch quality, laboratory testing (COA), customized packaging, and seamless export fulfillment for global agro commodity buyers.",
-    url: "https://www.vedaimpex.com/export-process",
+    url: "https://www.vedaimpex.com/quality-process",
     siteName: "Veda Impex",
     locale: "en_US",
     type: "website",
