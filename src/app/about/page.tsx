@@ -61,14 +61,16 @@ export default function AboutPage() {
             <span className="text-sky font-bold">About Us</span>
           </nav>
 
-          {/* Bold tilted headline typography - styled after gxpresss.com */}
-          <div className="transform -skew-y-2 bg-[#293681] px-6 py-4 shadow-2xl border border-white/10">
-            <h1 className="text-4xl md:text-7xl font-black tracking-tight uppercase leading-none text-white italic">
-              About Veda Impex
-            </h1>
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[10px] font-bold text-sky uppercase tracking-widest shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-sky animate-pulse" />
+            Corporate Profile
           </div>
 
-          <p className="text-sky font-bold text-sm md:text-lg uppercase tracking-wider mt-6 max-w-2xl font-display">
+          <h1 className="text-3xl md:text-6xl font-black text-white tracking-tight uppercase max-w-4xl mt-6 leading-tight">
+            About Veda Impex
+          </h1>
+
+          <p className="text-slate-200 text-sm md:text-base leading-relaxed max-w-2xl font-sans mx-auto mt-6">
             Connecting Rajasthan's Harvest to the World
           </p>
         </div>
@@ -87,7 +89,7 @@ export default function AboutPage() {
             className="lg:col-span-7 space-y-6 text-left"
           >
             <motion.span variants={fadeInUp} className="text-xs font-bold text-accent uppercase tracking-widest block font-display">// BRAND POSITIONING</motion.span>
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-4.5xl font-black text-brand uppercase tracking-tight leading-none italic transform -skew-y-1">
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-4.5xl font-black text-brand uppercase tracking-tight leading-none">
               Rooted in Rajasthan, Reaching the World
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-slate-600 text-sm md:text-base leading-relaxed">
@@ -143,7 +145,7 @@ export default function AboutPage() {
             {/* Heading Column */}
             <div className="lg:col-span-6 text-left space-y-2">
               <span className="text-xs font-bold text-accent uppercase tracking-widest block font-display">// SOURCING ANCHOR</span>
-              <h2 className="text-3xl md:text-5xl font-black text-brand uppercase tracking-tight leading-none italic transform -skew-y-1">
+              <h2 className="text-3xl md:text-5xl font-black text-brand uppercase tracking-tight leading-none">
                 The Jodhpur Base
               </h2>
             </div>
@@ -223,7 +225,7 @@ export default function AboutPage() {
         <div className="space-y-12 text-center">
           <div className="space-y-2">
             <span className="text-xs font-bold text-accent uppercase tracking-widest block font-display">// TRUST VALUE</span>
-            <h2 className="text-3xl md:text-5xl font-black text-brand uppercase tracking-tight leading-none italic transform -skew-y-1">
+            <h2 className="text-3xl md:text-5xl font-black text-brand uppercase tracking-tight leading-none">
               Why Global Buyers Choose Veda Impex
             </h2>
           </div>
@@ -288,7 +290,7 @@ export default function AboutPage() {
           {/* Founder Statement Quote */}
           <div className="md:col-span-8 space-y-6 text-left">
             <span className="text-[10px] font-bold text-sky uppercase tracking-widest block font-display">// FOUNDER STATEMENT</span>
-            <blockquote className="text-xl md:text-2xl font-black italic leading-snug font-display text-slate-100">
+            <blockquote className="text-xl md:text-2xl font-black leading-snug font-display text-slate-100">
               "At Veda Impex, our mission is to build absolute trust between India's finest producers and our global partners. By establishing direct sourcing lines and controlling quality at the origin, we deliver consistency that matches international standards."
             </blockquote>
             <div className="h-0.5 w-16 bg-sky" />
@@ -306,7 +308,7 @@ export default function AboutPage() {
           
           <div className="text-center space-y-2">
             <span className="text-xs font-bold text-accent uppercase tracking-widest block font-display">// WORKFLOW PIPELINE</span>
-            <h2 className="text-3xl md:text-5xl font-black text-brand uppercase tracking-tight leading-none italic transform -skew-y-1">
+            <h2 className="text-3xl md:text-5xl font-black text-brand uppercase tracking-tight leading-none">
               From Farm to Freight
             </h2>
             <p className="text-slate-500 text-xs md:text-sm font-medium tracking-wide">
@@ -377,7 +379,7 @@ export default function AboutPage() {
       {/* 7. CLOSING CTA */}
       <section className="bg-slate-50 py-16 px-6 md:px-12 relative border-t border-slate-200">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <h2 className="text-2xl md:text-3.5xl font-black uppercase text-brand tracking-tight max-w-xl mx-auto leading-tight italic transform -skew-y-1">
+          <h2 className="text-2xl md:text-3.5xl font-black uppercase text-brand tracking-tight max-w-xl mx-auto leading-tight">
             Looking to Import Premium Psyllium Husk or Senna Leaves?
           </h2>
           
