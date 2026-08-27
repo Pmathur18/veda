@@ -39,7 +39,7 @@ export default function LegalDocumentsPage() {
               </a>
             </li>
             <li>
-              <a href="#finder" className="hover:text-neutral-800 transition-colors block py-1 border-l-2 border-[#1261C9] pl-3 text-neutral-800 font-semibold">
+              <a href="#finder" className="hover:text-neutral-800 transition-colors block py-1 border-l-2 border-[#4274D9] pl-3 text-neutral-800 font-semibold">
                 2. Requirements Finder
               </a>
             </li>
@@ -67,7 +67,7 @@ export default function LegalDocumentsPage() {
           {/* interactive Lookup Section */}
           <section id="finder" className="space-y-6 pt-6 border-t border-neutral-100">
             <h2 className="text-lg font-bold text-neutral-900 flex items-center gap-2">
-              <Filter className="h-5 w-5 text-[#1261C9]" /> Compliance Finder
+              <Filter className="h-5 w-5 text-[#4274D9]" /> Compliance Finder
             </h2>
             
             {/* Filter Toolbar */}
@@ -136,7 +136,7 @@ export default function LegalDocumentsPage() {
                   <div key={idx} className="border border-neutral-200/80 rounded-2xl p-6 bg-white space-y-4 shadow-sm">
                     <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 border-b border-neutral-100 pb-3">
                       <div>
-                        <span className="text-[10px] font-bold text-[#1261C9] uppercase tracking-wider block">
+                        <span className="text-[10px] font-bold text-[#4274D9] uppercase tracking-wider block">
                           Destination Corridor
                         </span>
                         <h4 className="text-sm font-bold text-neutral-850">
@@ -155,7 +155,7 @@ export default function LegalDocumentsPage() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {req.documentsRequired.map((doc, dIdx) => (
                           <div key={dIdx} className="text-xs text-neutral-600 flex items-start gap-2">
-                            <CheckSquare className="h-4 w-4 text-[#1261C9] shrink-0 mt-0.5" />
+                            <CheckSquare className="h-4 w-4 text-[#4274D9] shrink-0 mt-0.5" />
                             <span>{doc}</span>
                           </div>
                         ))}
@@ -176,7 +176,7 @@ export default function LegalDocumentsPage() {
           {/* Definitions Section */}
           <section id="definitions" className="space-y-6 pt-6 border-t border-neutral-100">
             <h2 className="text-lg font-bold text-neutral-900 flex items-center gap-2">
-              <FileText className="h-5 w-5 text-[#1261C9]" /> Glossary of Common Clearances
+              <FileText className="h-5 w-5 text-[#4274D9]" /> Glossary of Common Clearances
             </h2>
 
             <div className="space-y-4 text-xs leading-relaxed text-neutral-600">

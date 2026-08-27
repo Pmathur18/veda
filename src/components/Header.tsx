@@ -41,7 +41,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${showBg
-        ? "bg-[#071B3A] border-b border-white/5 shadow-md py-4"
+        ? "bg-[#293681] border-b border-white/5 shadow-md py-4"
         : "bg-transparent border-b border-transparent shadow-none py-6"
         }`}
     >
@@ -145,11 +145,11 @@ export default function Header() {
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className={`flex items-center gap-3 px-4 py-3 text-sm font-bold uppercase tracking-[0.1em] transition-all rounded-xl ${isActive
-                        ? "text-[#071B3A] bg-slate-100"
-                        : "text-slate-600 hover:text-[#071B3A] hover:bg-slate-50"
+                        ? "text-[#293681] bg-slate-100"
+                        : "text-slate-600 hover:text-[#293681] hover:bg-slate-50"
                         }`}
                     >
-                      <Icon className={`h-5 w-5 ${isActive ? "text-[#071B3A]" : "text-slate-500"}`} />
+                      <Icon className={`h-5 w-5 ${isActive ? "text-[#293681]" : "text-slate-500"}`} />
                       {item.name}
                     </Link>
                   );
@@ -160,7 +160,7 @@ export default function Header() {
                 <Link
                   href="/contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full bg-[#071B3A] text-white font-bold py-3.5 px-4 rounded-none text-center text-xs tracking-[0.1em] uppercase transition-all block cursor-pointer border border-[#071B3A] hover:bg-slate-900"
+                  className="w-full bg-[#293681] text-white font-bold py-3.5 px-4 rounded-none text-center text-xs tracking-[0.1em] uppercase transition-all block cursor-pointer border border-[#293681] hover:bg-slate-900"
                 >
                   Get Started
                 </Link>

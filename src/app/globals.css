@@ -8,18 +8,18 @@
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-display: var(--font-montserrat), system-ui, sans-serif;
 
-  --color-brand: #1E3A8A;
-  --color-brand-hover: #172554;
-  --color-brand-light: #EFF6FF;
-  --color-accent: #2563EB;
-  --color-accent-hover: #1D4ED8;
-  --color-sky: #0ea5e9;
-  --color-sky-hover: #0284c7;
-  --color-midnight: #0F172A;
-  --color-ocean: #1E3A8A;
-  --color-azure: #2563EB;
-  --color-ice: #F0F9FF;
-  --color-dark-blue: #071B3A;
+  --color-brand: #293681;
+  --color-brand-hover: #1d2760;
+  --color-brand-light: #D0E7E6;
+  --color-accent: #4274D9;
+  --color-accent-hover: #2757bc;
+  --color-sky: #95CCDD;
+  --color-sky-hover: #75b4c9;
+  --color-midnight: #1c255b;
+  --color-ocean: #293681;
+  --color-azure: #4274D9;
+  --color-ice: #D0E7E6;
+  --color-dark-blue: #293681;
 }
 
 body {

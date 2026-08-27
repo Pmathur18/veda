@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
           </span>
           <ul className="space-y-3">
             <li>
-              <a href="#data-collection" className="hover:text-neutral-800 transition-colors block py-1 border-l-2 border-[#1261C9] pl-3 text-neutral-800 font-semibold">
+              <a href="#data-collection" className="hover:text-neutral-800 transition-colors block py-1 border-l-2 border-[#4274D9] pl-3 text-neutral-800 font-semibold">
                 1. Data Collection
               </a>
             </li>
@@ -86,7 +86,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-base font-bold text-neutral-850">5. Client Control & Contact</h2>
             <p>
               Corporate clients can request the correction, deletion, or restriction of their stored trade metrics. Please contact our data privacy officer at{" "}
-              <a href="mailto:privacy@vedaimpex.com" className="text-[#1261C9] hover:underline font-semibold">
+              <a href="mailto:privacy@vedaimpex.com" className="text-[#4274D9] hover:underline font-semibold">
                 privacy@vedaimpex.com
               </a>{" "}
               for assistance.

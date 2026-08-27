@@ -14,7 +14,7 @@ export default function TermsAndConditionsPage() {
           </span>
           <ul className="space-y-3">
             <li>
-              <a href="#intro" className="hover:text-neutral-800 transition-colors block py-1 border-l-2 border-[#1261C9] pl-3 text-neutral-800 font-semibold">
+              <a href="#intro" className="hover:text-neutral-800 transition-colors block py-1 border-l-2 border-[#4274D9] pl-3 text-neutral-800 font-semibold">
                 1. Introduction
               </a>
             </li>
@@ -95,7 +95,7 @@ export default function TermsAndConditionsPage() {
             </p>
             <p>
               For legal support, custom rate revisions, or claims filing, contact our compliance desk at{" "}
-              <a href="mailto:legal@vedaimpex.com" className="text-[#1261C9] hover:underline font-semibold">
+              <a href="mailto:legal@vedaimpex.com" className="text-[#4274D9] hover:underline font-semibold">
                 legal@vedaimpex.com
               </a>
               .

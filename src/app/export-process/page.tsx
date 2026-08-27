@@ -135,7 +135,7 @@ export default function QualityProcessPage() {
             Quality Starts With <br />
             <span className="relative inline-block mt-2">
               <span className="absolute inset-0 bg-sky" />
-              <span className="relative text-[#071B3A] px-5 py-0.5 inline-block">
+              <span className="relative text-[#293681] px-5 py-0.5 inline-block">
                 Knowing Buyer Needs
               </span>
             </span>
@@ -148,10 +148,10 @@ export default function QualityProcessPage() {
           <div className="pt-2">
             <Link
               href="/contact?subject=Spec%20Sheet"
-              className="inline-flex items-center bg-white hover:bg-slate-100 text-[#071B3A] font-bold py-3 px-6 rounded-none text-xs uppercase tracking-wider transition-all border border-white cursor-pointer shadow-lg mt-4"
+              className="inline-flex items-center bg-white hover:bg-slate-100 text-[#293681] font-bold py-3 px-6 rounded-none text-xs uppercase tracking-wider transition-all border border-white cursor-pointer shadow-lg mt-4"
             >
               Submit Your Spec Sheet
-              <ArrowRight className="ml-2 h-4 w-4 text-[#071B3A]" />
+              <ArrowRight className="ml-2 h-4 w-4 text-[#293681]" />
             </Link>
           </div>
         </div>

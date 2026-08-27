@@ -34,10 +34,10 @@ export default function CookieConsent() {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 100, opacity: 0 }}
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
-        className="fixed bottom-6 left-6 right-6 md:left-auto md:right-6 md:max-w-md z-50 bg-[#071B3A] border border-neutral-800 text-white rounded-3xl p-6 shadow-2xl shadow-black/40"
+        className="fixed bottom-6 left-6 right-6 md:left-auto md:right-6 md:max-w-md z-50 bg-[#293681] border border-neutral-800 text-white rounded-3xl p-6 shadow-2xl shadow-black/40"
       >
         <div className="flex items-start gap-4">
-          <div className="p-3 bg-[#1261C9]/10 text-[#1261C9] rounded-full shrink-0">
+          <div className="p-3 bg-[#4274D9]/10 text-[#4274D9] rounded-full shrink-0">
             <Cookie className="h-6 w-6" />
           </div>
           <div className="flex-1">
@@ -56,7 +56,7 @@ export default function CookieConsent() {
         <div className="flex items-center gap-3 mt-5">
           <button
             onClick={handleAccept}
-            className="flex-1 bg-[#1261C9] hover:bg-[#1687E8] text-neutral-950 font-semibold py-2.5 px-4 rounded-full text-sm transition-all shadow-md shadow-[#1261C9]/20 cursor-pointer"
+            className="flex-1 bg-[#4274D9] hover:bg-[#76B8CD] text-neutral-950 font-semibold py-2.5 px-4 rounded-full text-sm transition-all shadow-md shadow-[#4274D9]/20 cursor-pointer"
           >
             Accept All
           </button>

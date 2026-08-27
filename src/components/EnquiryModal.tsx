@@ -102,7 +102,7 @@ export default function EnquiryModal({ isOpen, onClose, initialProduct = "" }: E
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="John Doe"
-                      className="w-full bg-neutral-50 border border-neutral-200 focus:border-[#1261C9] focus:ring-1 focus:ring-[#1261C9] focus:bg-white text-neutral-800 rounded-xl px-4 py-2.5 text-sm transition-all outline-none"
+                      className="w-full bg-neutral-50 border border-neutral-200 focus:border-[#4274D9] focus:ring-1 focus:ring-[#4274D9] focus:bg-white text-neutral-800 rounded-xl px-4 py-2.5 text-sm transition-all outline-none"
                     />
                   </div>
                   <div>
@@ -115,7 +115,7 @@ export default function EnquiryModal({ isOpen, onClose, initialProduct = "" }: E
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+1 (555) 000-0000"
-                      className="w-full bg-neutral-50 border border-neutral-200 focus:border-[#1261C9] focus:ring-1 focus:ring-[#1261C9] focus:bg-white text-neutral-800 rounded-xl px-4 py-2.5 text-sm transition-all outline-none"
+                      className="w-full bg-neutral-50 border border-neutral-200 focus:border-[#4274D9] focus:ring-1 focus:ring-[#4274D9] focus:bg-white text-neutral-800 rounded-xl px-4 py-2.5 text-sm transition-all outline-none"
                     />
                   </div>
                 </div>
@@ -130,7 +130,7 @@ export default function EnquiryModal({ isOpen, onClose, initialProduct = "" }: E
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="john@example.com"
-                    className="w-full bg-neutral-50 border border-neutral-200 focus:border-[#1261C9] focus:ring-1 focus:ring-[#1261C9] focus:bg-white text-neutral-800 rounded-xl px-4 py-2.5 text-sm transition-all outline-none"
+                    className="w-full bg-neutral-50 border border-neutral-200 focus:border-[#4274D9] focus:ring-1 focus:ring-[#4274D9] focus:bg-white text-neutral-800 rounded-xl px-4 py-2.5 text-sm transition-all outline-none"
                   />
                 </div>
 
@@ -145,7 +145,7 @@ export default function EnquiryModal({ isOpen, onClose, initialProduct = "" }: E
                       value={formData.product}
                       onChange={(e) => setFormData({ ...formData, product: e.target.value })}
                       placeholder="e.g. Organic Black Pepper"
-                      className="w-full bg-neutral-50 border border-neutral-200 focus:border-[#1261C9] focus:ring-1 focus:ring-[#1261C9] focus:bg-white text-neutral-800 rounded-xl px-4 py-2.5 text-sm transition-all outline-none"
+                      className="w-full bg-neutral-50 border border-neutral-200 focus:border-[#4274D9] focus:ring-1 focus:ring-[#4274D9] focus:bg-white text-neutral-800 rounded-xl px-4 py-2.5 text-sm transition-all outline-none"
                     />
                   </div>
                   <div>
@@ -158,7 +158,7 @@ export default function EnquiryModal({ isOpen, onClose, initialProduct = "" }: E
                       value={formData.quantity}
                       onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
                       placeholder="e.g. 10 Metric Tons"
-                      className="w-full bg-neutral-50 border border-neutral-200 focus:border-[#1261C9] focus:ring-1 focus:ring-[#1261C9] focus:bg-white text-neutral-800 rounded-xl px-4 py-2.5 text-sm transition-all outline-none"
+                      className="w-full bg-neutral-50 border border-neutral-200 focus:border-[#4274D9] focus:ring-1 focus:ring-[#4274D9] focus:bg-white text-neutral-800 rounded-xl px-4 py-2.5 text-sm transition-all outline-none"
                     />
                   </div>
                 </div>
@@ -172,13 +172,13 @@ export default function EnquiryModal({ isOpen, onClose, initialProduct = "" }: E
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Specify destination port, packaging type, or timeline..."
-                    className="w-full bg-neutral-50 border border-neutral-200 focus:border-[#1261C9] focus:ring-1 focus:ring-[#1261C9] focus:bg-white text-neutral-800 rounded-xl px-4 py-2.5 text-sm transition-all outline-none resize-none"
+                    className="w-full bg-neutral-50 border border-neutral-200 focus:border-[#4274D9] focus:ring-1 focus:ring-[#4274D9] focus:bg-white text-neutral-800 rounded-xl px-4 py-2.5 text-sm transition-all outline-none resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-[#1261C9] hover:bg-[#1687E8] text-white font-bold py-3 px-4 rounded-xl text-sm transition-all flex items-center justify-center gap-2 mt-2 cursor-pointer shadow-md shadow-[#1261C9]/10"
+                  className="w-full bg-[#4274D9] hover:bg-[#76B8CD] text-white font-bold py-3 px-4 rounded-xl text-sm transition-all flex items-center justify-center gap-2 mt-2 cursor-pointer shadow-md shadow-[#4274D9]/10"
                 >
                   Send Trade Enquiry <Send className="h-4 w-4" />
                 </button>

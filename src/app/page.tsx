@@ -133,10 +133,10 @@ export default function HomePage() {
           >
             <Link
               href="/products"
-              className="group bg-white hover:bg-slate-100 text-[#071B3A] font-bold py-3 px-6 rounded-none text-xs transition-all flex items-center justify-between gap-6 uppercase tracking-wider border border-white cursor-pointer shadow-lg"
+              className="group bg-white hover:bg-slate-100 text-[#293681] font-bold py-3 px-6 rounded-none text-xs transition-all flex items-center justify-between gap-6 uppercase tracking-wider border border-white cursor-pointer shadow-lg"
             >
               Explore Products
-              <ArrowRight className="h-4 w-4 text-[#071B3A]" />
+              <ArrowRight className="h-4 w-4 text-[#293681]" />
             </Link>
 
             <Link
@@ -159,7 +159,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.85 }}
-            className="bg-[#071B3A] border border-white/10 p-8 rounded-none shadow-2xl space-y-4 text-left hover:scale-[1.01] transition-transform duration-300"
+            className="bg-[#293681] border border-white/10 p-8 rounded-none shadow-2xl space-y-4 text-left hover:scale-[1.01] transition-transform duration-300"
           >
             <h3 className="font-black text-white text-lg uppercase leading-none">Direct Indian Sourcing</h3>
             <p className="text-slate-200 text-xs leading-relaxed font-normal">
@@ -172,7 +172,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.95 }}
-            className="bg-[#071B3A] border border-white/10 p-8 rounded-none shadow-2xl space-y-4 text-left hover:scale-[1.01] transition-transform duration-300"
+            className="bg-[#293681] border border-white/10 p-8 rounded-none shadow-2xl space-y-4 text-left hover:scale-[1.01] transition-transform duration-300"
           >
             <h3 className="font-black text-white text-lg uppercase leading-none">Zero Compromise Purity</h3>
             <p className="text-slate-200 text-xs leading-relaxed font-normal">
@@ -241,7 +241,7 @@ export default function HomePage() {
       {/* 3. WHY VEDA IMPEX */}
       <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto w-full relative">
         {/* Banner */}
-        <div className="bg-[#071B3A] text-white rounded-[32px] pt-16 pb-36 px-8 md:px-12 relative overflow-hidden shadow-2xl">
+        <div className="bg-[#293681] text-white rounded-[32px] pt-16 pb-36 px-8 md:px-12 relative overflow-hidden shadow-2xl">
           {/* Decorative background accent */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-brand/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.05),transparent)]" />
@@ -273,7 +273,7 @@ export default function HomePage() {
             <div className="bg-white border border-slate-100 rounded-[28px] p-6 shadow-xl flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300 h-[220px] text-left">
               <div className="space-y-4">
                 <div className="h-12 w-12 rounded-full bg-brand-light flex items-center justify-center text-brand shadow-sm">
-                  <FileText className="h-6 w-6 text-[#071B3A]" />
+                  <FileText className="h-6 w-6 text-[#293681]" />
                 </div>
                 <div className="space-y-1">
                   <h4 className="text-sm font-extrabold text-slate-900 uppercase">Absolute Clarity</h4>
@@ -288,7 +288,7 @@ export default function HomePage() {
             <div className="bg-white border border-slate-100 rounded-[28px] p-6 shadow-xl flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300 h-[220px] text-left">
               <div className="space-y-4">
                 <div className="h-12 w-12 rounded-full bg-brand-light flex items-center justify-center text-brand shadow-sm">
-                  <CheckCircle2 className="h-6 w-6 text-[#071B3A]" />
+                  <CheckCircle2 className="h-6 w-6 text-[#293681]" />
                 </div>
                 <div className="space-y-1">
                   <h4 className="text-sm font-extrabold text-slate-900 uppercase">Consistency</h4>
@@ -303,7 +303,7 @@ export default function HomePage() {
             <div className="bg-white border border-slate-100 rounded-[28px] p-6 shadow-xl flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300 h-[220px] text-left">
               <div className="space-y-4">
                 <div className="h-12 w-12 rounded-full bg-brand-light flex items-center justify-center text-brand shadow-sm">
-                  <ShieldCheck className="h-6 w-6 text-[#071B3A]" />
+                  <ShieldCheck className="h-6 w-6 text-[#293681]" />
                 </div>
                 <div className="space-y-1">
                   <h4 className="text-sm font-extrabold text-slate-900 uppercase">Accountability</h4>
@@ -318,7 +318,7 @@ export default function HomePage() {
             <div className="bg-white border border-slate-100 rounded-[28px] p-6 shadow-xl flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300 h-[220px] text-left">
               <div className="space-y-4">
                 <div className="h-12 w-12 rounded-full bg-brand-light flex items-center justify-center text-brand shadow-sm">
-                  <Calendar className="h-6 w-6 text-[#071B3A]" />
+                  <Calendar className="h-6 w-6 text-[#293681]" />
                 </div>
                 <div className="space-y-1">
                   <h4 className="text-sm font-extrabold text-slate-900 uppercase">Long-Term Trade</h4>

@@ -14,7 +14,7 @@ export default function CookiesPolicyPage() {
           </span>
           <ul className="space-y-3">
             <li>
-              <a href="#what-cookies" className="hover:text-neutral-800 transition-colors block py-1 border-l-2 border-[#1261C9] pl-3 text-neutral-800 font-semibold">
+              <a href="#what-cookies" className="hover:text-neutral-800 transition-colors block py-1 border-l-2 border-[#4274D9] pl-3 text-neutral-800 font-semibold">
                 1. What are Cookies
               </a>
             </li>
@@ -83,7 +83,7 @@ export default function CookiesPolicyPage() {
             <h2 className="text-base font-bold text-[#111111]">4. Contact & Support</h2>
             <p>
               If you have any questions regarding how we use cookie files to manage search histories or portal states, feel free to email our engineering desk at{" "}
-              <a href="mailto:support@vedaimpex.com" className="text-[#1261C9] hover:underline font-semibold">
+              <a href="mailto:support@vedaimpex.com" className="text-[#4274D9] hover:underline font-semibold">
                 support@vedaimpex.com
               </a>
               .
