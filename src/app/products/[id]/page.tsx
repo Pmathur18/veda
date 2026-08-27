@@ -3,7 +3,7 @@
 import React, { use, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence, Variants } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft,
   ChevronRight,
@@ -54,12 +54,12 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   }
 
   // Animation variants
-  const fadeInUp: Variants = {
+  const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const } }
   };
 
-  const staggerContainer: Variants = {
+  const staggerContainer = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
