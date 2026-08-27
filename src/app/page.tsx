@@ -10,10 +10,7 @@ import {
   FileText,
   CheckCircle2,
   ShieldCheck,
-  MessageSquare,
-  Calendar,
-  MapPin,
-  Layers
+  Calendar
 } from "lucide-react";
 import { productsData } from "../data/products-data";
 

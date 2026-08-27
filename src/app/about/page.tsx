@@ -1,380 +1,430 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
   ShieldCheck,
   ArrowUpRight,
   ArrowRight,
-  FileText,
-  CheckCircle2,
-  Calendar,
-  Globe,
-  Building,
-  Anchor
+  Sparkles,
+  Check,
+  MapPin,
+  MessageSquare,
+  ClipboardCheck,
+  RotateCcw,
+  TrendingUp,
+  Target,
+  Compass,
+  Award,
+  ChevronDown
 } from "lucide-react";
 
 export default function AboutPage() {
-  const stats = [
-    { label: "Purity Grade Sourced", value: "99.5%" },
-    { label: "Transit Success Rate", value: "100%" },
-    { label: "Containers Exported", value: "500+" }
-  ];
+  const [activeAdvantage, setActiveAdvantage] = useState(0);
+  const [isAdvantagePaused, setIsAdvantagePaused] = useState(false);
 
   const pillars = [
     {
       num: "01",
-      title: "Real-time Visibility",
-      desc: "Every batch is tracked from raw farm collection to Jodhpur processing and Mundra Port departure, with immediate updates on specifications testing."
+      title: "Integrity in Every Conversation",
+      desc: "Clear, direct, and transparent communication from initial price quote to final container clearance. We only commit to what we can execute.",
+      icon: MessageSquare
     },
     {
       num: "02",
-      title: "Reliable Consistency",
-      desc: "A great first shipment builds a contact; repeating that exact standard order after order builds a long-term trade partnership."
+      title: "Responsibility in Commitments",
+      desc: "Meticulous oversight of laboratory testing (COA), moisture protection, packaging durability, and export documentation.",
+      icon: ClipboardCheck
     },
     {
       num: "03",
-      title: "Flexible Sourcing Specs",
-      desc: "Whether your compliance requires specific mesh sizes (40-100 mesh) or low-residue organic certificates, we adapt processing to fit."
+      title: "Consistency in Delivery",
+      desc: "Delivering the exact benchmark quality and parameters on repeat orders as established on the first successful shipment.",
+      icon: RotateCcw
+    },
+    {
+      num: "04",
+      title: "Built for Long-Term Trade",
+      desc: "We measure our success not by one-off transactions, but by international buyers who comfortably return to us order after order.",
+      icon: TrendingUp
     }
   ];
 
-  const industries = [
+  const advantages = [
     {
-      title: "Nutraceuticals",
-      desc: "High-purity whole psyllium husk and standardized sennoside leaves for capsules, tablets, and dietary fiber supplements.",
-      link: "/products"
+      id: 0,
+      badge: "Direct Proximity",
+      title: "Proximity to Prime Crop Belts",
+      subtitle: "Western Rajasthan & Regional Sourcing Belts",
+      desc: "Western Rajasthan and the surrounding regions produce the world's highest-grade crops of Psyllium (Plantago ovata) and Senna (Cassia angustifolia).",
+      metric: "World's Highest Grade Belts",
+      image: "/ChatGPT Image Aug 26, 2026, 06_56_03 PM.png"
     },
     {
-      title: "Food & Baking",
-      desc: "Gluten-free binding agents, fiber-boosting baking ingredients, and natural stabilizers for commercial food lines.",
-      link: "/products"
+      id: 1,
+      badge: "Raw Material Control",
+      title: "Early Lot Selection & Quality Control",
+      subtitle: "Direct Mandi & Regional Hub Access",
+      desc: "Close proximity to regional trade hubs allows early selection of prime raw material lots, minimizing transport degradation and ensuring freshness.",
+      metric: "Zero Transport Degradation",
+      image: "/quality-control-lab.jpg"
     },
     {
-      title: "Pharmaceuticals",
-      desc: "USP/BP grade natural laxative ingredients, standardized botanical extracts, and raw active materials.",
-      link: "/products"
-    },
-    {
-      title: "Animal Nutrition",
-      desc: "Premium organic animal feed fiber, digestive wellness additives, and clean bulk raw ingredients.",
-      link: "/products"
+      id: 2,
+      badge: "Streamlined Logistics",
+      title: "Fast Western Port Connectivity",
+      subtitle: "Mundra, Kandla & ICD Jodhpur Ports",
+      desc: "Direct transport connectivity to major western Indian ports (Mundra, Kandla, and ICD Jodhpur) ensures fast, efficient container dispatches to global destinations.",
+      metric: "Rapid Container Clearance",
+      image: "/senna-leaves.jpg"
     }
   ];
+
+  const regulatoryBadges = [
+    {
+      badge: "DGFT REGISTERED",
+      title: "Importer Exporter Code (IEC)",
+      desc: "Officially registered with the Directorate General of Foreign Trade (DGFT), Ministry of Commerce & Industry, Govt. of India."
+    },
+    {
+      badge: "APEDA CERTIFIED",
+      title: "Export Development Authority",
+      desc: "Registered member of APEDA for scheduled agricultural product exports, adhering to strict export quality standards."
+    },
+    {
+      badge: "FSSAI COMPLIANT",
+      title: "Food Safety & Standards",
+      desc: "Licensed by Food Safety & Standards Authority of India (FSSAI) for hygienic processing and food-grade export handling."
+    },
+    {
+      badge: "LEGAL ENTITY",
+      title: "GST & MSME Registered",
+      desc: "Fully registered and compliant Indian business entity with active GSTIN and MSME certification for global commercial trade."
+    }
+  ];
+
+
+
+
+  // Auto-scroll / Auto-rotate effect for Strategic Sourcing Advantage section
+  useEffect(() => {
+    if (isAdvantagePaused) return;
+    const timer = setInterval(() => {
+      setActiveAdvantage((prev) => (prev + 1) % advantages.length);
+    }, 4000); // cycle every 4 seconds
+
+    return () => clearInterval(timer);
+  }, [isAdvantagePaused, advantages.length]);
 
   return (
-    <div className="bg-white min-h-screen">
-      {/* 1. HERO IMAGE BANNER */}
-      <section className="relative w-full min-h-[55vh] md:min-h-[60vh] flex flex-col items-center justify-center overflow-hidden -mt-16 mb-16">
-        {/* Background Image */}
+    <div className="bg-[#F7F6F2] text-slate-900 min-h-screen font-sans">
+      {/* 1. HERO SECTION */}
+      <section className="relative w-full min-h-[55vh] md:min-h-[62vh] flex flex-col items-center justify-center overflow-hidden -mt-16 mb-10">
         <Image
           src="/ChatGPT Image Aug 26, 2026, 06_56_03 PM.png"
-          alt="About Us Banner"
+          alt="VEDA IMPEX About Us Banner"
           fill
           priority
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
-        {/* Dark Overlay to protect text contrast */}
-        <div className="absolute inset-0 bg-slate-950/60 z-10" />
-
-
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-slate-950/65 z-10" />
 
         {/* Hero Content Overlay */}
-        <div className="w-full max-w-5xl mx-auto px-6 md:px-8 py-20 md:py-24 relative z-20 flex flex-col items-center justify-center text-center text-white">
-
-
-          <h1 className="text-5xl md:text-5xl font-black text-white tracking-tight uppercase max-w-4xl mt-6 leading-tight">
-            Leading Coordinators of <br />Agricultural Exports
+        <div className="w-full max-w-5xl mx-auto px-6 md:px-8 py-20 md:py-28 relative z-20 flex flex-col items-center justify-center text-center text-white space-y-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight uppercase max-w-4xl leading-tight">
+            We Believe Good Business Starts With Trust
           </h1>
-
-          <p className="text-slate-200 text-sm md:text-base leading-relaxed max-w-4xl font-normal font-sans mx-auto mt-6">
-            Based out of Jodhpur, Rajasthan, VEDA IMPEX is an Indian export coordinator built around a single, uncompromising objective making cross-border sourcing from India simple, transparent, and completely dependable.
+          <p className="text-slate-200 text-sm md:text-base leading-relaxed max-w-3xl font-normal font-sans mx-auto">
+            Connecting international buyers with premium Indian natural ingredients through absolute transparency, specification integrity, and seamless export execution.
           </p>
         </div>
-      </section >
+      </section>
 
-      {/* Overlapping Stats Cards Container */}
-      < div className="max-w-4xl mx-auto px-6 md:px-8 -mt-28 mb-16 relative z-20" >
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {stats.map((stat, idx) => (
-            <div
-              key={idx}
-              className="bg-white border border-slate-200 rounded-[24px] p-6 shadow-xl flex flex-col items-center justify-center text-center space-y-2 hover:-translate-y-0.5 transition-transform duration-300 h-[120px]"
-            >
-              <span className="block font-black text-2xl text-sky leading-none">
-                {stat.value}
-              </span>
-              <span className="block text-[9px] font-bold text-slate-500 uppercase tracking-widest leading-relaxed">
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div >
+      {/* 2. BRAND ORIGIN & STORY (HUMAN & PROFESSIONAL) */}
+      <section className="py-10 px-6 md:px-12 max-w-7xl mx-auto w-full">
+        <div className="bg-white border border-slate-200/80 rounded-[32px] p-8 md:p-12 shadow-sm relative overflow-hidden space-y-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4.5xl font-extrabold text-slate-900 leading-[1.25] tracking-tight max-w-5xl">
+            Building a Reliable Bridge Between <br /> India and Global Markets
+          </h2>
 
-      {/* 2. FOUNDED & STATEMENT SECTION (DARK) */}
-      < section className="bg-slate-950 text-white py-20 px-6 md:px-12 relative overflow-hidden" >
-        {/* Decorative elements */}
-        < div className="absolute top-0 right-0 w-96 h-96 bg-brand/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-7xl mx-auto space-y-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-            {/* Left Statement Block */}
-            <div className="lg:col-span-8 space-y-6 text-left">
-              <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight leading-normal text-left">
-                Founded with a commitment to absolute purity and quality consistency, VEDA IMPEX helps B2B buyers navigate complex agricultural supply chains through direct, laboratory-verified sourcing.
-              </h2>
-              <p className="text-slate-400 text-xs md:text-sm leading-relaxed font-normal">
-                Our processing facilities in Jodhpur, Rajasthan, act as the central anchor for our operations. We manage the supply chain from raw desert harvests to container loading and customs clearances, assuring EU and US regulation compliance.
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start pt-2 border-t border-slate-100">
+            <div className="md:col-span-8 space-y-5 text-slate-600 text-sm md:text-base leading-relaxed">
+              <p className="font-medium text-slate-900">
+                Based out of Jodhpur, Rajasthan, VEDA IMPEX was founded with a straightforward objective: to make cross-border sourcing from India clear, dependable, and completely hassle-free for commercial buyers worldwide.
+              </p>
+              <p>
+                Our portfolio focuses on high-demand, world-class Indian commodities—starting with <strong className="text-slate-900">Psyllium Husk, Psyllium Powder, and Senna Leaves</strong>—products where India holds a primary position in global supply. To us, exporting is far more than shipping freight across borders; it is an absolute commitment to understanding exact buyer specifications, taking ownership of quality details, and delivering on every commercial promise we make.
+              </p>
+              <p>
+                We are building VEDA IMPEX around a long-term vision—carefully expanding our export offerings while ensuring that our core operational values remain uncompromised.
               </p>
             </div>
           </div>
-        </div >
-      </section >
-
-      {/* 3. BUILT ON TRUST. DRIVEN BY PERFORMANCE */}
-      < section className="py-20 px-6 md:px-12 max-w-7xl mx-auto w-full relative" >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
-          {/* Left Column: Values List */}
-          <div className="lg:col-span-7 space-y-12 text-left">
-            <div className="space-y-4">
-              <div className="w-12 h-1 bg-[#293681] rounded" />
-              <h2 className="text-3xl md:text-4.5xl font-black uppercase tracking-tight text-slate-900 leading-none">
-                Built on Trust. <br />
-                Driven by Performance.
-              </h2>
-            </div>
-
-            <div className="space-y-8">
-              {pillars.map((p, idx) => (
-                <div key={idx} className="flex gap-6 items-start border-l-2 border-slate-100 pl-6 hover:border-[#293681] transition-colors">
-                  <span className="text-lg font-black text-sky font-sans">{p.num}</span>
-                  <div className="space-y-2">
-                    <h4 className="text-sm font-extrabold text-slate-900 uppercase tracking-wide">{p.title}</h4>
-                    <p className="text-slate-500 text-xs md:text-sm leading-relaxed font-normal">{p.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Column: Large Vertical Image */}
-          <div className="lg:col-span-5 relative w-full h-[400px] md:h-[500px] rounded-[32px] overflow-hidden shadow-2xl border-2 border-slate-900 bg-slate-100">
-            <Image
-              src="/senna-leaves.jpg"
-              alt="Agricultural Sorting Cargo"
-              fill
-              className="object-cover filter grayscale contrast-125 opacity-95 transition-transform duration-500 hover:scale-102"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 bg-slate-900/90 border border-slate-800 backdrop-blur-sm p-5 rounded-2xl text-white">
-              <span className="text-[8px] font-black text-sky uppercase tracking-widest block">Quality Control Desk</span>
-              <h4 className="text-xs font-bold uppercase mt-2">Active Sennosides Testing Lab</h4>
-              <p className="text-[10px] text-slate-350 leading-relaxed font-normal mt-1 text-left">
-                Batch evaluation of Cassia Angustifolia leaves for compliance with chemical residue limits prior to packing.
-              </p>
-            </div>
-          </div>
-
         </div>
-      </section >
+      </section>
 
-      {/* 4. DIRECTOR PROFILE & LIAISON MAP (DARK) */}
-      < section className="bg-slate-900 text-white py-20 px-6 md:px-12 relative overflow-hidden" >
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#293681]/20 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
-
-          {/* Left Column: Sourcing Route Map */}
-          <div className="lg:col-span-5 space-y-6 text-left flex flex-col justify-between">
-            <div className="space-y-4">
-              <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight leading-none text-white">
-                Our supply path: from <br />
-                crop fields to global ports
-              </h3>
-              <p className="text-slate-400 text-xs leading-relaxed font-normal">
-                We coordinate transportation routes to ensure cargo is cleaned, inspected, containerized, and dispatched with absolute efficiency.
-              </p>
-            </div>
-
-            {/* Visual Route Steps */}
-            <div className="space-y-4 py-6 border-y border-slate-800">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-slate-950 border border-slate-800 flex items-center justify-center text-xs font-bold text-sky">
-                  <Globe className="h-4 w-4" />
-                </div>
-                <div>
-                  <span className="block text-[8px] text-slate-500 uppercase font-bold tracking-wider">Step 1: Origin</span>
-                  <span className="block text-[11px] font-bold text-white uppercase">Rajasthan Agriculture Hubs</span>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-slate-950 border border-slate-800 flex items-center justify-center text-xs font-bold text-sky">
-                  <Building className="h-4 w-4" />
-                </div>
-                <div>
-                  <span className="block text-[8px] text-slate-500 uppercase font-bold tracking-wider">Step 2: Processing</span>
-                  <span className="block text-[11px] font-bold text-white uppercase">Jodhpur Grading Facility</span>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-slate-950 border border-slate-800 flex items-center justify-center text-xs font-bold text-sky">
-                  <Anchor className="h-4 w-4" />
-                </div>
-                <div>
-                  <span className="block text-[8px] text-slate-500 uppercase font-bold tracking-wider">Step 3: Export Dispatch</span>
-                  <span className="block text-[11px] font-bold text-white uppercase">Mundra Port Liaison Desk</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Dashboard stats pills */}
-            <div className="flex flex-wrap gap-3">
-              <div className="bg-slate-950 border border-slate-850 px-3.5 py-2 rounded-xl text-left">
-                <span className="block text-[10px] font-bold text-sky leading-none">99.8%</span>
-                <span className="text-[7px] text-slate-400 font-bold uppercase tracking-wider">Quality Rate</span>
-              </div>
-              <div className="bg-slate-950 border border-slate-850 px-3.5 py-2 rounded-xl text-left">
-                <span className="block text-[10px] font-bold text-sky leading-none">100%</span>
-                <span className="text-[7px] text-slate-400 font-bold uppercase tracking-wider">Doc Compliance</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Director Profile Card */}
-          <div className="lg:col-span-7 bg-white text-slate-900 p-6 md:p-8 rounded-2xl border border-slate-200 shadow-xl flex flex-col justify-between space-y-6">
-            <div className="flex flex-col md:flex-row gap-6 items-start text-left">
-              {/* Director Image Badge */}
-              <div className="w-28 h-28 md:w-36 md:h-36 rounded-2xl overflow-hidden border-2 border-slate-900 bg-slate-950 relative flex items-center justify-center shrink-0 shadow-lg">
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#293681] to-sky/30 flex flex-col items-center justify-center p-4 text-center">
-                  <div className="h-14 w-14 rounded-full border-2 border-white bg-slate-900 flex items-center justify-center text-xl font-black text-sky font-mono shadow-md">
-                    DJ
-                  </div>
-                  <span className="text-[9px] font-black text-white uppercase mt-2 font-display">Deepeksha Jain</span>
-                </div>
-              </div>
-
-              {/* Director Quote & Role */}
-              <div className="space-y-4 flex-1">
-                <div className="space-y-1">
-                  <span className="bg-blue-50 text-accent border border-blue-150 px-2.5 py-0.5 rounded text-[8px] font-bold tracking-wider uppercase inline-block">
-                    Founder & Director
-                  </span>
-                  <h4 className="text-lg font-black uppercase text-slate-900">
-                    Deepeksha Jain
-                  </h4>
-                </div>
-
-                <div className="relative">
-                  <span className="text-3xl text-accent font-serif absolute -top-3.5 -left-1 select-none">“</span>
-                  <p className="text-slate-750 text-xs leading-relaxed font-medium italic pl-4">
-                    I founded VEDA IMPEX on a simple foundation: global trade thrives when trust is mutual and absolute. We are building this company step-by-step—creating long-term value and dependable relationships, not short-term transactional hype.
-                  </p>
-                </div>
-
-                <p className="text-slate-500 text-[10px] leading-relaxed font-normal">
-                  Supervising Jodhpur road logistics coordinates, batch purity verification, phytosanitary certifications, and B2B client satisfaction.
-                </p>
-              </div>
-            </div>
-
-            {/* CTA Link */}
-            <Link
-              href="/contact?subject=director_sourcing"
-              className="bg-slate-900 hover:bg-[#293681] text-white font-bold py-3.5 px-6 rounded-none text-xs uppercase tracking-wider transition-all text-center flex items-center justify-center gap-2 cursor-pointer border border-transparent shadow-md"
-            >
-              Connect with Director Desk <ArrowUpRight className="h-4 w-4 text-white" />
-            </Link>
-          </div>
-
+      {/* 3. OUR CORE PILLARS (THE TRUST FRAMEWORK) */}
+      <section className="py-10 px-6 md:px-12 max-w-7xl mx-auto w-full">
+        <div className="space-y-4 mb-8">
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
+            Our Core Pillars <br />
+            <span className="font-serif italic font-normal text-amber-700">Four Commitments of Trade</span>
+          </h2>
         </div>
-      </section >
 
-      {/* 5. SOLUTIONS DESIGNED FOR EVERY INDUSTRY */}
-      < section className="bg-slate-950 text-white py-20 px-6 md:px-12 relative overflow-hidden" >
-        <div className="max-w-7xl mx-auto space-y-12">
-          {/* Header Block */}
-          <div className="space-y-4 text-left max-w-2xl">
-            <span className="text-[10px] font-bold text-sky uppercase tracking-widest block">
-              // Target Markets
-            </span>
-            <h2 className="text-3xl md:text-4.5xl font-black uppercase tracking-tight text-white leading-none">
-              Sourcing Solutions Designed <br />
-              For Every Industry
-            </h2>
-            <p className="text-slate-400 text-xs md:text-sm leading-relaxed font-normal font-sans">
-              From organic nutraceutical powders to standardized pharmaceutical extracts, we align crop purity limits directly with target industry standards.
-            </p>
-          </div>
-
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {industries.map((ind, idx) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {pillars.map((pillar, idx) => {
+            const Icon = pillar.icon;
+            return (
               <div
                 key={idx}
-                className="bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between hover:border-sky/40 transition-colors duration-300 h-[260px] text-left relative overflow-hidden group shadow-lg"
+                className="bg-white border border-slate-200/90 rounded-[28px] p-6 shadow-sm flex flex-col justify-between hover:border-amber-600/40 hover:shadow-md transition-all duration-300 min-h-[260px] text-left group"
               >
                 <div className="space-y-4">
-                  <span className="text-sky text-xs font-black font-sans block">
-                    {(idx + 1).toString().padStart(2, "0")}
-                  </span>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-black text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full font-mono">
+                      {pillar.num}
+                    </span>
+                    <div className="w-9 h-9 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center group-hover:bg-amber-700 group-hover:text-white transition-colors">
+                      <Icon className="h-4 w-4" />
+                    </div>
+                  </div>
+
                   <div className="space-y-2">
-                    <h3 className="text-base font-extrabold text-white uppercase tracking-wide group-hover:text-sky transition-colors">
-                      {ind.title}
+                    <h3 className="text-base font-extrabold text-slate-900 group-hover:text-amber-700 transition-colors">
+                      {pillar.title}
                     </h3>
-                    <p className="text-slate-400 text-[11px] md:text-xs leading-relaxed font-normal font-sans">
-                      {ind.desc}
+                    <p className="text-slate-600 text-xs leading-relaxed">
+                      {pillar.desc}
                     </p>
                   </div>
                 </div>
-
-                <Link
-                  href={ind.link}
-                  className="w-9 h-9 rounded-full bg-slate-950 text-white flex items-center justify-center transition-transform hover:scale-105 group-hover:translate-x-0.5 shrink-0 border border-slate-800"
-                >
-                  <ArrowRight className="h-4 w-4 text-white" />
-                </Link>
               </div>
-            ))}
-          </div>
-
-          {/* Footer compliance banners */}
-          <div className="border-t border-slate-900 pt-12 flex flex-wrap gap-2.5 justify-center">
-            <span className="bg-white/5 border border-white/10 text-white font-bold uppercase tracking-wider text-[8px] px-3.5 py-1.5 rounded-full">
-              DGFT Registered
-            </span>
-            <span className="bg-white/5 border border-white/10 text-white font-bold uppercase tracking-wider text-[8px] px-3.5 py-1.5 rounded-full">
-              APEDA Exporter
-            </span>
-            <span className="bg-white/5 border border-white/10 text-white font-bold uppercase tracking-wider text-[8px] px-3.5 py-1.5 rounded-full">
-              Spices Board Member
-            </span>
-          </div>
-
+            );
+          })}
         </div>
-      </section >
+      </section>
 
-      {/* 6. PARTNERSHIP CTA FOOTER */}
-      < section className="py-20 px-6 md:px-12 max-w-7xl mx-auto w-full text-center space-y-8" >
-        <div className="max-w-2xl mx-auto space-y-4">
-          <h2 className="text-3xl md:text-4.5xl font-black text-slate-900 uppercase tracking-tight leading-none">
-            Ready to secure your bulk crop allocation?
+      {/* 4. STRATEGIC SOURCING ADVANTAGE (WHY JODHPUR?) - AUTO SCROLLING SECTION */}
+      <section
+        className="py-10 px-6 md:px-12 max-w-7xl mx-auto w-full"
+        onMouseEnter={() => setIsAdvantagePaused(true)}
+        onMouseLeave={() => setIsAdvantagePaused(false)}
+      >
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-8">
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
+            Strategic Sourcing Advantage <br />
+            <span className="font-serif italic font-normal text-amber-700">Rooted at the Source of Quality</span>
           </h2>
-          <p className="text-slate-500 text-sm font-normal">
-            Discuss crop packaging customizations, bulk volume discounts, and shipping logs directly with our operations team.
+          <p className="text-slate-600 text-xs md:text-sm max-w-xl mx-auto">
+            Operating from Jodhpur gives VEDA IMPEX a distinct operational edge in the agro-export market:
           </p>
         </div>
 
-        <Link
-          href="/contact?subject=partnership"
-          className="inline-flex items-center bg-[#293681] hover:bg-slate-950 text-white font-bold py-3.5 px-6 rounded-none text-xs uppercase tracking-wider transition-all duration-300 shadow-lg group border border-[#293681]"
-        >
-          Initiate Sourcing Request
-          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 text-white" />
-        </Link>
-      </section >
-    </div >
+        {/* Horizontal Navigation Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-6">
+          {advantages.map((adv) => {
+            const isActive = activeAdvantage === adv.id;
+            return (
+              <button
+                key={adv.id}
+                onClick={() => setActiveAdvantage(adv.id)}
+                className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 flex items-center gap-2 ${isActive
+                  ? "bg-slate-900 text-white shadow-md scale-105"
+                  : "bg-white text-slate-600 hover:bg-slate-100 border border-slate-200"
+                  }`}
+              >
+                <span className={`w-2 h-2 rounded-full ${isActive ? "bg-amber-400" : "bg-slate-300"}`} />
+                Advantage 0{adv.id + 1}: {adv.badge}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Showcase Card */}
+        {advantages.map((adv) => {
+          if (adv.id !== activeAdvantage) return null;
+          return (
+            <div
+              key={adv.id}
+              className="bg-white border border-slate-200 rounded-[32px] p-6 md:p-10 shadow-lg grid grid-cols-1 lg:grid-cols-12 gap-8 items-center transition-all duration-500"
+            >
+              <div className="lg:col-span-6 space-y-6 text-left">
+                <h3 className="text-2xl md:text-3.5xl font-black text-slate-900 tracking-tight leading-tight">
+                  {adv.title}
+                </h3>
+
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+                  {adv.desc}
+                </p>
+
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                  <div>
+                    <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Strategic Operational Edge</span>
+                    <span className="text-sm font-extrabold text-amber-700">{adv.metric}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-6 relative h-[280px] md:h-[340px] rounded-2xl overflow-hidden border border-slate-200">
+                <Image
+                  src={adv.image}
+                  alt={adv.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-slate-950/20" />
+                <div className="absolute bottom-4 right-4 bg-slate-900/90 text-white text-xs font-mono px-3.5 py-1.5 rounded-lg backdrop-blur-sm">
+                  {adv.badge}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </section>
+
+      {/* 5. VISION & MISSION */}
+      <section className="py-10 px-6 md:px-12 max-w-7xl mx-auto w-full">
+        <div className="space-y-4 mb-8 text-center">
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
+            Core Objective <br />
+            <span className="font-serif italic font-normal text-amber-700">Vision & Mission</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Vision Card */}
+          <div className="bg-slate-900 text-white border border-slate-800 rounded-[32px] p-8 md:p-10 shadow-lg space-y-6 flex flex-col justify-between relative overflow-hidden">
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 bg-white/10 text-amber-300 border border-white/20 px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider">
+                <Compass className="h-3.5 w-3.5 text-amber-400" />
+                Our Vision
+              </div>
+              <h3 className="text-2xl font-extrabold text-white leading-snug">
+                Benchmark for Trade Reliability & Specification Accuracy
+              </h3>
+              <p className="text-slate-300 text-sm md:text-base leading-relaxed">
+                To build VEDA IMPEX into a globally respected Indian export brand known not merely for volume, but as the benchmark for trade reliability, specification accuracy, and client trust.
+              </p>
+            </div>
+          </div>
+
+          {/* Mission Card */}
+          <div className="bg-white text-slate-900 border border-slate-200 rounded-[32px] p-8 md:p-10 shadow-md space-y-6 flex flex-col justify-between relative overflow-hidden">
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-900 border border-amber-200 px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider">
+                <Target className="h-3.5 w-3.5 text-amber-700" />
+                Our Mission
+              </div>
+              <h3 className="text-2xl font-extrabold text-slate-900 leading-snug">
+                Simplifying International Trade With India
+              </h3>
+              <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+                To simplify international trade with India by delivering precise specification alignment, open commercial communication, and end-to-end shipment accountability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. FOUNDER'S PERSPECTIVE (LEADERSHIP SECTION) */}
+      <section className="py-10 px-6 md:px-12 max-w-7xl mx-auto w-full">
+        <div className="space-y-4 mb-8 text-center">
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
+            The Person Behind <br />
+            <span className="font-serif italic font-normal text-amber-700">VEDA IMPEX</span>
+          </h2>
+        </div>
+
+        <div className="bg-white border border-slate-200 rounded-[32px] p-8 md:p-12 shadow-md grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative overflow-hidden">
+          {/* Quotemark Background Watermark */}
+          <span className="text-[160px] font-serif text-slate-100 font-bold absolute -top-10 left-6 select-none pointer-events-none leading-none">
+            “
+          </span>
+
+          <div className="lg:col-span-8 space-y-6 text-left relative z-10">
+            <h3 className="text-2xl md:text-3.5xl font-black text-slate-900 uppercase tracking-tight">
+              Deepeksha Jain — <span className="text-amber-700 font-normal">Founder, VEDA IMPEX</span>
+            </h3>
+
+            <p className="text-slate-700 text-base md:text-lg leading-relaxed font-medium italic">
+              "I started VEDA IMPEX with a simple belief: international business works best when people can trust the person and company on the other side of the transaction. We are building VEDA IMPEX step-by-step—with the intention of creating something that lasts, not something that simply looks big."
+            </p>
+          </div>
+
+          <div className="lg:col-span-4 flex justify-center lg:justify-end">
+            <div className="w-44 h-44 md:w-52 md:h-52 rounded-3xl overflow-hidden border-4 border-white shadow-xl relative bg-slate-950 flex flex-col items-center justify-center text-center">
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#293681] to-amber-600/40 flex flex-col items-center justify-center p-4">
+                <div className="h-16 w-16 rounded-full border-2 border-white bg-slate-900 flex items-center justify-center text-2xl font-black text-amber-400 font-mono shadow-lg mb-2">
+                  DJ
+                </div>
+                <span className="text-xs font-black text-white uppercase tracking-wider">Deepeksha Jain</span>
+                <span className="text-[10px] text-slate-200">Founder, Veda Impex</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. REGULATORY COMPLIANCE & EXPORT REGISTRATIONS */}
+      <section className="py-10 px-6 md:px-12 max-w-7xl mx-auto w-full">
+        <div className="space-y-4 mb-8 text-center">
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
+            Export Registrations & <br />
+            <span className="font-serif italic font-normal text-amber-700">Legal Structures</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {regulatoryBadges.map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-white border border-slate-200/90 rounded-[28px] p-6 shadow-sm flex flex-col justify-between hover:border-amber-600/40 hover:shadow-md transition-all duration-300 min-h-[220px] text-left group"
+            >
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full font-mono">
+                    {item.badge}
+                  </span>
+                  <ShieldCheck className="h-4 w-4 text-emerald-600" />
+                </div>
+                <h3 className="text-base font-extrabold text-slate-900 group-hover:text-amber-700 transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-slate-600 text-xs leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 8. BOTTOM CALL-TO-ACTION (CTA) */}
+      <section className="py-10 px-6 md:px-12 max-w-7xl mx-auto w-full">
+        <div className="bg-slate-900 text-white rounded-[36px] p-8 md:p-14 text-center space-y-8 relative overflow-hidden shadow-xl">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="max-w-2xl mx-auto space-y-4 relative z-10">
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-tight">
+              Ready to Discuss Your<br /> Export Requirements?
+            </h2>
+            <p className="text-slate-300 text-xs md:text-sm font-normal leading-relaxed max-w-xl mx-auto">
+              Share your target specifications, required volume, and destination port. Our team will review your enquiry and get back to you with swift commercial details.
+            </p>
+          </div>
+
+          <div className="relative z-10 pt-2">
+            <Link
+              href="/contact?subject=commercial_enquiry"
+              className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 px-8 rounded-full text-xs uppercase tracking-wider transition-all duration-300 shadow-lg group"
+            >
+              Send Commercial Enquiry →
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

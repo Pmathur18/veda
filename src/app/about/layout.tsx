@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About VEDA IMPEX | Trusted Indian Product Exporter Jodhpur",
-  description: "Discover VEDA IMPEX, a Jodhpur-based export house bridging the gap between premium Indian agro-products and global commercial buyers.",
+  title: "About VEDA IMPEX | Trusted Indian Agro Exporter Jodhpur",
+  description: "Learn about VEDA IMPEX, an India-based export house in Jodhpur, Rajasthan, connecting global importers with high-purity Psyllium Husk and Senna Leaves through transparent trade.",
   keywords: [
     "Indian export house",
     "agro export company Jodhpur",
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     canonical: "https://www.vedaimpex.com/about",
   },
   openGraph: {
-    title: "About VEDA IMPEX | Trusted Indian Product Exporter",
-    description: "Discover VEDA IMPEX, a Jodhpur-based export house bridging the gap between premium Indian agro-products and global commercial buyers.",
+    title: "About VEDA IMPEX | Trusted Indian Agro Exporter Jodhpur",
+    description: "Learn about VEDA IMPEX, an India-based export house in Jodhpur, Rajasthan, connecting global importers with high-purity Psyllium Husk and Senna Leaves through transparent trade.",
     url: "https://www.vedaimpex.com/about",
     siteName: "VEDA IMPEX",
     locale: "en_US",

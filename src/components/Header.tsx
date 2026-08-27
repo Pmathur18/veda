@@ -35,13 +35,12 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const hasVideoBanner = pathname === "/" || pathname === "/products" || pathname === "/about" || pathname === "/export-process";
-  const showBg = !hasVideoBanner || scrolled;
+  const showBg = scrolled;
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${showBg
-        ? "bg-[#293681] border-b border-white/5 shadow-md py-4"
+        ? "bg-[#293681]/70 backdrop-blur-md border-b border-white/5 shadow-md py-4"
         : "bg-transparent border-b border-transparent shadow-none py-6"
         }`}
     >
