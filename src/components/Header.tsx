@@ -175,7 +175,6 @@ export default function Header() {
               {navigation.map((item) => {
                 const isActive =
                   pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
-                const Icon = item.icon;
 
                 return (
                   <motion.div key={item.name} variants={itemVariants}>
@@ -192,12 +191,9 @@ export default function Header() {
                         <span className="text-xs font-mono font-bold text-sky-400">
                           {item.num}
                         </span>
-                        <div className="flex items-center gap-3">
-                          <Icon className={`h-5 w-5 ${isActive ? "text-sky-400" : "text-slate-400 group-hover:text-white"}`} />
-                          <span className="text-xl font-black uppercase tracking-wide font-display">
-                            {item.name}
-                          </span>
-                        </div>
+                        <span className="text-xl font-black uppercase tracking-wide font-display">
+                          {item.name}
+                        </span>
                       </div>
 
                       <div className="flex items-center gap-2">
@@ -212,7 +208,7 @@ export default function Header() {
               })}
             </div>
 
-            {/* Bottom Contact Card & Action Row */}
+            {/* Bottom Action Row */}
             <motion.div variants={itemVariants} className="z-10 space-y-4 pt-4 border-t border-white/10">
               {/* Primary Callout Button */}
               <Link
@@ -223,25 +219,6 @@ export default function Header() {
                 <span>Request Container Quote</span>
                 <ArrowUpRight className="h-4.5 w-4.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
-
-              {/* Hotline Details */}
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-300 pt-2 px-1">
-                <a
-                  href="tel:+912915550145"
-                  className="flex items-center gap-2 hover:text-white transition-colors"
-                >
-                  <Phone className="h-4 w-4 text-sky-400" />
-                  <span className="font-bold">+91 (291) 555-0145</span>
-                </a>
-
-                <a
-                  href="mailto:connect@vedaimpex.com"
-                  className="flex items-center gap-2 hover:text-white transition-colors"
-                >
-                  <Mail className="h-4 w-4 text-sky-400" />
-                  <span className="font-medium">connect@vedaimpex.com</span>
-                </a>
-              </div>
 
               {/* Copyright Tag */}
               <p className="text-center text-[10px] text-slate-400 tracking-wider pt-2 font-mono">
