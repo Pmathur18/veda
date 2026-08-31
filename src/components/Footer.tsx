@@ -82,7 +82,7 @@ export default function Footer() {
   };
 
   return (
-    <div ref={footerRef} className="relative z-0 md:sticky md:bottom-0 w-full overflow-hidden bg-dark-blue">
+    <div ref={footerRef} className="sticky bottom-0 z-0 w-full overflow-hidden bg-dark-blue">
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
