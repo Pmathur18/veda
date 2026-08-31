@@ -12,14 +12,17 @@ import {
   ShieldCheck,
   Menu,
   X,
-  ArrowRight
+  ArrowRight,
+  ArrowUpRight,
+  Phone,
+  Mail
 } from "lucide-react";
 
 const navigation = [
-  { name: "Home", href: "/", icon: Home },
-  { name: "Products", href: "/products", icon: Layers },
-  { name: "Quality & Process", href: "/export-process", icon: ShieldCheck },
-  { name: "About", href: "/about", icon: Info },
+  { name: "Home", href: "/", icon: Home, num: "01" },
+  { name: "Products", href: "/products", icon: Layers, num: "02" },
+  { name: "Quality & Process", href: "/export-process", icon: ShieldCheck, num: "03" },
+  { name: "About", href: "/about", icon: Info, num: "04" },
 ];
 
 export default function Header() {
@@ -36,6 +39,38 @@ export default function Header() {
   }, []);
 
   const showBg = scrolled;
+
+  // Drawer animation variants
+  const menuVariants = {
+    closed: {
+      opacity: 0,
+      y: "-100%",
+      transition: {
+        duration: 0.4,
+        ease: "easeIn" as const,
+        when: "afterChildren",
+      },
+    },
+    open: {
+      opacity: 1,
+      y: "0%",
+      transition: {
+        duration: 0.5,
+        ease: [0.16, 1, 0.3, 1] as const,
+        staggerChildren: 0.08,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    closed: { opacity: 0, y: 20 },
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] as const },
+    },
+  };
 
   return (
     <header
@@ -95,80 +130,125 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Nav Overlay */}
+      {/* Full-Screen Ultra-Modern Mobile Menu Curtain */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setMobileMenuOpen(false)}
-              className="fixed inset-0 bg-neutral-950/40 backdrop-blur-sm z-50 md:hidden"
-            />
-            {/* Sidebar drawer */}
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", bounce: 0.15 }}
-              className="fixed right-0 top-0 bottom-0 w-80 max-w-full bg-white shadow-2xl z-50 md:hidden p-6 flex flex-col overflow-y-auto no-scrollbar border-l border-white/5"
-            >
-              <div className="flex items-center justify-between mb-8">
-                <Link href="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
-                  <Image
-                    src="/logo.png"
-                    alt="Veda Impex Logo"
-                    width={130}
-                    height={36}
-                    className="h-9 w-auto object-contain"
-                    priority
-                  />
-                </Link>
-                <button
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 text-slate-500 hover:text-slate-900 rounded-full cursor-pointer"
-                >
-                  <X className="h-6 w-6" />
-                </button>
-              </div>
+          <motion.div
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={menuVariants}
+            className="fixed inset-0 z-50 bg-[#0b1727]/98 backdrop-blur-2xl text-white flex flex-col justify-between p-6 sm:p-8 md:hidden overflow-y-auto no-scrollbar"
+          >
+            {/* Ambient Decorative Glow Lights */}
+            <div className="absolute top-10 right-10 w-72 h-72 bg-sky-500/15 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#1d4ed8]/20 rounded-full blur-3xl pointer-events-none" />
 
-              <div className="flex-1 space-y-4">
-                {navigation.map((item) => {
-                  const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
-                  const Icon = item.icon;
-                  return (
+            {/* Top Bar: Logo & Close Button */}
+            <motion.div variants={itemVariants} className="flex items-center justify-between z-10 pt-2 pb-6 border-b border-white/10">
+              <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
+                <Image
+                  src="/logo.png"
+                  alt="Veda Impex Logo"
+                  width={140}
+                  height={38}
+                  className="h-9 w-auto object-contain"
+                  priority
+                />
+              </Link>
+
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white hover:text-slate-950 flex items-center justify-center transition-all cursor-pointer shadow-lg"
+                aria-label="Close menu"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </motion.div>
+
+            {/* Navigation Links List */}
+            <div className="py-8 space-y-3 z-10">
+              <motion.span variants={itemVariants} className="text-[10px] font-black text-sky-400 uppercase tracking-widest block mb-2 font-mono">
+                // NAVIGATION LANES
+              </motion.span>
+
+              {navigation.map((item) => {
+                const isActive =
+                  pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+                const Icon = item.icon;
+
+                return (
+                  <motion.div key={item.name} variants={itemVariants}>
                     <Link
-                      key={item.name}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-3 text-sm font-bold uppercase tracking-[0.1em] transition-all rounded-xl ${isActive
-                        ? "text-[#293681] bg-slate-100"
-                        : "text-slate-600 hover:text-[#293681] hover:bg-slate-50"
-                        }`}
+                      className={`group flex items-center justify-between p-4 rounded-2xl transition-all duration-300 border ${
+                        isActive
+                          ? "bg-white/10 border-white/20 text-white shadow-xl"
+                          : "border-transparent text-slate-300 hover:text-white hover:bg-white/5"
+                      }`}
                     >
-                      <Icon className={`h-5 w-5 ${isActive ? "text-[#293681]" : "text-slate-500"}`} />
-                      {item.name}
+                      <div className="flex items-center gap-4">
+                        <span className="text-xs font-mono font-bold text-sky-400">
+                          {item.num}
+                        </span>
+                        <div className="flex items-center gap-3">
+                          <Icon className={`h-5 w-5 ${isActive ? "text-sky-400" : "text-slate-400 group-hover:text-white"}`} />
+                          <span className="text-xl font-black uppercase tracking-wide font-display">
+                            {item.name}
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        {isActive && (
+                          <span className="w-2 h-2 rounded-full bg-sky-400 animate-ping" />
+                        )}
+                        <ArrowUpRight className="h-5 w-5 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-white" />
+                      </div>
                     </Link>
-                  );
-                })}
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            {/* Bottom Contact Card & Action Row */}
+            <motion.div variants={itemVariants} className="z-10 space-y-4 pt-4 border-t border-white/10">
+              {/* Primary Callout Button */}
+              <Link
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full bg-gradient-to-r from-[#1d4ed8] to-[#0ea5e9] hover:from-[#1e40af] hover:to-[#0284c7] text-white font-black py-4 px-6 rounded-2xl text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-between shadow-xl cursor-pointer border border-white/20 group"
+              >
+                <span>Request Container Quote</span>
+                <ArrowUpRight className="h-4.5 w-4.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+
+              {/* Hotline Details */}
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-300 pt-2 px-1">
+                <a
+                  href="tel:+912915550145"
+                  className="flex items-center gap-2 hover:text-white transition-colors"
+                >
+                  <Phone className="h-4 w-4 text-sky-400" />
+                  <span className="font-bold">+91 (291) 555-0145</span>
+                </a>
+
+                <a
+                  href="mailto:connect@vedaimpex.com"
+                  className="flex items-center gap-2 hover:text-white transition-colors"
+                >
+                  <Mail className="h-4 w-4 text-sky-400" />
+                  <span className="font-medium">connect@vedaimpex.com</span>
+                </a>
               </div>
 
-              <div className="mt-auto space-y-4">
-                <Link
-                  href="/contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="w-full bg-[#293681] text-white font-bold py-3.5 px-4 rounded-none text-center text-xs tracking-[0.1em] uppercase transition-all block cursor-pointer border border-[#293681] hover:bg-slate-900"
-                >
-                  Get Started
-                </Link>
-                <p className="text-center text-xs text-slate-400">
-                  © 2026 Veda Impex. All rights reserved.
-                </p>
-              </div>
+              {/* Copyright Tag */}
+              <p className="text-center text-[10px] text-slate-400 tracking-wider pt-2 font-mono">
+                © {new Date().getFullYear()} VEDA IMPEX • JODHPUR, INDIA
+              </p>
             </motion.div>
-          </>
+          </motion.div>
         )}
       </AnimatePresence>
     </header>
