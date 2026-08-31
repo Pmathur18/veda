@@ -54,12 +54,12 @@ export default function Footer() {
   const menuLinks = [
     { label: "Products", href: "/products" },
     { label: "About", href: "/about" },
-    { label: "Quality & Process", href: "/quality-process" },
+    { label: "Quality & Process", href: "/export-process" },
     { label: "Contact", href: "/contact" }
   ];
 
   return (
-    <div ref={footerRef} className="relative z-0 sticky bottom-0 w-full overflow-hidden bg-dark-blue">
+    <div ref={footerRef} className="relative z-0 md:sticky md:bottom-0 w-full overflow-hidden bg-dark-blue">
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -71,41 +71,41 @@ export default function Footer() {
           priority
         />
         {/* Dark overlay to provide contrast for text and match the ocean depth style */}
-        <div className="absolute inset-0 bg-slate-950/65 pointer-events-none" />
+        <div className="absolute inset-0 bg-slate-950/75 pointer-events-none" />
       </div>
 
       {/* Main Content & Bottom Bar Container */}
       <div className="w-full relative z-10 flex flex-col justify-between min-h-[400px] sm:min-h-[420px] md:min-h-[460px]">
 
         {/* Main Content Overlay */}
-        <div className="w-full max-w-7xl mx-auto pt-14 md:pt-16 px-8 pb-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+        <div className="w-full max-w-7xl mx-auto pt-10 md:pt-16 px-6 sm:px-8 pb-8 md:pb-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
 
             {/* Column 1: Connect With Us & Socials */}
-            <div className="lg:col-span-5 space-y-8 text-left">
+            <div className="lg:col-span-5 space-y-6 text-left">
 
               {/* Header Title with wrap */}
               <div className="flex flex-col text-left">
-                <span className="text-3xl md:text-[38px] font-black text-white tracking-tight leading-[1.1] uppercase font-display">
+                <span className="text-2xl sm:text-3xl md:text-[38px] font-black text-white tracking-tight leading-[1.1] uppercase font-display">
                   Connect With
                 </span>
                 <div className="flex items-center gap-2 mt-1">
-                  <span className="text-3xl md:text-[38px] font-black text-white tracking-tight leading-[1.1] uppercase font-display">
+                  <span className="text-2xl sm:text-3xl md:text-[38px] font-black text-white tracking-tight leading-[1.1] uppercase font-display">
                     Us
                   </span>
-                  <div className="w-8 h-8 rounded-full bg-white text-slate-950 flex items-center justify-center shrink-0 hover:bg-sky hover:text-white transition-colors duration-200 cursor-pointer">
-                    <ArrowUpRight className="w-4.5 h-4.5 stroke-[3]" />
+                  <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-white text-slate-950 flex items-center justify-center shrink-0 hover:bg-sky hover:text-white transition-colors duration-200 cursor-pointer">
+                    <ArrowUpRight className="w-4 h-4 md:w-4.5 md:h-4.5 stroke-[3]" />
                   </div>
                 </div>
               </div>
 
               {/* Social Media Circular Links */}
-              <div className="flex gap-4 pt-1">
+              <div className="flex gap-3 pt-1">
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}
                     href={social.href}
-                    className="h-10 w-10 rounded-full border border-white/20 text-white hover:text-slate-950 hover:bg-white hover:border-transparent flex items-center justify-center hover:scale-105 transition-all duration-200"
+                    className="h-9 w-9 md:h-10 md:w-10 rounded-full border border-white/20 text-white hover:text-slate-950 hover:bg-white hover:border-transparent flex items-center justify-center hover:scale-105 transition-all duration-200"
                     title={social.name}
                   >
                     {social.icon}
@@ -114,13 +114,13 @@ export default function Footer() {
               </div>
 
               {/* Email Callout */}
-              <div className="space-y-1 pt-2">
-                <span className="block text-sm font-semibold text-slate-200/90 tracking-wide">
+              <div className="space-y-1 pt-1">
+                <span className="block text-xs sm:text-sm font-semibold text-slate-200/90 tracking-wide">
                   Or email us at
                 </span>
                 <a
                   href="mailto:connect@vedaimpex.com"
-                  className="inline-block text-xl md:text-2xl font-black text-white hover:text-sky tracking-tight transition-colors duration-200 font-display"
+                  className="inline-block text-lg sm:text-xl md:text-2xl font-black text-white hover:text-sky tracking-tight transition-colors duration-200 font-display break-all sm:break-normal"
                 >
                   connect@vedaimpex.com
                 </a>
@@ -128,48 +128,47 @@ export default function Footer() {
             </div>
 
             {/* Column 2: Navigation Menu */}
-            <div className="lg:col-span-3 space-y-6 text-left">
-              <h3 className="text-xl font-black text-white uppercase tracking-wide font-display">
+            <div className="lg:col-span-3 space-y-4 md:space-y-6 text-left">
+              <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-wide font-display">
                 Menu
               </h3>
-              <ul className="space-y-4">
+              <ul className="space-y-3 md:space-y-4">
                 {menuLinks.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
-                      className="text-sm font-bold text-slate-300 hover:text-white transition-colors duration-200"
+                      className="text-xs sm:text-sm font-bold text-slate-300 hover:text-white transition-colors duration-200"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Column 3: Office Coordinates */}
-            <div className="lg:col-span-4 space-y-6 text-left">
-              <h3 className="text-xl font-black text-white uppercase tracking-wide font-display">
+            <div className="lg:col-span-4 space-y-4 md:space-y-6 text-left">
+              <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-wide font-display">
                 OFFICE
               </h3>
-              <div className="space-y-5 text-sm">
+              <div className="space-y-4 text-xs sm:text-sm">
 
                 {/* Office 1 */}
                 <div className="text-slate-300 font-medium leading-relaxed max-w-[280px]">
-                  Industrial Area, Jodhpur,
-                  Rajasthan,
-                  India
+                  Industrial Area, Jodhpur,<br />
+                  Rajasthan 342001, India
                 </div>
 
                 {/* Hotline callout numbers */}
-                <div className="flex flex-wrap gap-4 pt-3 text-white font-bold">
+                <div className="flex flex-wrap gap-4 pt-2 text-white font-bold">
                   <a
-                    href="tel:+19379129590"
+                    href="tel:+912915550145"
                     className="group inline-flex items-center gap-2 hover:text-sky transition-colors"
                   >
                     <span className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center text-white shrink-0 group-hover:border-transparent group-hover:bg-white group-hover:text-slate-950 transition-colors">
                       <Phone className="w-3.5 h-3.5 fill-current" />
                     </span>
-                    +1 937 912 9590
+                    +91 (291) 555-0145
                   </a>
                 </div>
               </div>
@@ -179,8 +178,8 @@ export default function Footer() {
         </div>
 
         {/* Copyright & Policy Overlay at the bottom */}
-        <div className=" py-5 text-center text-slate-400 text-sm z-10">
-          <div className="max-w-7xl mx-auto px-8 flex flex-col sm:flex-row justify-between items-center gap-3 font-medium">
+        <div className="py-5 text-center text-slate-400 text-xs sm:text-sm z-10 border-t border-white/10">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-3 font-medium">
             <p>© {new Date().getFullYear()} Veda Impex. All rights reserved.</p>
             <div className="flex gap-6">
               <Link href="/privacy-policy" className="hover:text-sky transition-colors">Privacy Policy</Link>
