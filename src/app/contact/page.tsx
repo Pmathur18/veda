@@ -280,7 +280,7 @@ export default function ContactPage() {
             Contact us
           </h1>
           <p className="text-slate-200 text-sm md:text-base leading-relaxed max-w-xl font-normal">
-            Kassapay / VEDA IMPEX is ready to provide the right solution according to your needs
+            VEDA IMPEX is ready to provide the right solution according to your needs
           </p>
         </div>
       </section>
@@ -297,7 +297,7 @@ export default function ContactPage() {
                   Get in touch
                 </h2>
                 <p className="text-xs md:text-sm text-slate-500 leading-relaxed font-normal">
-                  Sociosqu viverra lectus placerat sem efficitur molestie vehicula cubilia leo etiam nam.
+                  Have questions about bulk orders, technical specifications, or shipping timelines? Reach out directly to our export team.
                 </p>
               </div>
 

@@ -34,7 +34,7 @@ export default function ProductsPage() {
             Indian Agro Commodities Global Standards<br />
           </h1>
 
-          <p className="text-slate-200 text-l md:text-base leading-relaxed max-w-2m font-sans mx-auto mt-6">
+          <p className="text-slate-200 text-sm md:text-base leading-relaxed max-w-2xl font-sans mx-auto mt-6">
             Spec-driven, batch-tested natural ingredients sourced directly from prime growing regions in Rajasthan and Western India. We align our processing, grading, and packaging directly with your technical spec sheet.
           </p>
         </div>

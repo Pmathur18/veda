@@ -58,7 +58,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className=" md:flex items-center gap-2">
+        <nav className="hidden md:flex items-center gap-2">
           {navigation.map((item) => {
             const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
             return (

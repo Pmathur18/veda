@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "psyllium-husk",
     "psyllium-powder",
     "senna-leaves",
+    "senna-pods",
   ];
 
   const productEntries = productRoutes.map((id) => ({

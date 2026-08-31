@@ -180,8 +180,8 @@ export default function HomePage() {
       </div>
 
       {/* 2. WHAT WE EXPORT */}
-      < section className="bg-white-50 py-12 px-4 md:px-8 relative overflow-hidden" >
-        <div className="absolute  left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -z-10" />
+      <section className="bg-slate-50 py-12 px-4 md:px-8 relative overflow-hidden">
+        <div className="absolute left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -z-10" />
 
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center space-y-0 max-w-xl mx-auto">
@@ -194,8 +194,6 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {productsData.map((product) => (
               <div key={product.id} className="group bg-gradient-to-b from-slate-50 to-white border border-slate-100 rounded-[32px] p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative overflow-hidden h-[420px]">
-
-
 
                 {/* Product Image (Rounded) */}
                 <div className="flex-1 overflow-hidden rounded-[24px] relative mb-6">
@@ -233,7 +231,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section >
+      </section>
 
       {/* 3. WHY VEDA IMPEX */}
       <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto w-full relative">
@@ -332,7 +330,7 @@ export default function HomePage() {
 
       {/* 4. STATS BOX */}
       <section className="py-6 px-4 md:px-8 max-w-7xl mx-auto w-full relative">
-        <div className="border-2 border-white-900 rounded-[32px] overflow-hidden shadow-2xl bg-slate-900 text-white p-8 md:p-12">
+        <div className="border-2 border-slate-900 rounded-[32px] overflow-hidden shadow-2xl bg-slate-900 text-white p-8 md:p-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
             {stats.map((stat, idx) => (
               <div key={idx} className="text-center space-y-2 flex flex-col items-center justify-center p-4">
@@ -349,11 +347,11 @@ export default function HomePage() {
       </section>
 
       {/* 5. QUICK ENQUIRY BANNER */}
-      < section className="bg-white py-12 px-4 md:px-8 border-b border-slate-100" >
+      <section className="bg-white py-12 px-4 md:px-8 border-b border-slate-100">
         <div className="max-w-5xl mx-auto bg-brand text-white rounded-3xl p-8 md:p-16 text-center space-y-8 shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.08),transparent)]" />
 
-          <div className="space-y-4 max-w-l mx-auto relative z-10">
+          <div className="space-y-4 max-w-lg mx-auto relative z-10">
             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-none">
               Have a Specific Export Requirement?
             </h2>
@@ -374,8 +372,8 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-      </section >
+      </section>
 
-    </div >
+    </div>
   );
 }
