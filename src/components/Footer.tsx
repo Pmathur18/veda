@@ -162,53 +162,56 @@ export default function Footer() {
               </div>
             </motion.div>
 
-            {/* Column 2: Navigation Menu */}
-            <motion.div variants={itemVariants} className="lg:col-span-3 space-y-4 md:space-y-6 text-left">
-              <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-wide font-display">
-                Menu
-              </h3>
-              <ul className="space-y-3 md:space-y-4">
-                {menuLinks.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="inline-block text-xs sm:text-sm font-bold text-slate-300 hover:text-white hover:translate-x-1 transition-all duration-200"
+            {/* Columns 2 & 3 Wrapper: Side-by-Side Row for Menu and Office on Mobile */}
+            <div className="lg:col-span-7 grid grid-cols-2 gap-6 sm:gap-8 items-start">
+              {/* Column 2: Navigation Menu */}
+              <motion.div variants={itemVariants} className="space-y-4 md:space-y-6 text-left">
+                <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-wide font-display">
+                  Menu
+                </h3>
+                <ul className="space-y-3 md:space-y-4">
+                  {menuLinks.map((link) => (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        className="inline-block text-xs sm:text-sm font-bold text-slate-300 hover:text-white hover:translate-x-1 transition-all duration-200"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              {/* Column 3: Office Coordinates */}
+              <motion.div variants={itemVariants} className="space-y-4 md:space-y-6 text-left">
+                <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-wide font-display">
+                  OFFICE
+                </h3>
+                <div className="space-y-4 text-xs sm:text-sm">
+
+                  {/* Office 1 */}
+                  <div className="text-slate-300 font-medium leading-relaxed max-w-[280px]">
+                    Industrial Area, Jodhpur,<br />
+                    Rajasthan 342001, India
+                  </div>
+
+                  {/* Hotline callout numbers */}
+                  <div className="flex flex-wrap gap-4 pt-2 text-white font-bold">
+                    <motion.a
+                      href="tel:+912915550145"
+                      whileHover={{ scale: 1.03 }}
+                      className="group inline-flex items-center gap-2 hover:text-sky transition-colors"
                     >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Column 3: Office Coordinates */}
-            <motion.div variants={itemVariants} className="lg:col-span-4 space-y-4 md:space-y-6 text-left">
-              <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-wide font-display">
-                OFFICE
-              </h3>
-              <div className="space-y-4 text-xs sm:text-sm">
-
-                {/* Office 1 */}
-                <div className="text-slate-300 font-medium leading-relaxed max-w-[280px]">
-                  Industrial Area, Jodhpur,<br />
-                  Rajasthan 342001, India
+                      <span className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center text-white shrink-0 group-hover:border-transparent group-hover:bg-white group-hover:text-slate-950 transition-colors">
+                        <Phone className="w-3.5 h-3.5 fill-current" />
+                      </span>
+                      <span className="truncate">+91 (291) 555-0145</span>
+                    </motion.a>
+                  </div>
                 </div>
-
-                {/* Hotline callout numbers */}
-                <div className="flex flex-wrap gap-4 pt-2 text-white font-bold">
-                  <motion.a
-                    href="tel:+912915550145"
-                    whileHover={{ scale: 1.03 }}
-                    className="group inline-flex items-center gap-2 hover:text-sky transition-colors"
-                  >
-                    <span className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center text-white shrink-0 group-hover:border-transparent group-hover:bg-white group-hover:text-slate-950 transition-colors">
-                      <Phone className="w-3.5 h-3.5 fill-current" />
-                    </span>
-                    +91 (291) 555-0145
-                  </motion.a>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
 
           </div>
         </motion.div>
