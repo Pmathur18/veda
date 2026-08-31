@@ -143,7 +143,7 @@ export default function AboutPage() {
       </section>
 
       {/* 2. BRAND ORIGIN & STORY (HUMAN & PROFESSIONAL) */}
-      <section className="py-10 px-6 md:px-12 max-w-7xl mx-auto w-full">
+      <section className="py-14 md:py-20 px-6 md:px-12 max-w-7xl mx-auto w-full">
         <div className="bg-white border border-slate-200/80 rounded-[32px] p-8 md:p-12 shadow-sm relative overflow-hidden space-y-8">
           <h2 className="text-2xl sm:text-3xl md:text-4.5xl font-extrabold text-slate-900 leading-[1.25] tracking-tight max-w-5xl">
             Building a Reliable Bridge Between <br /> India and Global Markets
@@ -166,7 +166,7 @@ export default function AboutPage() {
       </section>
 
       {/* 3. OUR CORE PILLARS (THE TRUST FRAMEWORK) */}
-      <section className="py-10 px-6 md:px-12 max-w-7xl mx-auto w-full">
+      <section className="py-14 md:py-20 px-6 md:px-12 max-w-7xl mx-auto w-full">
         <div className="space-y-4 mb-8">
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
             Our Core Pillars <br />
@@ -209,7 +209,7 @@ export default function AboutPage() {
 
       {/* 4. STRATEGIC SOURCING ADVANTAGE (WHY JODHPUR?) - AUTO SCROLLING SECTION */}
       <section
-        className="py-10 px-6 md:px-12 max-w-7xl mx-auto w-full"
+        className="py-14 md:py-20 px-6 md:px-12 max-w-7xl mx-auto w-full"
         onMouseEnter={() => setIsAdvantagePaused(true)}
         onMouseLeave={() => setIsAdvantagePaused(false)}
       >
@@ -286,7 +286,7 @@ export default function AboutPage() {
       </section>
 
       {/* 5. VISION & MISSION */}
-      <section className="py-10 px-6 md:px-12 max-w-7xl mx-auto w-full">
+      <section className="py-14 md:py-20 px-6 md:px-12 max-w-7xl mx-auto w-full">
         <div className="space-y-4 mb-8 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
             Core Objective <br />
@@ -330,7 +330,7 @@ export default function AboutPage() {
       </section>
 
       {/* 6. FOUNDER'S PERSPECTIVE (LEADERSHIP SECTION) */}
-      <section className="py-10 px-6 md:px-12 max-w-7xl mx-auto w-full">
+      <section className="py-14 md:py-20 px-6 md:px-12 max-w-7xl mx-auto w-full">
         <div className="space-y-4 mb-8 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
             The Person Behind <br />
@@ -369,7 +369,7 @@ export default function AboutPage() {
       </section>
 
       {/* 7. REGULATORY COMPLIANCE & EXPORT REGISTRATIONS */}
-      <section className="py-10 px-6 md:px-12 max-w-7xl mx-auto w-full">
+      <section className="py-14 md:py-20 px-6 md:px-12 max-w-7xl mx-auto w-full">
         <div className="space-y-4 mb-8 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
             Export Registrations & <br />
@@ -403,7 +403,7 @@ export default function AboutPage() {
       </section>
 
       {/* 8. BOTTOM CALL-TO-ACTION (CTA) */}
-      <section className="py-10 px-6 md:px-12 max-w-7xl mx-auto w-full">
+      <section className="py-14 md:py-24 px-6 md:px-12 max-w-7xl mx-auto w-full">
         <div className="bg-slate-900 text-white rounded-[36px] p-8 md:p-14 text-center space-y-8 relative overflow-hidden shadow-xl">
           <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
           <div className="max-w-2xl mx-auto space-y-4 relative z-10">
