@@ -170,7 +170,7 @@ export default function AboutPage() {
         <div className="space-y-4 mb-8">
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
             Our Core Pillars <br />
-            <span className="font-serif italic font-normal text-amber-700">Four Commitments of Trade</span>
+            <span className="italic font-normal text-amber-700 font-display">Four Commitments of Trade</span>
           </h2>
         </div>
 
@@ -184,7 +184,7 @@ export default function AboutPage() {
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-black text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full font-mono">
+                    <span className="text-xs font-black text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full font-sans">
                       {pillar.num}
                     </span>
                     <div className="w-9 h-9 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center group-hover:bg-amber-700 group-hover:text-white transition-colors">
@@ -216,7 +216,7 @@ export default function AboutPage() {
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-8">
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
             Strategic Sourcing Advantage <br />
-            <span className="font-serif italic font-normal text-amber-700">Rooted at the Source of Quality</span>
+            <span className="italic font-normal text-amber-700 font-display">Rooted at the Source of Quality</span>
           </h2>
           <p className="text-slate-600 text-xs md:text-sm max-w-xl mx-auto">
             Operating from Jodhpur gives VEDA IMPEX a distinct operational edge in the agro-export market:
@@ -276,7 +276,7 @@ export default function AboutPage() {
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-slate-950/20" />
-                <div className="absolute bottom-4 right-4 bg-slate-900/90 text-white text-xs font-mono px-3.5 py-1.5 rounded-lg backdrop-blur-sm">
+                <div className="absolute bottom-4 right-4 bg-slate-900/90 text-white text-xs font-sans px-3.5 py-1.5 rounded-lg backdrop-blur-sm">
                   {adv.badge}
                 </div>
               </div>
@@ -290,7 +290,7 @@ export default function AboutPage() {
         <div className="space-y-4 mb-8 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
             Core Objective <br />
-            <span className="font-serif italic font-normal text-amber-700">Vision & Mission</span>
+            <span className="italic font-normal text-amber-700 font-display">Vision & Mission</span>
           </h2>
         </div>
 
@@ -298,7 +298,7 @@ export default function AboutPage() {
           {/* Vision Card */}
           <div className="bg-slate-900 text-white border border-slate-800 rounded-[32px] p-8 md:p-10 shadow-lg space-y-6 flex flex-col justify-between relative overflow-hidden">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 bg-white/10 text-amber-300 border border-white/20 px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 bg-white/10 text-amber-300 border border-white/20 px-3.5 py-1 rounded-full text-xs font-sans font-bold uppercase tracking-wider">
                 <Compass className="h-3.5 w-3.5 text-amber-400" />
                 Our Vision
               </div>
@@ -314,7 +314,7 @@ export default function AboutPage() {
           {/* Mission Card */}
           <div className="bg-white text-slate-900 border border-slate-200 rounded-[32px] p-8 md:p-10 shadow-md space-y-6 flex flex-col justify-between relative overflow-hidden">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-900 border border-amber-200 px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-900 border border-amber-200 px-3.5 py-1 rounded-full text-xs font-sans font-bold uppercase tracking-wider">
                 <Target className="h-3.5 w-3.5 text-amber-700" />
                 Our Mission
               </div>
@@ -334,13 +334,13 @@ export default function AboutPage() {
         <div className="space-y-4 mb-8 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
             The Person Behind <br />
-            <span className="font-serif italic font-normal text-amber-700">VEDA IMPEX</span>
+            <span className="italic font-normal text-amber-700 font-display">VEDA IMPEX</span>
           </h2>
         </div>
 
         <div className="bg-white border border-slate-200 rounded-[32px] p-8 md:p-12 shadow-md grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative overflow-hidden">
           {/* Quotemark Background Watermark */}
-          <span className="text-[160px] font-serif text-slate-100 font-bold absolute -top-10 left-6 select-none pointer-events-none leading-none">
+          <span className="text-[160px] font-display text-slate-100 font-bold absolute -top-10 left-6 select-none pointer-events-none leading-none">
             “
           </span>
 
@@ -357,7 +357,7 @@ export default function AboutPage() {
           <div className="lg:col-span-4 flex justify-center lg:justify-end">
             <div className="w-44 h-44 md:w-52 md:h-52 rounded-3xl overflow-hidden border-4 border-white shadow-xl relative bg-slate-950 flex flex-col items-center justify-center text-center">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#293681] to-amber-600/40 flex flex-col items-center justify-center p-4">
-                <div className="h-16 w-16 rounded-full border-2 border-white bg-slate-900 flex items-center justify-center text-2xl font-black text-amber-400 font-mono shadow-lg mb-2">
+                <div className="h-16 w-16 rounded-full border-2 border-white bg-slate-900 flex items-center justify-center text-2xl font-black text-amber-400 font-sans shadow-lg mb-2">
                   DJ
                 </div>
                 <span className="text-xs font-black text-white uppercase tracking-wider">Deepeksha Jain</span>
@@ -373,7 +373,7 @@ export default function AboutPage() {
         <div className="space-y-4 mb-8 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
             Export Registrations & <br />
-            <span className="font-serif italic font-normal text-amber-700">Legal Structures</span>
+            <span className="italic font-normal text-amber-700 font-display">Legal Structures</span>
           </h2>
         </div>
 
@@ -385,7 +385,7 @@ export default function AboutPage() {
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full font-mono">
+                  <span className="text-[10px] font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full font-sans">
                     {item.badge}
                   </span>
                   <ShieldCheck className="h-4 w-4 text-emerald-600" />

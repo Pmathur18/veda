@@ -240,7 +240,7 @@ export default function HomePage() {
           {/* Decorative background accent */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-brand/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.05),transparent)]" />
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             {/* Left side title */}
             <div className="lg:col-span-5 space-y-4 text-left">
@@ -249,7 +249,7 @@ export default function HomePage() {
                 Why VEDA IMPEX?
               </h2>
             </div>
-            
+
             {/* Right side description text */}
             <div className="lg:col-span-7 flex items-center justify-between gap-8 text-left">
               <p className="text-slate-350 text-sm md:text-base leading-relaxed max-w-xl font-normal font-sans">
@@ -263,7 +263,7 @@ export default function HomePage() {
         {/* Overlapping Cards Container */}
         <div className="max-w-6xl mx-auto px-6 md:px-8 -mt-24 relative z-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            
+
             {/* Card 1: Absolute Clarity */}
             <div className="bg-white border border-slate-100 rounded-[28px] p-6 shadow-xl flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300 h-[220px] text-left">
               <div className="space-y-4">
@@ -351,7 +351,7 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto bg-brand text-white rounded-3xl p-8 md:p-16 text-center space-y-8 shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.08),transparent)]" />
 
-          <div className="space-y-4 max-w-lg mx-auto relative z-10">
+          <div className="space-y-2 max-w-lg mx-auto relative z-5">
             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-none">
               Have a Specific Export Requirement?
             </h2>

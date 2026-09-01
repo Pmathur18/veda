@@ -5,8 +5,11 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
-  --font-display: var(--font-montserrat), system-ui, sans-serif;
+  --font-sans: var(--font-inter);
+  --font-inter: var(--font-inter);
+  --font-display: var(--font-montserrat);
+  --font-heading: var(--font-montserrat);
+  --font-montserrat: var(--font-montserrat);
 
   --color-brand: #293681;
   --color-brand-hover: #1d2760;
@@ -24,12 +27,23 @@
 
 body {
   background-color: var(--background);
-  font-family: var(--font-sans);
+  font-family: var(--font-inter);
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, .font-display {
-  font-family: var(--font-display);
+/* Montserrat: For Blogs, Editorial, and Headings */
+h1, h2, h3, h4, h5, h6, .font-display, .font-heading, .font-montserrat {
+  font-family: var(--font-montserrat) !important;
+}
+
+/* Inter: For UI, Body Text, and Modern Sites */
+p, span, a, button, input, textarea, select, label, li, code, pre, .font-sans, .font-inter {
+  font-family: var(--font-inter);
+}
+
+/* Ensure all heading children inherit Montserrat */
+h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
+  font-family: var(--font-montserrat);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -66,8 +80,23 @@ h1, h2, h3, h4, h5, h6, .font-display {
 }
 
 @theme inline {
-  --font-heading: var(--font-sans);
-  --font-sans: var(--font-sans);
+  --font-heading: var(--font-montserrat);
+  --font-display: var(--font-montserrat);
+  --font-montserrat: var(--font-montserrat);
+  --font-sans: var(--font-inter);
+  --font-inter: var(--font-inter);
+  --color-brand: #293681;
+  --color-brand-hover: #1d2760;
+  --color-brand-light: #D0E7E6;
+  --color-accent: #4274D9;
+  --color-accent-hover: #2757bc;
+  --color-sky: #95CCDD;
+  --color-sky-hover: #75b4c9;
+  --color-midnight: #1c255b;
+  --color-ocean: #293681;
+  --color-azure: #4274D9;
+  --color-ice: #D0E7E6;
+  --color-dark-blue: #293681;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -85,8 +114,6 @@ h1, h2, h3, h4, h5, h6, .font-display {
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -115,14 +142,14 @@ h1, h2, h3, h4, h5, h6, .font-display {
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: #293681;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent: #4274D9;
+  --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
@@ -135,10 +162,10 @@ h1, h2, h3, h4, h5, h6, .font-display {
   --radius: 0.625rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary: #293681;
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-accent: #4274D9;
+  --sidebar-accent-foreground: #ffffff;
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 }
@@ -150,14 +177,14 @@ h1, h2, h3, h4, h5, h6, .font-display {
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
+  --primary: #4274D9;
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --accent: #4274D9;
+  --accent-foreground: #ffffff;
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
@@ -169,10 +196,10 @@ h1, h2, h3, h4, h5, h6, .font-display {
   --chart-5: oklch(0.269 0 0);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary: #4274D9;
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-accent: #4274D9;
+  --sidebar-accent-foreground: #ffffff;
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }

@@ -65,7 +65,7 @@ export default function ProductsPage() {
                   <div className="space-y-4">
                     <div className="flex justify-between items-start">
                       <div>
-                        <span className="text-[10px] text-accent font-mono font-bold block uppercase">
+                        <span className="text-[10px] text-accent font-sans font-bold block uppercase">
                           {p.botanicalName}
                         </span>
                         <h3 className="text-xl font-black text-slate-900 group-hover:text-accent transition-colors uppercase leading-tight">

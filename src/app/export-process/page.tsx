@@ -286,7 +286,7 @@ export default function QualityProcessPage() {
                   {/* Left Title & Content */}
                   <div className="flex items-start gap-5 flex-1">
                     <span
-                      className={`text-2xl md:text-3xl font-extrabold font-mono transition-colors ${
+                      className={`text-2xl md:text-3xl font-extrabold font-sans transition-colors ${
                         isActive ? "text-[#0d1b12]" : "text-slate-400"
                       }`}
                     >
@@ -436,7 +436,7 @@ export default function QualityProcessPage() {
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold text-[#0d1b12] bg-[#c0ed37]/30 border border-[#c0ed37] px-3 py-1 rounded-full font-mono uppercase tracking-wider">
+                  <span className="text-[10px] font-bold text-[#0d1b12] bg-[#c0ed37]/30 border border-[#c0ed37] px-3 py-1 rounded-full font-sans uppercase tracking-wider">
                     {comp.badge}
                   </span>
                   <ArrowUpRight className="h-5 w-5 text-slate-400 group-hover:text-[#0d1b12] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />

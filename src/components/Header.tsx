@@ -168,7 +168,7 @@ export default function Header() {
 
             {/* Navigation Links List */}
             <div className="py-8 space-y-3 z-10">
-              <motion.span variants={itemVariants} className="text-[10px] font-black text-sky-400 uppercase tracking-widest block mb-2 font-mono">
+              <motion.span variants={itemVariants} className="text-[10px] font-black text-sky-400 uppercase tracking-widest block mb-2 font-sans">
                 // NAVIGATION LANES
               </motion.span>
 
@@ -188,7 +188,7 @@ export default function Header() {
                       }`}
                     >
                       <div className="flex items-center gap-4">
-                        <span className="text-xs font-mono font-bold text-sky-400">
+                        <span className="text-xs font-bold text-sky-400 font-sans">
                           {item.num}
                         </span>
                         <span className="text-xl font-black uppercase tracking-wide font-display">
@@ -221,7 +221,7 @@ export default function Header() {
               </Link>
 
               {/* Copyright Tag */}
-              <p className="text-center text-[10px] text-slate-400 tracking-wider pt-2 font-mono">
+              <p className="text-center text-[10px] text-slate-400 tracking-wider pt-2 font-sans">
                 © {new Date().getFullYear()} VEDA IMPEX • JODHPUR, INDIA
               </p>
             </motion.div>

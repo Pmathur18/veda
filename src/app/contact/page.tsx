@@ -261,32 +261,32 @@ function ContactFormInner() {
 export default function ContactPage() {
   return (
     <div className="bg-[#f8fafc] min-h-screen">
-      {/* 1. HERO SECTION WITH DARK BLUE OVERLAY & CENTERED TEXT */}
-      <section className="relative w-full min-h-[48vh] md:min-h-[52vh] flex flex-col items-center justify-center overflow-hidden -mt-16 bg-[#0f172a]">
+      {/* 1. HERO SECTION */}
+      <section className="relative w-full min-h-[55vh] md:min-h-[62vh] flex flex-col items-center justify-center overflow-hidden -mt-16">
         {/* Background Image Banner */}
         <Image
           src="/Contact us banner image.png"
-          alt="Contact Us Banner"
+          alt="VEDA IMPEX Contact Us Banner"
           fill
           priority
-          className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 mix-blend-luminosity"
+          className="absolute inset-0 w-full h-full object-cover z-0"
         />
-        {/* Dark Blue Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0b1727]/90 via-[#0b1727]/80 to-[#0b1727]/95 z-10" />
+        {/* Dark Overlay to protect text contrast */}
+        <div className="absolute inset-0 bg-slate-950/65 z-10" />
 
-        {/* Content Container */}
-        <div className="w-full max-w-4xl mx-auto px-6 py-20 relative z-20 flex flex-col items-center justify-center text-center space-y-3">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
-            Contact us
+        {/* Hero Content Overlay */}
+        <div className="w-full max-w-5xl mx-auto px-6 md:px-8 py-20 md:py-28 relative z-20 flex flex-col items-center justify-center text-center text-white space-y-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight uppercase max-w-4xl leading-tight">
+            Contact Us
           </h1>
-          <p className="text-slate-200 text-sm md:text-base leading-relaxed max-w-xl font-normal">
-            VEDA IMPEX is ready to provide the right solution according to your needs
+          <p className="text-slate-200 text-sm md:text-base leading-relaxed max-w-2xl font-normal font-sans mx-auto">
+            VEDA IMPEX is ready to provide the right solution according to your needs. Reach out directly for technical specifications, custom packaging, and bulk pricing.
           </p>
         </div>
       </section>
 
       {/* 2. OVERLAPPING CONTACT CARD (GET IN TOUCH + SEND US A MESSAGE) */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 relative z-30 -mt-20 md:-mt-24 mb-20">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 relative z-30 -mt-16 md:-mt-20 mb-20">
         <div className="bg-white rounded-[32px] p-6 sm:p-10 md:p-14 shadow-2xl border border-slate-100">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14">
             
