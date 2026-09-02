@@ -70,7 +70,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   };
 
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-white min-h-screen">
       {/* Product JSON-LD Schema */}
       <script
         type="application/ld+json"

@@ -115,12 +115,7 @@ export default function Footer() {
               {/* Header Title with wrap */}
               <div className="flex flex-col text-left group cursor-pointer">
                 <span className="text-2xl sm:text-3xl md:text-[38px] font-black text-white tracking-tight leading-[1.1] uppercase font-display">
-                  Connect With
-                </span>
-                <div className="flex items-center gap-2 mt-1">
-                  <span className="text-2xl sm:text-3xl md:text-[38px] font-black text-white tracking-tight leading-[1.1] uppercase font-display">
-                    Us
-                  </span>
+                  Connect With US
                   <motion.div
                     whileHover={{ scale: 1.15, rotate: 45 }}
                     transition={{ type: "spring", stiffness: 300, damping: 15 }}
@@ -128,7 +123,7 @@ export default function Footer() {
                   >
                     <ArrowUpRight className="w-4 h-4 md:w-4.5 md:h-4.5 stroke-[3]" />
                   </motion.div>
-                </div>
+                </span>
               </div>
 
               {/* Social Media Circular Links */}
@@ -232,7 +227,7 @@ export default function Footer() {
           </div>
         </motion.div>
 
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }

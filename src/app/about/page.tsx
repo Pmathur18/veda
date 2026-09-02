@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ShieldCheck,
   ArrowUpRight,
@@ -17,7 +18,9 @@ import {
   Target,
   Compass,
   Award,
-  ChevronDown
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 
 export default function AboutPage() {
@@ -118,7 +121,7 @@ export default function AboutPage() {
   }, [isAdvantagePaused, advantages.length]);
 
   return (
-    <div className="bg-[#F7F6F2] text-slate-900 min-h-screen font-sans">
+    <div className="bg-white text-slate-900 min-h-screen font-sans">
       {/* 1. HERO SECTION */}
       <section className="relative w-full min-h-[55vh] md:min-h-[62vh] flex flex-col items-center justify-center overflow-hidden -mt-16 mb-10">
         <Image
@@ -145,12 +148,12 @@ export default function AboutPage() {
       {/* 2. BRAND ORIGIN & STORY (HUMAN & PROFESSIONAL) */}
       <section className="py-14 md:py-20 px-6 md:px-12 max-w-7xl mx-auto w-full">
         <div className="bg-white border border-slate-200/80 rounded-[32px] p-8 md:p-12 shadow-sm relative overflow-hidden space-y-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4.5xl font-extrabold text-slate-900 leading-[1.25] tracking-tight max-w-5xl">
-            Building a Reliable Bridge Between <br /> India and Global Markets
+          <h2 className="text-2xl sm:text-3xl md:text-4.5xl font-extrabold text-slate-900 leading-[1.25] tracking-tight max-w-5xl justify center">
+            Building a Reliable Bridge Between India and Global Markets
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start pt-2 border-t border-slate-100">
-            <div className="md:col-span-8 space-y-5 text-slate-600 text-sm md:text-base leading-relaxed">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center pt-2">
+            <div className="lg:col-span-7 space-y-5 text-slate-600 text-sm md:text-base leading-relaxed">
               <p className="font-medium text-slate-900">
                 Based out of Jodhpur, Rajasthan, VEDA IMPEX was founded with a straightforward objective: to make cross-border sourcing from India clear, dependable, and completely hassle-free for commercial buyers worldwide.
               </p>
@@ -161,49 +164,108 @@ export default function AboutPage() {
                 We are building VEDA IMPEX around a long-term vision—carefully expanding our export offerings while ensuring that our core operational values remain uncompromised.
               </p>
             </div>
+
+            {/* Right Column: Global Trade Visual Showcase */}
+            <div className="lg:col-span-5 relative w-full h-[280px] sm:h-[340px] lg:h-[360px] rounded-3xl overflow-hidden border border-slate-200/90 shadow-lg group">
+              <Image
+                src="/global-trade-bridge.jpg"
+                alt="VEDA IMPEX Global Maritime Export Operations"
+                fill
+                priority
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+
+              <div className="absolute bottom-4 left-4 right-4 bg-slate-900/80 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/20 text-white flex items-center justify-between shadow-md">
+                <div>
+                  <span className="block text-[10px] font-mono uppercase tracking-widest text-[#95CCDD]">Global Logistics</span>
+                  <span className="text-xs font-bold text-white">India to Worldwide Ports</span>
+                </div>
+                <span className="text-[10px] font-bold bg-[#4274D9] text-white px-2.5 py-1 rounded-full uppercase tracking-wider">
+                  Active
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 3. OUR CORE PILLARS (THE TRUST FRAMEWORK) */}
-      <section className="py-14 md:py-20 px-6 md:px-12 max-w-7xl mx-auto w-full">
-        <div className="space-y-4 mb-8">
-          <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
-            Our Core Pillars <br />
-            <span className="italic font-normal text-amber-700 font-display">Four Commitments of Trade</span>
-          </h2>
-        </div>
+      {/* 3. OUR CORE PILLARS (THE TRADE LOOP & TRUST FRAMEWORK) */}
+      <section className="relative py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto w-full overflow-hidden rounded-[36px] my-6 bg-white border border-slate-200/80 shadow-sm">
+        {/* Subtle Blueprint Grid Pattern Backdrop */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,#000_80%,transparent_100%)] opacity-75 pointer-events-none" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {pillars.map((pillar, idx) => {
-            const Icon = pillar.icon;
-            return (
-              <div
-                key={idx}
-                className="bg-white border border-slate-200/90 rounded-[28px] p-6 shadow-sm flex flex-col justify-between hover:border-amber-600/40 hover:shadow-md transition-all duration-300 min-h-[260px] text-left group"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-black text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full font-sans">
-                      {pillar.num}
-                    </span>
-                    <div className="w-9 h-9 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center group-hover:bg-amber-700 group-hover:text-white transition-colors">
-                      <Icon className="h-4 w-4" />
-                    </div>
-                  </div>
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
 
-                  <div className="space-y-2">
-                    <h3 className="text-base font-extrabold text-slate-900 group-hover:text-amber-700 transition-colors">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-slate-600 text-xs leading-relaxed">
-                      {pillar.desc}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          {/* LEFT COLUMN: Title/Intro + Highlighted Card 1 */}
+          <div className="lg:col-span-4 flex flex-col justify-between space-y-6">
+            <div className="space-y-4">
+              <h2 className="text-3xl sm:text-4xl md:text-[38px] font-black text-[#1c255b] tracking-tight leading-[1.15] font-display">
+                The Trade Loop: <br />
+                <span className="text-[#293681]">Engineering for Velocity</span>
+              </h2>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
+                In high-reliability global commodity trade, trust isn&apos;t just a promise—it is the operational engine that powers repeat partnerships. We design every stage from lot testing to export logistics to function seamlessly in real time.
+              </p>
+            </div>
+
+            {/* Bottom Card (Highlighted with Blue Border) */}
+            <div className="bg-white rounded-2xl p-6 sm:p-7 border-2 border-[#4274D9] shadow-sm hover:shadow-md transition-all duration-300 space-y-3">
+              <h3 className="text-lg sm:text-xl font-bold text-[#1c255b] tracking-tight font-display">
+                Integrity in Every Conversation
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
+                Clear, direct, and transparent communication from initial price quote to final container clearance. We commit strictly to parameters we can execute.
+              </p>
+            </div>
+          </div>
+
+          {/* MIDDLE COLUMN: Top Card 2 + Bottom Highlighted Card 3 */}
+          <div className="lg:col-span-4 flex flex-col justify-between space-y-6">
+            {/* Top Card */}
+            <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 space-y-3 flex-1 flex flex-col justify-center">
+              <h3 className="text-lg sm:text-xl font-bold text-[#1c255b] tracking-tight font-display">
+                Responsibility in Commitments
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
+                Meticulous oversight of physical &amp; microbiological laboratory testing (COA), moisture protection, packaging durability, and export documentation.
+              </p>
+            </div>
+
+            {/* Bottom Card (Highlighted with Blue Border) */}
+            <div className="bg-white rounded-2xl p-6 sm:p-7 border-2 border-[#4274D9] shadow-sm hover:shadow-md transition-all duration-300 space-y-3 flex-1 flex flex-col justify-center">
+              <h3 className="text-lg sm:text-xl font-bold text-[#1c255b] tracking-tight font-display">
+                Embedded Trust &amp; Governance
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
+                Delivering exact benchmark quality parameters on repeat orders. Statutory compliance (DGFT, APEDA, FSSAI) is built into every single iteration.
+              </p>
+            </div>
+          </div>
+
+          {/* RIGHT COLUMN: Top Card 4 + Bottom Card 5 */}
+          <div className="lg:col-span-4 flex flex-col justify-between space-y-6">
+            {/* Top Card */}
+            <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 space-y-3 flex-1 flex flex-col justify-center">
+              <h3 className="text-lg sm:text-xl font-bold text-[#1c255b] tracking-tight font-display">
+                Predictive Export Execution
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
+                The methodology shifts from reactive troubleshooting to proactive coordination by anticipating port clearances, container sealing, and third-party inspection needs.
+              </p>
+            </div>
+
+            {/* Bottom Card */}
+            <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 space-y-3 flex-1 flex flex-col justify-center">
+              <h3 className="text-lg sm:text-xl font-bold text-[#1c255b] tracking-tight font-display">
+                Built for Long-Term Scalability
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
+                The framework is engineered to support recurring container shipments without compromise. We measure success by international buyers who return order after order.
+              </p>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -223,66 +285,98 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Horizontal Navigation Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-6">
-          {advantages.map((adv) => {
-            const isActive = activeAdvantage === adv.id;
-            return (
-              <button
-                key={adv.id}
-                onClick={() => setActiveAdvantage(adv.id)}
-                className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 flex items-center gap-2 ${isActive
-                  ? "bg-slate-900 text-white shadow-md scale-105"
-                  : "bg-white text-slate-600 hover:bg-slate-100 border border-slate-200"
-                  }`}
-              >
-                <span className={`w-2 h-2 rounded-full ${isActive ? "bg-amber-400" : "bg-slate-300"}`} />
-                Advantage 0{adv.id + 1}: {adv.badge}
-              </button>
-            );
-          })}
+        {/* Auto-scrolling Showcase Card with AnimatePresence */}
+        <div className="relative overflow-hidden min-h-[360px] md:min-h-[380px]">
+          <AnimatePresence mode="wait">
+            {advantages.map((adv) => {
+              if (adv.id !== activeAdvantage) return null;
+              return (
+                <motion.div
+                  key={adv.id}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.45, ease: "easeOut" }}
+                  className="bg-white border border-slate-200 rounded-[32px] p-6 md:p-10 shadow-lg grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+                >
+                  <div className="lg:col-span-6 space-y-6 text-left">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
+                      <span className="text-xs font-mono font-bold text-amber-700 uppercase tracking-widest">
+                        Advantage 0{adv.id + 1} • {adv.badge}
+                      </span>
+                    </div>
+
+                    <h3 className="text-2xl md:text-3.5xl font-black text-slate-900 tracking-tight leading-tight">
+                      {adv.title}
+                    </h3>
+
+                    <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+                      {adv.desc}
+                    </p>
+
+                    <div className="pt-3 flex items-center justify-between">
+                      <div>
+                        <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Strategic Operational Edge</span>
+                        <span className="text-sm font-extrabold text-amber-700">{adv.metric}</span>
+                      </div>
+
+                      {/* Auto progress bar */}
+                      <div className="flex items-center gap-1.5">
+                        {advantages.map((_, i) => (
+                          <span
+                            key={i}
+                            className={`h-1.5 rounded-full transition-all duration-300 ${
+                              activeAdvantage === i ? "w-6 bg-amber-600" : "w-1.5 bg-slate-200"
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="lg:col-span-6 relative h-[280px] md:h-[340px] rounded-2xl overflow-hidden border border-slate-200 group">
+                    <Image
+                      src={adv.image}
+                      alt={adv.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-slate-950/20" />
+                    <div className="absolute bottom-4 right-4 bg-slate-900/90 text-white text-xs font-sans px-3.5 py-1.5 rounded-lg backdrop-blur-sm">
+                      {adv.badge}
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
         </div>
 
-        {/* Showcase Card */}
-        {advantages.map((adv) => {
-          if (adv.id !== activeAdvantage) return null;
-          return (
-            <div
-              key={adv.id}
-              className="bg-white border border-slate-200 rounded-[32px] p-6 md:p-10 shadow-lg grid grid-cols-1 lg:grid-cols-12 gap-8 items-center transition-all duration-500"
-            >
-              <div className="lg:col-span-6 space-y-6 text-left">
-                <h3 className="text-2xl md:text-3.5xl font-black text-slate-900 tracking-tight leading-tight">
-                  {adv.title}
-                </h3>
+        {/* Manual Arrow Controls & Counter Below Showcase */}
+        <div className="flex items-center justify-center gap-4 pt-6">
+          <button
+            onClick={() => setActiveAdvantage((prev) => (prev > 0 ? prev - 1 : advantages.length - 1))}
+            className="w-10 h-10 rounded-full bg-white border border-slate-200 hover:bg-slate-100 hover:border-slate-300 text-slate-700 flex items-center justify-center transition-all shadow-sm hover:scale-105 cursor-pointer"
+            aria-label="Previous advantage"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
 
-                <p className="text-slate-600 text-sm md:text-base leading-relaxed">
-                  {adv.desc}
-                </p>
+          <div className="flex items-center gap-2 px-3.5 py-1.5 bg-white border border-slate-200 rounded-full text-xs font-mono font-bold text-slate-700 shadow-sm">
+            <span className="text-amber-700">0{activeAdvantage + 1}</span>
+            <span className="text-slate-300">/</span>
+            <span className="text-slate-400">0{advantages.length}</span>
+          </div>
 
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <div>
-                    <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Strategic Operational Edge</span>
-                    <span className="text-sm font-extrabold text-amber-700">{adv.metric}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="lg:col-span-6 relative h-[280px] md:h-[340px] rounded-2xl overflow-hidden border border-slate-200">
-                <Image
-                  src={adv.image}
-                  alt={adv.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-slate-950/20" />
-                <div className="absolute bottom-4 right-4 bg-slate-900/90 text-white text-xs font-sans px-3.5 py-1.5 rounded-lg backdrop-blur-sm">
-                  {adv.badge}
-                </div>
-              </div>
-            </div>
-          );
-        })}
+          <button
+            onClick={() => setActiveAdvantage((prev) => (prev < advantages.length - 1 ? prev + 1 : 0))}
+            className="w-10 h-10 rounded-full bg-white border border-slate-200 hover:bg-slate-100 hover:border-slate-300 text-slate-700 flex items-center justify-center transition-all shadow-sm hover:scale-105 cursor-pointer"
+            aria-label="Next advantage"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+        </div>
       </section>
 
       {/* 5. VISION & MISSION */}

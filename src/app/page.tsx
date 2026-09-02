@@ -180,7 +180,7 @@ export default function HomePage() {
       </div>
 
       {/* 2. WHAT WE EXPORT */}
-      <section className="bg-slate-50 py-16 md:py-24 px-4 md:px-8 relative overflow-hidden">
+      <section className="bg-white py-16 md:py-24 px-4 md:px-8 relative overflow-hidden">
         <div className="absolute left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -z-10" />
 
         <div className="max-w-7xl mx-auto space-y-16">
@@ -347,7 +347,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. QUICK ENQUIRY BANNER */}
-      <section className="bg-white py-16 md:py-24 px-4 md:px-8 border-b border-slate-100">
+      <section className="bg-white py-16 md:py-24 px-4 md:px-8">
         <div className="max-w-5xl mx-auto bg-brand text-white rounded-3xl p-8 md:p-16 text-center space-y-8 shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.08),transparent)]" />
 

@@ -260,7 +260,7 @@ function ContactFormInner() {
 
 export default function ContactPage() {
   return (
-    <div className="bg-[#f8fafc] min-h-screen">
+    <div className="bg-white min-h-screen">
       {/* 1. HERO SECTION */}
       <section className="relative w-full min-h-[55vh] md:min-h-[62vh] flex flex-col items-center justify-center overflow-hidden -mt-16">
         {/* Background Image Banner */}

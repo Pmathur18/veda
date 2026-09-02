@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Host
+Host: https://www.vedaimpex.com
+
+# Sitemaps
+Sitemap: https://www.vedaimpex.com/sitemap.xml
