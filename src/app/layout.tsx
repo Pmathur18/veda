@@ -3,7 +3,6 @@ import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import CookieConsent from "../components/CookieConsent";
 import { cn } from "@/lib/utils";
 
 const inter = Inter({
@@ -47,6 +46,16 @@ export const metadata: Metadata = {
     siteName: "Veda Impex",
     locale: "en_US",
     type: "website",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   other: {
     "geo.region": "IN-RJ",
@@ -146,7 +155,6 @@ export default function RootLayout({
         </div>
 
         <Footer />
-        <CookieConsent />
       </body>
     </html>
   );
