@@ -123,7 +123,7 @@ export default function QualityProcessPage() {
       <section className="relative w-full min-h-[58vh] md:min-h-[66vh] flex flex-col items-center justify-center overflow-hidden -mt-16 mb-16 bg-slate-950">
         {/* Background Image */}
         <Image
-          src="/ChatGPT Image Aug 26, 2026, 06_56_03 PM.png"
+          src="/veda-impex-about-banner.png"
           alt="VEDA IMPEX Quality Background"
           fill
           priority

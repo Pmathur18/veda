@@ -62,7 +62,7 @@ export default function AboutPage() {
       subtitle: "Western Rajasthan & Regional Sourcing Belts",
       desc: "Western Rajasthan and the surrounding regions produce the world's highest-grade crops of Psyllium (Plantago ovata) and Senna (Cassia angustifolia).",
       metric: "World's Highest Grade Belts",
-      image: "/ChatGPT Image Aug 26, 2026, 06_56_03 PM.png"
+      image: "/veda-impex-about-banner.png"
     },
     {
       id: 1,
@@ -125,7 +125,7 @@ export default function AboutPage() {
       {/* 1. HERO SECTION */}
       <section className="relative w-full min-h-[55vh] md:min-h-[62vh] flex flex-col items-center justify-center overflow-hidden -mt-16 mb-10">
         <Image
-          src="/ChatGPT Image Aug 26, 2026, 06_56_03 PM.png"
+          src="/veda-impex-about-banner.png"
           alt="VEDA IMPEX About Us Banner"
           fill
           priority

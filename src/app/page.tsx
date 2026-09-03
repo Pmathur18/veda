@@ -27,19 +27,34 @@ const parseValue = (val: string) => {
 };
 
 function Counter({ value }: { value: string }) {
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const ref = React.useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const parsed = React.useMemo(() => parseValue(value), [value]);
   const [count, setCount] = React.useState(0);
+  const [hasStarted, setHasStarted] = React.useState(false);
 
-  const parsed = parseValue(value);
+  // Trigger animation either when in view or via small fallback timer
+  React.useEffect(() => {
+    if (isInView) {
+      setHasStarted(true);
+    }
+  }, [isInView]);
 
   React.useEffect(() => {
-    if (isInView && parsed.number !== null) {
+    const timer = setTimeout(() => {
+      setHasStarted(true);
+    }, 400);
+    return () => clearTimeout(timer);
+  }, []);
+
+  React.useEffect(() => {
+    if (hasStarted && parsed.number !== null) {
       let startTime: number;
-      const duration = 2000; // 2 seconds
+      const duration = 1800; // 1.8 seconds
       const startValue = 0;
       const endValue = parsed.number;
 
+      let animationFrameId: number;
       const animateStep = (timestamp: number) => {
         if (!startTime) startTime = timestamp;
         const progress = Math.min((timestamp - startTime) / duration, 1);
@@ -48,19 +63,24 @@ function Counter({ value }: { value: string }) {
         setCount(currentCount);
 
         if (progress < 1) {
-          requestAnimationFrame(animateStep);
+          animationFrameId = requestAnimationFrame(animateStep);
+        } else {
+          setCount(endValue);
         }
       };
 
-      requestAnimationFrame(animateStep);
+      animationFrameId = requestAnimationFrame(animateStep);
+      return () => cancelAnimationFrame(animationFrameId);
     }
-  }, [isInView, parsed.number]);
+  }, [hasStarted, parsed.number]);
 
   if (parsed.number === null) {
     return <span ref={ref}>{value}</span>;
   }
 
-  const displayVal = parsed.isDecimal ? count.toFixed(1) : Math.floor(count).toString();
+  const displayVal = parsed.isDecimal
+    ? (hasStarted ? count.toFixed(1) : parsed.number.toFixed(1))
+    : (hasStarted ? Math.floor(count).toString() : parsed.number.toString());
 
   return (
     <span ref={ref}>
@@ -90,6 +110,7 @@ export default function HomePage() {
           loop
           muted
           playsInline
+          poster="/hero-video-poster.jpg"
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
           <source src="/360536.mp4" type="video/mp4" />

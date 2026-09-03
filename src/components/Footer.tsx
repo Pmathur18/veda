@@ -10,47 +10,6 @@ export default function Footer() {
   const footerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(footerRef, { once: true, amount: 0.05 });
 
-  const socialLinks = [
-    {
-      name: "Facebook",
-      href: "#",
-      icon: (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-        </svg>
-      )
-    },
-    {
-      name: "Instagram",
-      href: "#",
-      icon: (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-        </svg>
-      )
-    },
-    {
-      name: "Pinterest",
-      href: "#",
-      icon: (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 2C6.5 2 2 6.5 2 12c0 4.25 2.67 7.9 6.44 9.34-.1-.8-.18-2.01.03-2.88.2-.82 1.3-5.52 1.3-5.52s-.33-.66-.33-1.64c0-1.54.89-2.69 2.01-2.69 1 0 1.47.75 1.47 1.64 0 .99-.63 2.48-.96 3.86-.27 1.15.58 2.09 1.71 2.09 2.05 0 3.63-2.17 3.63-5.3 0-2.77-2-4.71-4.83-4.71-3.3 0-5.23 2.47-5.23 5.02 0 1 .38 2.07.86 2.66.1.11.11.2.08.31-.1.38-.3 1.21-.34 1.37-.06.24-.2.32-.45.2-1.63-.76-2.65-3.14-2.65-5.06 0-4.12 3-7.9 8.63-7.9 4.53 0 8.05 3.23 8.05 7.54 0 4.5-2.84 8.12-6.78 8.12-1.32 0-2.57-.69-3-1.51l-.82 3.13c-.3 1.14-1.1 2.56-1.64 3.42C10.74 21.84 11.36 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z" />
-        </svg>
-      )
-    },
-    {
-      name: "Twitter",
-      href: "#",
-      icon: (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-        </svg>
-      )
-    }
-  ];
-
   const menuLinks = [
     { label: "Products", href: "/products" },
     { label: "About", href: "/about" },
@@ -124,22 +83,6 @@ export default function Footer() {
                     <ArrowUpRight className="w-4 h-4 md:w-4.5 md:h-4.5 stroke-[3]" />
                   </motion.div>
                 </span>
-              </div>
-
-              {/* Social Media Circular Links */}
-              <div className="flex gap-3 pt-1">
-                {socialLinks.map((social) => (
-                  <motion.a
-                    key={social.name}
-                    href={social.href}
-                    whileHover={{ scale: 1.15, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="h-9 w-9 md:h-10 md:w-10 rounded-full border border-white/20 text-white hover:text-slate-950 hover:bg-white hover:border-transparent flex items-center justify-center transition-colors duration-200 shadow-sm"
-                    title={social.name}
-                  >
-                    {social.icon}
-                  </motion.a>
-                ))}
               </div>
 
               {/* Email Callout */}
